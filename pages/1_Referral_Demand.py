@@ -12,6 +12,9 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
     # Ensure required columns are present
     required_columns = ['month', 'specialty', 'priority', 'referrals']
     if all(column in referral_df.columns for column in required_columns):
+        # Consistent order of priorities
+        priority_order = ['2-week wait', 'Urgent', 'Routine']
+        
         specialties = referral_df['specialty'].unique()
         
         if st.session_state.selected_specialty is None:
@@ -25,6 +28,9 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
         # Filter referral data based on selected specialty
         specialty_referral_df = referral_df[referral_df['specialty'] == selected_specialty].copy()
         specialty_referral_df.loc[:, 'month'] = pd.to_datetime(specialty_referral_df['month']).dt.to_period('M').dt.to_timestamp('M')
+
+        # Set the priority category order
+        specialty_referral_df['priority'] = pd.Categorical(specialty_referral_df['priority'], categories=priority_order, ordered=True)
 
         st.subheader(f"Referral Trends for {selected_specialty}")
         # Allow user to select baseline period
@@ -47,7 +53,8 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
             y='referrals',
             color='priority',
             labels={'referrals': 'Number of Referrals'},
-            title=f'Referrals Over Time for {selected_specialty}'
+            title=f'Referrals Over Time for {selected_specialty}',
+            color_discrete_sequence=px.colors.qualitative.Safe  # Different color scheme without red
         )
 
         if baseline_start != baseline_end:
@@ -83,34 +90,53 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
             priority_percentages = baseline_referral_df.groupby('priority')['referrals'].sum() / total_referrals_baseline * 100
 
             st.write("**Percentage of Referrals by Priority in Baseline Period:**")
-            for priority, percentage in priority_percentages.items():
-                st.write(f"- **{priority}:** {percentage:.2f}%")
+            for priority in priority_order:
+                if priority in priority_percentages:
+                    st.write(f"- **{priority}:** {priority_percentages[priority]:.2f}%")
+
+            # Create a bar chart for total referrals (12-month equivalent) by priority
+            baseline_priority_totals = baseline_referral_df.groupby('priority')['referrals'].sum() / num_baseline_months * 12
+            baseline_priority_totals = baseline_priority_totals.reindex(priority_order)  # Ensure consistent priority order
+
+            fig_baseline = px.bar(
+                baseline_priority_totals.reset_index(),
+                x='priority',
+                y='referrals',
+                title='Total Referrals (12-Month Equivalent) by Priority',
+                labels={'referrals': 'Number of Referrals', 'priority': 'Priority'},
+                text='referrals',
+                color='priority',
+                color_discrete_sequence=px.colors.qualitative.Safe  # Same colors as the line chart
+            )
+            fig_baseline.update_traces(texttemplate='%{text:.0f}', textposition='outside')
+            st.plotly_chart(fig_baseline, use_container_width=True)
 
         # Determine trends for each priority and forecast increase
         st.subheader("Referral Trend Analysis")
 
         priority_trend_data = []
-        for priority in specialty_referral_df['priority'].unique():
+        for priority in priority_order:
             priority_df = specialty_referral_df[specialty_referral_df['priority'] == priority]
-            priority_df = priority_df.sort_values('month')
-            x = priority_df['month'].map(pd.Timestamp.toordinal)
-            y = priority_df['referrals']
+            if not priority_df.empty:
+                priority_df = priority_df.sort_values('month')
+                x = priority_df['month'].map(pd.Timestamp.toordinal)
+                y = priority_df['referrals']
 
-            # Perform linear regression
-            slope, intercept, r_value, p_value, std_err = linregress(x, y)
+                # Perform linear regression
+                slope, intercept, r_value, p_value, std_err = linregress(x, y)
 
-            # Calculate trend increase percentage for next year
-            if slope > 0:
-                trend_increase_percentage = (slope * 12) / y.mean() * 100
-            else:
-                trend_increase_percentage = 0
+                # Calculate trend increase percentage for next year
+                if slope > 0:
+                    trend_increase_percentage = (slope * 12) / y.mean() * 100
+                else:
+                    trend_increase_percentage = 0
 
-            priority_trend_data.append({
-                'priority': priority,
-                'trend_increase_percentage': trend_increase_percentage
-            })
+                priority_trend_data.append({
+                    'priority': priority,
+                    'trend_increase_percentage': trend_increase_percentage
+                })
 
-            st.write(f"**{priority} referrals trend increase (annualized):** {trend_increase_percentage:.2f}%")
+                st.write(f"**{priority} referrals trend increase (annualized):** {trend_increase_percentage:.2f}%")
 
         # Calculate the forecasted referrals for the next year including the trend increase
         st.subheader("Forecasted Referrals for the Next Year")
@@ -142,9 +168,16 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
             y='forecasted_referrals',
             title='Forecasted Referrals for the Next Year (Split by Priority)',
             labels={'forecasted_referrals': 'Number of Referrals', 'priority': 'Priority'},
-            text='forecasted_referrals'
+            text='forecasted_referrals',
+            color='priority',
+            color_discrete_sequence=px.colors.qualitative.Safe  # Same colors as the line chart
         )
+        fig_forecast.update_traces(texttemplate='%{text:.0f}', textposition='outside')
         st.plotly_chart(fig_forecast, use_container_width=True)
+
+        # Display total forecasted referrals
+        total_forecasted_referrals = forecasted_df['forecasted_referrals'].sum()
+        st.write(f"**Total Forecasted Referrals for Next Year:** {total_forecasted_referrals:.0f}")
 
     else:
         st.error("Referral data is missing required columns.")
