@@ -21,8 +21,8 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
         st.session_state.selected_specialty = selected_specialty
 
         # Filter referral data based on selected specialty
-        specialty_referral_df = referral_df[referral_df['specialty'] == selected_specialty]
-        specialty_referral_df['month'] = pd.to_datetime(specialty_referral_df['month']).dt.to_period('M').dt.to_timestamp('M')
+        specialty_referral_df = referral_df[referral_df['specialty'] == selected_specialty].copy()
+        specialty_referral_df.loc[:, 'month'] = pd.to_datetime(specialty_referral_df['month']).dt.to_period('M').dt.to_timestamp('M')
 
         st.subheader(f"Referral Trends for {selected_specialty}")
         fig = px.line(
@@ -37,9 +37,16 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
         
         # Allow user to select baseline period
         st.subheader("Baseline Period Selection")
-        baseline_start = st.date_input('Baseline Start Date', value=specialty_referral_df['month'].min())
-        baseline_end = st.date_input('Baseline End Date', value=specialty_referral_df['month'].max())
+        min_date = specialty_referral_df['month'].min()
+        max_date = specialty_referral_df['month'].max()
+        baseline_start = st.date_input('Baseline Start Date', value=min_date, min_value=min_date, max_value=max_date)
+        baseline_end = st.date_input('Baseline End Date', value=max_date, min_value=min_date, max_value=max_date)
 
+        # Convert baseline dates to datetime
+        baseline_start = pd.to_datetime(baseline_start).to_period('M').to_timestamp('M')
+        baseline_end = pd.to_datetime(baseline_end).to_period('M').to_timestamp('M')
+
+        # Filter the referral data based on the selected baseline period
         baseline_referral_df = specialty_referral_df[(specialty_referral_df['month'] >= baseline_start) & (specialty_referral_df['month'] <= baseline_end)]
 
         if not baseline_referral_df.empty:
