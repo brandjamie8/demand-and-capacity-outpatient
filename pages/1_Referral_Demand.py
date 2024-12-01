@@ -161,6 +161,10 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
         # Create a DataFrame for forecasted referrals
         forecasted_df = pd.DataFrame(forecasted_referrals)
 
+        # Save the forecasted data and total to session state
+        st.session_state['forecasted_referrals'] = forecasted_df
+        st.session_state['forecasted_total'] = forecasted_df['forecasted_referrals'].sum()
+        
         # Plot forecasted referrals split by priority
         fig_forecast = px.bar(
             forecasted_df,
