@@ -45,7 +45,7 @@ if 'appointment_df' in st.session_state and st.session_state.appointment_df is n
             st.write(total_appointments)
 
             # User Input for Ratios and Utilization
-            st.subheader("Adjust Capacity Ratios and Utilization")
+            st.subheader("Adjust Capacity Ratios and Utilisation")
 
             col1, col2, col3 = st.columns(3)
             with col1:
