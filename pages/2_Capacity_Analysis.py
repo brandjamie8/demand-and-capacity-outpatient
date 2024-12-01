@@ -40,23 +40,27 @@ if 'appointment_df' in st.session_state and st.session_state.appointment_df is n
             # Calculate total appointments for each type
             total_appointments = baseline_appointment_df.groupby('appointment type', observed=True)['appointments completed'].sum().reset_index()
 
-            # Display baseline appointment capacity
-            st.write("**Baseline Appointment Capacity Breakdown**")
-            st.write(total_appointments)
+            # Calculate a year's worth of appointments from the baseline period
+            num_baseline_months = len(pd.date_range(start=baseline_start, end=baseline_end, freq='M'))
+            scaling_factor = 12 / num_baseline_months
+            yearly_appointments = total_appointments.copy()
+            yearly_appointments['appointments completed'] *= scaling_factor
 
-            # User Input for Ratios and Utilization
-            st.subheader("Adjust Capacity Ratios and Utilisation")
+            st.write("**Baseline Appointment Capacity Breakdown (Scaled to 12 Months)**")
+            st.write(yearly_appointments)
 
-            col1, col2, col3 = st.columns(3)
-            with col1:
-                rtt_first_ratio = st.number_input('RTT First Ratio', min_value=0.0, max_value=1.0, value=0.3, step=0.01)
-            with col2:
-                rtt_followup_ratio = st.number_input('RTT Follow-up Ratio', min_value=0.0, max_value=1.0, value=0.5, step=0.01)
-            with col3:
-                non_rtt_ratio = st.number_input('Non-RTT Ratio', min_value=0.0, max_value=1.0, value=0.2, step=0.01)
+            # Determine if there is enough capacity for referrals (one first appointment per referral)
+            if 'forecasted_total' in st.session_state:
+                total_forecasted_referrals = st.session_state['forecasted_total']
+                rtt_first_appointments = yearly_appointments[yearly_appointments['appointment type'] == 'RTT first']['appointments completed'].values[0]
 
-            if (rtt_first_ratio + rtt_followup_ratio + non_rtt_ratio) != 1.0:
-                st.warning("Ratios should sum to 1.0 for accurate capacity calculations.")
+                if rtt_first_appointments >= total_forecasted_referrals:
+                    st.success("There is enough RTT first appointment capacity for forecasted referrals.")
+                else:
+                    st.warning("There is NOT enough RTT first appointment capacity for forecasted referrals.")
+
+            # User Input for Utilization and DNA Rate
+            st.subheader("Adjust Utilization and DNA Rate")
 
             col1, col2 = st.columns(2)
             with col1:
@@ -64,33 +68,27 @@ if 'appointment_df' in st.session_state and st.session_state.appointment_df is n
             with col2:
                 dna_rate = st.slider('Did Not Attend (DNA) Rate (%)', min_value=0, max_value=100, value=10) / 100.0
 
-            # Calculate available appointments for next year
-            total_appointments_baseline = baseline_appointment_df['appointments completed'].sum()
-            total_available_appointments_next_year = total_appointments_baseline * 12 / len(pd.date_range(start=baseline_start, end=baseline_end, freq='M'))
+            # Calculate the required available appointments based on utilization and DNA rates
+            yearly_appointments['appointments needed'] = yearly_appointments['appointments completed'] / (utilization_rate * (1 - dna_rate))
 
-            # Adjust based on ratios and utilization
-            available_rtt_first = total_available_appointments_next_year * rtt_first_ratio * utilization_rate * (1 - dna_rate)
-            available_rtt_followup = total_available_appointments_next_year * rtt_followup_ratio * utilization_rate * (1 - dna_rate)
-            available_non_rtt = total_available_appointments_next_year * non_rtt_ratio * utilization_rate * (1 - dna_rate)
+            st.write("**Projected Required Available Appointment Capacity for Next Year**")
+            st.write(yearly_appointments[['appointment type', 'appointments needed']])
 
-            st.write("**Projected Capacity for Next Year**")
-            st.write(f"- RTT First Appointments: {available_rtt_first:.0f}")
-            st.write(f"- RTT Follow-up Appointments: {available_rtt_followup:.0f}")
-            st.write(f"- Non-RTT Appointments: {available_non_rtt:.0f}")
+            # Save relevant variables to session state for next page
+            st.session_state['available_rtt_first'] = yearly_appointments[yearly_appointments['appointment type'] == 'RTT first']['appointments needed'].values[0]
+            st.session_state['available_rtt_followup'] = yearly_appointments[yearly_appointments['appointment type'] == 'RTT follow-up']['appointments needed'].values[0]
+            st.session_state['available_non_rtt'] = yearly_appointments[yearly_appointments['appointment type'] == 'non-RTT']['appointments needed'].values[0]
 
-            # Bar Chart of Projected Capacity
-            projected_capacity = {
-                'Appointment Type': ['RTT First', 'RTT Follow-up', 'Non-RTT'],
-                'Available Appointments': [available_rtt_first, available_rtt_followup, available_non_rtt]
-            }
-            projected_capacity_df = pd.DataFrame(projected_capacity)
-
+            # Bar Chart for Projected Capacity
             fig_capacity = px.bar(
-                projected_capacity_df,
-                x='Appointment Type',
-                y='Available Appointments',
-                title='Projected Appointment Capacity for Next Year',
-                text='Available Appointments'
+                yearly_appointments,
+                x='appointment type',
+                y='appointments needed',
+                title='Projected Required Available Appointment Capacity for Next Year',
+                text='appointments needed',
+                labels={'appointments needed': 'Number of Appointments', 'appointment type': 'Appointment Type'},
+                color='appointment type',
+                color_discrete_sequence=px.colors.qualitative.Safe
             )
             fig_capacity.update_traces(texttemplate='%{text:.0f}', textposition='outside')
             st.plotly_chart(fig_capacity, use_container_width=True)
