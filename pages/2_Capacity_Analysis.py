@@ -186,7 +186,7 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
             grand_total_df,
             x='Category',
             y='Appointments',
-            title='',
+            title=False,
             labels={'Appointments': 'Number of Appointments'},
             text='Appointments',
             color_discrete_sequence=px.colors.qualitative.Safe
