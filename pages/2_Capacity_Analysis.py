@@ -165,9 +165,6 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
             st.success("With the adjusted utilisation and DNA rates, the projected capacity is sufficient for the referrals.")
         else:
             st.warning("With the adjusted utilisation and DNA rates, the projected capacity is not sufficient for the referrals.")
-
-        # Grand Total Summary Chart
-        st.subheader("Grand Total Summary")
               
         grand_total_data = {
             'Category': [
@@ -189,6 +186,7 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
             grand_total_df,
             x='Category',
             y='Appointments',
+            title='',
             labels={'Appointments': 'Number of Appointments'},
             text='Appointments',
             color_discrete_sequence=px.colors.qualitative.Safe
