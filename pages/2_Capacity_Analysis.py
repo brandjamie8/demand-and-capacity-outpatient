@@ -35,8 +35,9 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
 
         # Allow user to adjust baseline period
         st.subheader("Select Baseline Period")
-        baseline_start = st.date_input('Baseline Start Date', value=default_baseline_start, min_value=specialty_appointment_df['month'].min(), max_value=max_date)
-        baseline_end = st.date_input('Baseline End Date', value=max_date, min_value=specialty_appointment_df['month'].min(), max_value=max_date)
+        with col1, col2, _:
+           col1 = baseline_start = st.date_input('Baseline Start Date', value=default_baseline_start, min_value=specialty_appointment_df['month'].min(), max_value=max_date)
+           col2 = baseline_end = st.date_input('Baseline End Date', value=max_date, min_value=specialty_appointment_df['month'].min(), max_value=max_date)
 
         # Convert baseline dates to datetime
         baseline_start = pd.to_datetime(baseline_start).to_period('M').to_timestamp('M')
@@ -223,7 +224,8 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
       
         st.plotly_chart(fig_grand_total, use_container_width=True)
       
-
+        if adjusted_attended_appointments > total_referrals_scaled:
+            st.success("The new rates would mean enough attended appointments to meet the referral demand, although unlikely to reduce the backlog significantly.")
 
         # Next Step
         st.markdown("""
