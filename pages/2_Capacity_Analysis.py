@@ -168,7 +168,7 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
 
         # Grand Total Summary Chart
         st.subheader("Grand Total Summary")
-        
+              
         grand_total_data = {
             'Category': [
                 'Baseline Attended (12-Month)', 
@@ -181,20 +181,19 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
                 int(adjusted_attended_appointments)
             ]
         }
-        
+      
         grand_total_df = pd.DataFrame(grand_total_data)
-        
+      
         # Create bar chart for grand total summary
         fig_grand_total = px.bar(
             grand_total_df,
             x='Category',
             y='Appointments',
-            title='Grand Total Summary of Capacity Analysis',
             labels={'Appointments': 'Number of Appointments'},
             text='Appointments',
             color_discrete_sequence=px.colors.qualitative.Safe
         )
-        
+      
         # Add dotted line for the number of referrals (as expected demand)
         fig_grand_total.add_shape(
             type='line',
@@ -202,19 +201,19 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
             y0=total_referrals_scaled,
             x1=2.5,
             y1=total_referrals_scaled,
-            line=dict(color='red', width=2, dash='dot'),
+            line=dict(color='black', width=2, dash='dot'),
             name='Total Referrals'
         )
-        
+      
         fig_grand_total.add_annotation(
             x=1,
             y=total_referrals_scaled,
             text=f"Total Referrals: {int(total_referrals_scaled)}",
             showarrow=False,
             yshift=10,
-            font=dict(size=12, color='red')
+            font=dict(size=12, color='black')
         )
-
+      
         # Update layout to ensure readability and display the chart
         fig_grand_total.update_traces(texttemplate='%{text:.0f}', textposition='outside')
         fig_grand_total.update_layout(
@@ -223,8 +222,17 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
             yaxis_tickformat=',',
             title_x=0.5
         )
-        
+      
         st.plotly_chart(fig_grand_total, use_container_width=True)
+      
+        # Determine and display capacity status message
+        st.subheader("Capacity Status Assessment")
+        if total_referrals_scaled > available_capacity:
+            st.error("The total referrals exceed even the available capacity if utilisation were 100% and DNAs were 0%. The number of appointments needs to increase.")
+        elif total_referrals_scaled > total_first_appointments_scaled and total_referrals_scaled <= available_capacity:
+            st.warning("The demand can be met if utilisation is increased and/or the DNA rate is reduced.")
+        else:
+            st.success("The capacity is sufficient, and the waiting list is expected to reduce.")
 
         # Next Step
         st.markdown("""
