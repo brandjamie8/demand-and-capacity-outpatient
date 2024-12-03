@@ -161,10 +161,12 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
         adjusted_attended_appointments = min(available_capacity * adjusted_utilisation_rate * (1 - adjusted_dna_rate), available_capacity)
         st.write(f"**Projected Number of Attended Appointments with Adjusted Rates:** {int(adjusted_attended_appointments)}")
 
-        if adjusted_attended_appointments >= total_referrals_scaled:
-            st.success("With the adjusted utilisation and DNA rates, the projected capacity is sufficient for the referrals.")
+        if total_referrals_scaled > available_capacity:
+            st.error("The total referrals exceed even the available capacity if utilisation were 100% and DNAs were 0%. The number of appointments needs to increase.")
+        elif total_referrals_scaled > total_first_appointments_scaled and total_referrals_scaled <= available_capacity:
+            st.warning("The demand can be met if utilisation is increased and/or the DNA rate is reduced.")
         else:
-            st.warning("With the adjusted utilisation and DNA rates, the projected capacity is not sufficient for the referrals.")
+            st.success("The capacity is sufficient, and the waiting list is expected to reduce.")
               
         grand_total_data = {
             'Category': [
@@ -223,12 +225,7 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
       
         st.plotly_chart(fig_grand_total, use_container_width=True)
       
-        if total_referrals_scaled > available_capacity:
-            st.error("The total referrals exceed even the available capacity if utilisation were 100% and DNAs were 0%. The number of appointments needs to increase.")
-        elif total_referrals_scaled > total_first_appointments_scaled and total_referrals_scaled <= available_capacity:
-            st.warning("The demand can be met if utilisation is increased and/or the DNA rate is reduced.")
-        else:
-            st.success("The capacity is sufficient, and the waiting list is expected to reduce.")
+
 
         # Next Step
         st.markdown("""
