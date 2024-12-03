@@ -212,18 +212,7 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
             yshift=10,
             font=dict(size=12, color='red')
         )
-      
-        # Adding annotations with a white background
-        for i, row in grand_total_df.iterrows():
-            fig_grand_total.add_annotation(
-                x=row['Category'],
-                y=row['Appointments'],
-                text=f"{row['Appointments']}",
-                showarrow=False,
-                bgcolor="white",  # White background
-                font=dict(color='black'),
-                borderpad=3  # Padding between text and border
-            )
+          
         fig_grand_total.update_layout(
               xaxis_title='',
               yaxis_title='Number of Appointments',
