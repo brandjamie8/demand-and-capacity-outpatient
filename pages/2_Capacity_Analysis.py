@@ -32,7 +32,9 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
         # Default baseline period as the last 6 months of available data
         max_date = specialty_appointment_df['month'].max()
         default_baseline_start = max_date - pd.DateOffset(months=5)  # Last 6 months
-
+          
+        # Plot all monthly appointments as a line chart
+        st.subheader(f"Monthly Appointments Attended for {selected_specialty}")
         # Allow user to adjust baseline period
         st.subheader("Select Baseline Period")
 
@@ -49,8 +51,6 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
         # Filter data based on the selected baseline period
         baseline_appointment_df = specialty_appointment_df[(specialty_appointment_df['month'] >= baseline_start) & (specialty_appointment_df['month'] <= baseline_end)]
 
-        # Plot all monthly appointments as a line chart
-        st.subheader("Monthly Appointments Attended")
         fig = px.line(
             specialty_appointment_df,
             x='month',
