@@ -35,9 +35,12 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
 
         # Allow user to adjust baseline period
         st.subheader("Select Baseline Period")
-        with col1, col2, _:
-           col1 = baseline_start = st.date_input('Baseline Start Date', value=default_baseline_start, min_value=specialty_appointment_df['month'].min(), max_value=max_date)
-           col2 = baseline_end = st.date_input('Baseline End Date', value=max_date, min_value=specialty_appointment_df['month'].min(), max_value=max_date)
+
+        col1, col2, _ = st.columns(3)  
+        with col1:
+           baseline_start = st.date_input('Baseline Start Date', value=default_baseline_start, min_value=specialty_appointment_df['month'].min(), max_value=max_date)
+        with col2:
+           baseline_end = st.date_input('Baseline End Date', value=max_date, min_value=specialty_appointment_df['month'].min(), max_value=max_date)
 
         # Convert baseline dates to datetime
         baseline_start = pd.to_datetime(baseline_start).to_period('M').to_timestamp('M')
