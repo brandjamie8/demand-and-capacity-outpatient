@@ -210,18 +210,34 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
             text=f"Total Referrals: {int(total_referrals_scaled)}",
             showarrow=False,
             yshift=10,
-            font=dict(size=12, color='black')
+            font=dict(size=12, color='red')
         )
       
-        # Update layout to ensure readability and display the chart
-        fig_grand_total.update_traces(texttemplate='%{text:.0f}', textposition='outside')
-        fig_grand_total.update_layout(
-            xaxis_title='',
-            yaxis_title='Number of Appointments',
-            yaxis_tickformat=',',
-            title_x=0.5,
-            title=''
+        fig_grand_total.update_traces(
+            texttemplate='%{text:.0f}', 
+            textposition='outside', 
+            textfont=dict(color='black'),
+            textbackgroundcolor='white'  # Adding white background to the text labels
         )
+      
+        # Adding annotations with a white background
+        for i, row in grand_total_df.iterrows():
+            fig_grand_total.add_annotation(
+                x=row['Category'],
+                y=row['Appointments'],
+                text=f"{row['Appointments']}",
+                showarrow=False,
+                bgcolor="white",  # White background
+                font=dict(color='black'),
+                borderpad=3  # Padding between text and border
+            )
+          fig_grand_total.update_layout(
+              xaxis_title='',
+              yaxis_title='Number of Appointments',
+              yaxis_tickformat=',',
+              title_x=0.5,
+              title=''
+          )
       
         st.plotly_chart(fig_grand_total, use_container_width=True)
       
