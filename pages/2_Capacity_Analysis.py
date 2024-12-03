@@ -54,10 +54,20 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
             color='appointment_type',
             labels={'appointments_attended': 'Number of Appointments Attended', 'appointment_type': 'Appointment Type'},
             title='Monthly Appointments Attended by Type',
-            line_group='appointment_type',
-            markers=False,
             color_discrete_sequence=px.colors.qualitative.Safe  # Consistent colors for clarity
         )
+
+        # Highlight the baseline period in the chart
+        if baseline_start != baseline_end:
+            fig.add_vrect(
+                x0=baseline_start,
+                x1=baseline_end,
+                fillcolor="LightGrey",
+                opacity=0.5,
+                layer="below",
+                line_width=0,
+            )
+
         st.plotly_chart(fig, use_container_width=True)
 
         # Summary of appointments during the baseline period
@@ -65,26 +75,35 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
         baseline_summary = baseline_appointment_df.groupby('appointment_type', observed=False)['appointments_attended'].sum().reset_index()
         baseline_summary['appointments_attended'] = baseline_summary['appointments_attended'].astype(int)
 
+        # Reorder rows and format titles
+        order = ['RTT First', 'RTT Follow-up', 'Non-RTT']
+        baseline_summary['appointment_type'] = pd.Categorical(baseline_summary['appointment_type'], categories=order, ordered=True)
+        baseline_summary = baseline_summary.sort_values('appointment_type')
+
         # Calculate grand total
         grand_total_baseline = baseline_summary['appointments_attended'].sum()
         total_row = pd.DataFrame({'appointment_type': ['Total'], 'appointments_attended': [grand_total_baseline]})
         baseline_summary = pd.concat([baseline_summary, total_row], ignore_index=True)
 
-        st.table(baseline_summary)
+        # Display table without index
+        st.table(baseline_summary.style.set_properties(**{'text-align': 'left'}).set_caption("Baseline Appointments Summary").hide_index())
 
-        # Comparison: Number of Referrals vs. Number of First Appointments
-        st.subheader("Comparison of Referrals vs. First Appointments")
-        baseline_referrals = specialty_referral_df[(specialty_referral_df['month'] >= baseline_start) & (specialty_referral_df['month'] <= baseline_end)]
-        total_referrals = baseline_referrals['referrals'].sum()
+        # Comparison: Number of Referrals vs. First Appointments (scaled for 12 months)
+        st.subheader("Comparison of Referrals vs. First Appointments (Scaled to 12-Month Equivalent)")
+        num_baseline_months = (baseline_end.year - baseline_start.year) * 12 + (baseline_end.month - baseline_start.month) + 1
+        total_referrals_baseline = specialty_referral_df[(specialty_referral_df['month'] >= baseline_start) & (specialty_referral_df['month'] <= baseline_end)]['referrals'].sum()
+        total_referrals_scaled = (total_referrals_baseline / num_baseline_months) * 12
+
         total_first_appointments = baseline_summary.loc[baseline_summary['appointment_type'] == 'RTT First', 'appointments_attended'].sum()
+        total_first_appointments_scaled = (total_first_appointments / num_baseline_months) * 12
 
-        st.write(f"**Total Referrals in Baseline Period:** {int(total_referrals)}")
-        st.write(f"**Total RTT First Appointments Attended in Baseline Period:** {int(total_first_appointments)}")
+        st.write(f"**Total Referrals for Next Year (Scaled):** {int(total_referrals_scaled)}")
+        st.write(f"**Total RTT First Appointments Attended for Next Year (Scaled):** {int(total_first_appointments_scaled)}")
 
-        if total_first_appointments >= total_referrals:
-            st.success("There is enough capacity for referrals based on the baseline attended first appointments.")
+        if total_first_appointments_scaled >= total_referrals_scaled:
+            st.success("There is enough capacity for referrals based on the baseline attended first appointments. The waiting list is expected to decrease.")
         else:
-            st.warning("There is not enough capacity for referrals based on the baseline attended first appointments.")
+            st.warning("There is not enough capacity for referrals based on the baseline attended first appointments. The waiting list is expected to increase.")
 
         # Utilisation and DNA Rate Analysis
         st.subheader("Utilisation and DNA Rate Analysis")
@@ -98,12 +117,11 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
         baseline_dna_rate = 0.1  # Example baseline DNA rate (e.g., 10%)
 
         # Calculate available capacity needed based on utilisation and DNA rates
-        attended_appointments = total_first_appointments
-        available_capacity = attended_appointments / ((1 - baseline_dna_rate) * baseline_utilisation_rate)
+        available_capacity = total_first_appointments_scaled / baseline_utilisation_rate / (1 - baseline_dna_rate)
 
         st.write(f"**Baseline Utilisation Rate:** {baseline_utilisation_rate * 100:.2f}%")
         st.write(f"**Baseline DNA Rate:** {baseline_dna_rate * 100:.2f}%")
-        st.write(f"**Number of Available Appointments Needed (to achieve {int(attended_appointments)} attended appointments):** {int(available_capacity)}")
+        st.write(f"**Number of Available Appointments Needed to Achieve {int(total_first_appointments_scaled)} Attended Appointments:** {int(available_capacity)}")
 
         # Allow user to adjust utilisation and DNA rates
         st.subheader("Adjust Utilisation and DNA Rates")
@@ -122,28 +140,84 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
             step=0.01
         )
 
-        # Projected number of attended appointments based on adjusted rates
-        projected_available_capacity = attended_appointments / ((1 - adjusted_dna_rate) * adjusted_utilisation_rate)
-        st.write(f"**Projected Number of Available Appointments Needed (Adjusted Rates):** {int(projected_available_capacity)}")
+        # Calculate the number of attended appointments with adjusted rates, capped by available capacity
+        adjusted_attended_appointments = min(available_capacity * adjusted_utilisation_rate * (1 - adjusted_dna_rate), available_capacity)
+        st.write(f"**Projected Number of Attended Appointments with Adjusted Rates:** {int(adjusted_attended_appointments)}")
 
-        if projected_available_capacity >= total_referrals:
+        if adjusted_attended_appointments >= total_referrals_scaled:
             st.success("With the adjusted utilisation and DNA rates, the projected capacity is sufficient for the referrals.")
         else:
             st.warning("With the adjusted utilisation and DNA rates, the projected capacity is not sufficient for the referrals.")
 
-        # Grand Total for All Metrics
+        # Grand Total Summary Chart
         st.subheader("Grand Total Summary")
-        st.write(f"**Total Attended Appointments in Baseline:** {int(total_first_appointments)}")
-        st.write(f"**Total Available Capacity Required (Baseline):** {int(available_capacity)}")
-        st.write(f"**Total Available Capacity Required (Adjusted Rates):** {int(projected_available_capacity)}")
+        
+        grand_total_data = {
+            'Category': [
+                'Baseline Attended (12-Month)', 
+                'Available Capacity (Baseline Rates)', 
+                'Adjusted Attended (Adjusted Rates)'
+            ],
+            'Appointments': [
+                int(total_first_appointments_scaled), 
+                int(available_capacity), 
+                int(adjusted_attended_appointments)
+            ]
+        }
+        
+        grand_total_df = pd.DataFrame(grand_total_data)
+        
+        # Create bar chart for grand total summary
+        fig_grand_total = px.bar(
+            grand_total_df,
+            x='Category',
+            y='Appointments',
+            title='Grand Total Summary of Capacity Analysis',
+            labels={'Appointments': 'Number of Appointments'},
+            text='Appointments',
+            color_discrete_sequence=px.colors.qualitative.Safe
+        )
+        
+        # Add dotted line for the number of referrals (as expected demand)
+        fig_grand_total.add_shape(
+            type='line',
+            x0=-0.5,
+            y0=total_referrals_scaled,
+            x1=2.5,
+            y1=total_referrals_scaled,
+            line=dict(color='red', width=2, dash='dot'),
+            name='Total Referrals'
+        )
+        
+        fig_grand_total.add_annotation(
+            x=1,
+            y=total_referrals_scaled,
+            text=f"Total Referrals: {int(total_referrals_scaled)}",
+            showarrow=False,
+            yshift=10,
+            font=dict(size=12, color='red')
+        )
+
+        # Update layout to ensure readability and display the chart
+        fig_grand_total.update_traces(texttemplate='%{text:.0f}', textposition='outside')
+        fig_grand_total.update_layout(
+            xaxis_title='',
+            yaxis_title='Number of Appointments',
+            yaxis_tickformat=',',
+            title_x=0.5
+        )
+        
+        st.plotly_chart(fig_grand_total, use_container_width=True)
 
         # Next Step
         st.markdown("""
         ## Next Steps
         After assessing whether the existing and adjusted capacities are sufficient, proceed to calculate the optimal capacity required to meet forecasted demand.
+        Navigate to the next page to perform a **detailed demand vs capacity comparison** and evaluate potential waiting list impacts.
         """)
 
     else:
         st.error("Referral or appointment data is missing required columns.")
 else:
     st.error("Please complete the **Referral Demand** and **Appointment Data Upload** sections to proceed.")
+
