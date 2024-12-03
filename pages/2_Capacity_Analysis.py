@@ -44,7 +44,7 @@ if 'appointment_df' in st.session_state and st.session_state.appointment_df is n
             num_baseline_months = len(pd.date_range(start=baseline_start, end=baseline_end, freq='M'))
             scaling_factor = 12 / num_baseline_months
             yearly_appointments = total_appointments.copy()
-            yearly_appointments['appointments attended'] *= scaling_factor
+            yearly_appointments['appointments completed'] *= scaling_factor
 
             st.write("**Baseline Appointment Capacity Breakdown (Scaled to 12 Months)**")
             st.write(yearly_appointments)
