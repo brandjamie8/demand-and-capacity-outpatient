@@ -186,7 +186,6 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
             grand_total_df,
             x='Category',
             y='Appointments',
-            title=False,
             labels={'Appointments': 'Number of Appointments'},
             text='Appointments',
             color_discrete_sequence=px.colors.qualitative.Safe
@@ -218,13 +217,12 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
             xaxis_title='',
             yaxis_title='Number of Appointments',
             yaxis_tickformat=',',
-            title_x=0.5
+            title_x=0.5,
+            title=''
         )
       
         st.plotly_chart(fig_grand_total, use_container_width=True)
       
-        # Determine and display capacity status message
-        st.subheader("Capacity Status Assessment")
         if total_referrals_scaled > available_capacity:
             st.error("The total referrals exceed even the available capacity if utilisation were 100% and DNAs were 0%. The number of appointments needs to increase.")
         elif total_referrals_scaled > total_first_appointments_scaled and total_referrals_scaled <= available_capacity:
