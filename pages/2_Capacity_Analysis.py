@@ -55,19 +55,20 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
             labels={'appointments_attended': 'Number of Appointments Attended', 'appointment_type': 'Appointment Type'},
             title='Monthly Appointments Attended by Type',
             line_group='appointment_type',
-            markers=True,
+            markers=False,
             color_discrete_sequence=px.colors.qualitative.Safe  # Consistent colors for clarity
         )
         st.plotly_chart(fig, use_container_width=True)
 
         # Summary of appointments during the baseline period
         st.subheader("Baseline Summary of Appointments Attended")
-        baseline_summary = baseline_appointment_df.groupby('appointment_type')['appointments_attended'].sum().reset_index()
+        baseline_summary = baseline_appointment_df.groupby('appointment_type', observed=False)['appointments_attended'].sum().reset_index()
         baseline_summary['appointments_attended'] = baseline_summary['appointments_attended'].astype(int)
 
         # Calculate grand total
         grand_total_baseline = baseline_summary['appointments_attended'].sum()
-        baseline_summary = baseline_summary.append({'appointment_type': 'Total', 'appointments_attended': grand_total_baseline}, ignore_index=True)
+        total_row = pd.DataFrame({'appointment_type': ['Total'], 'appointments_attended': [grand_total_baseline]})
+        baseline_summary = pd.concat([baseline_summary, total_row], ignore_index=True)
 
         st.table(baseline_summary)
 
