@@ -15,15 +15,7 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
         # Consistent order of priorities
         priority_order = ['2-week wait', 'Urgent', 'Routine']
         
-        specialties = referral_df['specialty'].unique()
-        
-        if st.session_state.selected_specialty is None:
-            st.session_state.selected_specialty = specialties[0]
-
-        selected_specialty = st.selectbox('Select Specialty', specialties, index=list(specialties).index(st.session_state.selected_specialty))
-
-        # Save the selected specialty to session state
-        st.session_state.selected_specialty = selected_specialty
+        selected_specialty = st.session_state.selected_specialty
 
         # Filter referral data based on selected specialty
         specialty_referral_df = referral_df[referral_df['specialty'] == selected_specialty].copy()
