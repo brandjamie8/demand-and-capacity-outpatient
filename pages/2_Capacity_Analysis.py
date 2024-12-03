@@ -95,11 +95,11 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
         total_row = pd.DataFrame({'appointment_type': ['Total'], 'appointments_attended': [grand_total_baseline]})
         baseline_summary = pd.concat([baseline_summary, total_row], ignore_index=True)
       
-        # Display the table without index and with proper formatting
-        st.table(baseline_summary.style.set_properties(**{'text-align': 'left'}).set_caption("Baseline Appointments Summary (Scaled to 12 Months)").set_table_styles([
-            {'selector': 'th', 'props': [('font-weight', 'bold')]},
-            {'selector': 'tr:nth-child(odd)', 'props': [('background-color', '#f2f2f2')]}
-        ]))
+        # Display the table without index and make the "Total" row bold
+        def highlight_total_row(row):
+            return ['font-weight: bold' if row['appointment_type'] == 'Total' else '' for _ in row]
+      
+        st.table(baseline_summary.style.apply(highlight_total_row, axis=1).set_properties(**{'text-align': 'left'}).set_caption("Baseline Appointments Summary (Scaled to 12 Months)"))
 
 
 
