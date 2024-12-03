@@ -1,0 +1,541 @@
+month,specialty,appointment_type,appointments_attended
+2022-01-31,Cardiology,RTT First,52.0
+2022-01-31,Cardiology,RTT Follow-up,129.0
+2022-01-31,Cardiology,Non-RTT,81.0
+2022-02-28,Cardiology,RTT First,66.0
+2022-02-28,Cardiology,RTT Follow-up,119.0
+2022-02-28,Cardiology,Non-RTT,80.0
+2022-03-31,Cardiology,RTT First,62.0
+2022-03-31,Cardiology,RTT Follow-up,118.0
+2022-03-31,Cardiology,Non-RTT,81.0
+2022-04-30,Cardiology,RTT First,53.0
+2022-04-30,Cardiology,RTT Follow-up,111.0
+2022-04-30,Cardiology,Non-RTT,93.0
+2022-05-31,Cardiology,RTT First,58.0
+2022-05-31,Cardiology,RTT Follow-up,118.0
+2022-05-31,Cardiology,Non-RTT,76.0
+2022-06-30,Cardiology,RTT First,58.0
+2022-06-30,Cardiology,RTT Follow-up,106.0
+2022-06-30,Cardiology,Non-RTT,92.0
+2022-07-31,Cardiology,RTT First,63.0
+2022-07-31,Cardiology,RTT Follow-up,130.0
+2022-07-31,Cardiology,Non-RTT,84.0
+2022-08-31,Cardiology,RTT First,68.0
+2022-08-31,Cardiology,RTT Follow-up,115.0
+2022-08-31,Cardiology,Non-RTT,85.0
+2022-09-30,Cardiology,RTT First,54.0
+2022-09-30,Cardiology,RTT Follow-up,134.0
+2022-09-30,Cardiology,Non-RTT,76.0
+2022-10-31,Cardiology,RTT First,69.0
+2022-10-31,Cardiology,RTT Follow-up,120.0
+2022-10-31,Cardiology,Non-RTT,68.0
+2022-11-30,Cardiology,RTT First,65.0
+2022-11-30,Cardiology,RTT Follow-up,138.0
+2022-11-30,Cardiology,Non-RTT,77.0
+2022-12-31,Cardiology,RTT First,59.0
+2022-12-31,Cardiology,RTT Follow-up,138.0
+2022-12-31,Cardiology,Non-RTT,78.0
+2023-01-31,Cardiology,RTT First,55.8
+2023-01-31,Cardiology,RTT Follow-up,136.5
+2023-01-31,Cardiology,Non-RTT,88.2
+2023-02-28,Cardiology,RTT First,61.8
+2023-02-28,Cardiology,RTT Follow-up,112.5
+2023-02-28,Cardiology,Non-RTT,83.2
+2023-03-31,Cardiology,RTT First,65.8
+2023-03-31,Cardiology,RTT Follow-up,113.5
+2023-03-31,Cardiology,Non-RTT,74.2
+2023-04-30,Cardiology,RTT First,60.8
+2023-04-30,Cardiology,RTT Follow-up,118.5
+2023-04-30,Cardiology,Non-RTT,94.2
+2023-05-31,Cardiology,RTT First,56.8
+2023-05-31,Cardiology,RTT Follow-up,108.5
+2023-05-31,Cardiology,Non-RTT,79.2
+2023-06-30,Cardiology,RTT First,63.8
+2023-06-30,Cardiology,RTT Follow-up,141.5
+2023-06-30,Cardiology,Non-RTT,75.2
+2023-07-31,Cardiology,RTT First,59.8
+2023-07-31,Cardiology,RTT Follow-up,128.5
+2023-07-31,Cardiology,Non-RTT,91.2
+2023-08-31,Cardiology,RTT First,52.8
+2023-08-31,Cardiology,RTT Follow-up,106.5
+2023-08-31,Cardiology,Non-RTT,94.2
+2023-09-30,Cardiology,RTT First,55.8
+2023-09-30,Cardiology,RTT Follow-up,139.5
+2023-09-30,Cardiology,Non-RTT,84.2
+2023-10-31,Cardiology,RTT First,58.8
+2023-10-31,Cardiology,RTT Follow-up,102.5
+2023-10-31,Cardiology,Non-RTT,87.2
+2023-11-30,Cardiology,RTT First,70.8
+2023-11-30,Cardiology,RTT Follow-up,118.5
+2023-11-30,Cardiology,Non-RTT,72.2
+2023-12-31,Cardiology,RTT First,63.8
+2023-12-31,Cardiology,RTT Follow-up,105.5
+2023-12-31,Cardiology,Non-RTT,69.2
+2024-01-31,Cardiology,RTT First,58.6
+2024-01-31,Cardiology,RTT Follow-up,135.0
+2024-01-31,Cardiology,Non-RTT,85.4
+2024-02-29,Cardiology,RTT First,64.6
+2024-02-29,Cardiology,RTT Follow-up,143.0
+2024-02-29,Cardiology,Non-RTT,93.4
+2024-03-31,Cardiology,RTT First,62.6
+2024-03-31,Cardiology,RTT Follow-up,130.0
+2024-03-31,Cardiology,Non-RTT,85.4
+2024-04-30,Cardiology,RTT First,59.6
+2024-04-30,Cardiology,RTT Follow-up,107.0
+2024-04-30,Cardiology,Non-RTT,79.4
+2024-05-31,Cardiology,RTT First,65.6
+2024-05-31,Cardiology,RTT Follow-up,132.0
+2024-05-31,Cardiology,Non-RTT,96.4
+2024-06-30,Cardiology,RTT First,72.6
+2024-06-30,Cardiology,RTT Follow-up,132.0
+2024-06-30,Cardiology,Non-RTT,74.4
+2024-07-31,Cardiology,RTT First,61.6
+2024-07-31,Cardiology,RTT Follow-up,143.0
+2024-07-31,Cardiology,Non-RTT,67.4
+2024-08-31,Cardiology,RTT First,55.6
+2024-08-31,Cardiology,RTT Follow-up,117.0
+2024-08-31,Cardiology,Non-RTT,94.4
+2024-09-30,Cardiology,RTT First,69.6
+2024-09-30,Cardiology,RTT Follow-up,129.0
+2024-09-30,Cardiology,Non-RTT,90.4
+2024-10-31,Cardiology,RTT First,53.6
+2024-10-31,Cardiology,RTT Follow-up,142.0
+2024-10-31,Cardiology,Non-RTT,87.4
+2024-11-30,Cardiology,RTT First,58.6
+2024-11-30,Cardiology,RTT Follow-up,136.0
+2024-11-30,Cardiology,Non-RTT,79.4
+2024-12-31,Cardiology,RTT First,67.6
+2024-12-31,Cardiology,RTT Follow-up,125.0
+2024-12-31,Cardiology,Non-RTT,82.4
+2022-01-31,Dermatology,RTT First,60.0
+2022-01-31,Dermatology,RTT Follow-up,136.0
+2022-01-31,Dermatology,Non-RTT,68.0
+2022-02-28,Dermatology,RTT First,52.0
+2022-02-28,Dermatology,RTT Follow-up,118.0
+2022-02-28,Dermatology,Non-RTT,84.0
+2022-03-31,Dermatology,RTT First,67.0
+2022-03-31,Dermatology,RTT Follow-up,113.0
+2022-03-31,Dermatology,Non-RTT,79.0
+2022-04-30,Dermatology,RTT First,50.0
+2022-04-30,Dermatology,RTT Follow-up,102.0
+2022-04-30,Dermatology,Non-RTT,80.0
+2022-05-31,Dermatology,RTT First,60.0
+2022-05-31,Dermatology,RTT Follow-up,111.0
+2022-05-31,Dermatology,Non-RTT,74.0
+2022-06-30,Dermatology,RTT First,65.0
+2022-06-30,Dermatology,RTT Follow-up,107.0
+2022-06-30,Dermatology,Non-RTT,70.0
+2022-07-31,Dermatology,RTT First,61.0
+2022-07-31,Dermatology,RTT Follow-up,123.0
+2022-07-31,Dermatology,Non-RTT,92.0
+2022-08-31,Dermatology,RTT First,57.0
+2022-08-31,Dermatology,RTT Follow-up,127.0
+2022-08-31,Dermatology,Non-RTT,68.0
+2022-09-30,Dermatology,RTT First,57.0
+2022-09-30,Dermatology,RTT Follow-up,127.0
+2022-09-30,Dermatology,Non-RTT,92.0
+2022-10-31,Dermatology,RTT First,54.0
+2022-10-31,Dermatology,RTT Follow-up,135.0
+2022-10-31,Dermatology,Non-RTT,91.0
+2022-11-30,Dermatology,RTT First,66.0
+2022-11-30,Dermatology,RTT Follow-up,108.0
+2022-11-30,Dermatology,Non-RTT,65.0
+2022-12-31,Dermatology,RTT First,69.0
+2022-12-31,Dermatology,RTT Follow-up,112.0
+2022-12-31,Dermatology,Non-RTT,92.0
+2023-01-31,Dermatology,RTT First,66.8
+2023-01-31,Dermatology,RTT Follow-up,130.5
+2023-01-31,Dermatology,Non-RTT,78.2
+2023-02-28,Dermatology,RTT First,64.8
+2023-02-28,Dermatology,RTT Follow-up,136.5
+2023-02-28,Dermatology,Non-RTT,94.2
+2023-03-31,Dermatology,RTT First,56.8
+2023-03-31,Dermatology,RTT Follow-up,119.5
+2023-03-31,Dermatology,Non-RTT,84.2
+2023-04-30,Dermatology,RTT First,55.8
+2023-04-30,Dermatology,RTT Follow-up,126.5
+2023-04-30,Dermatology,Non-RTT,67.2
+2023-05-31,Dermatology,RTT First,60.8
+2023-05-31,Dermatology,RTT Follow-up,131.5
+2023-05-31,Dermatology,Non-RTT,83.2
+2023-06-30,Dermatology,RTT First,63.8
+2023-06-30,Dermatology,RTT Follow-up,106.5
+2023-06-30,Dermatology,Non-RTT,88.2
+2023-07-31,Dermatology,RTT First,51.8
+2023-07-31,Dermatology,RTT Follow-up,102.5
+2023-07-31,Dermatology,Non-RTT,83.2
+2023-08-31,Dermatology,RTT First,65.8
+2023-08-31,Dermatology,RTT Follow-up,112.5
+2023-08-31,Dermatology,Non-RTT,86.2
+2023-09-30,Dermatology,RTT First,67.8
+2023-09-30,Dermatology,RTT Follow-up,114.5
+2023-09-30,Dermatology,Non-RTT,66.2
+2023-10-31,Dermatology,RTT First,52.8
+2023-10-31,Dermatology,RTT Follow-up,136.5
+2023-10-31,Dermatology,Non-RTT,66.2
+2023-11-30,Dermatology,RTT First,66.8
+2023-11-30,Dermatology,RTT Follow-up,107.5
+2023-11-30,Dermatology,Non-RTT,93.2
+2023-12-31,Dermatology,RTT First,67.8
+2023-12-31,Dermatology,RTT Follow-up,106.5
+2023-12-31,Dermatology,Non-RTT,70.2
+2024-01-31,Dermatology,RTT First,58.6
+2024-01-31,Dermatology,RTT Follow-up,107.0
+2024-01-31,Dermatology,Non-RTT,87.4
+2024-02-29,Dermatology,RTT First,57.6
+2024-02-29,Dermatology,RTT Follow-up,141.0
+2024-02-29,Dermatology,Non-RTT,76.4
+2024-03-31,Dermatology,RTT First,62.6
+2024-03-31,Dermatology,RTT Follow-up,123.0
+2024-03-31,Dermatology,Non-RTT,83.4
+2024-04-30,Dermatology,RTT First,66.6
+2024-04-30,Dermatology,RTT Follow-up,113.0
+2024-04-30,Dermatology,Non-RTT,80.4
+2024-05-31,Dermatology,RTT First,53.6
+2024-05-31,Dermatology,RTT Follow-up,117.0
+2024-05-31,Dermatology,Non-RTT,70.4
+2024-06-30,Dermatology,RTT First,53.6
+2024-06-30,Dermatology,RTT Follow-up,144.0
+2024-06-30,Dermatology,Non-RTT,68.4
+2024-07-31,Dermatology,RTT First,60.6
+2024-07-31,Dermatology,RTT Follow-up,143.0
+2024-07-31,Dermatology,Non-RTT,92.4
+2024-08-31,Dermatology,RTT First,54.6
+2024-08-31,Dermatology,RTT Follow-up,107.0
+2024-08-31,Dermatology,Non-RTT,93.4
+2024-09-30,Dermatology,RTT First,70.6
+2024-09-30,Dermatology,RTT Follow-up,116.0
+2024-09-30,Dermatology,Non-RTT,67.4
+2024-10-31,Dermatology,RTT First,64.6
+2024-10-31,Dermatology,RTT Follow-up,109.0
+2024-10-31,Dermatology,Non-RTT,96.4
+2024-11-30,Dermatology,RTT First,69.6
+2024-11-30,Dermatology,RTT Follow-up,127.0
+2024-11-30,Dermatology,Non-RTT,81.4
+2024-12-31,Dermatology,RTT First,57.6
+2024-12-31,Dermatology,RTT Follow-up,125.0
+2024-12-31,Dermatology,Non-RTT,80.4
+2022-01-31,Neurology,RTT First,51.0
+2022-01-31,Neurology,RTT Follow-up,110.0
+2022-01-31,Neurology,Non-RTT,83.0
+2022-02-28,Neurology,RTT First,56.0
+2022-02-28,Neurology,RTT Follow-up,137.0
+2022-02-28,Neurology,Non-RTT,92.0
+2022-03-31,Neurology,RTT First,51.0
+2022-03-31,Neurology,RTT Follow-up,137.0
+2022-03-31,Neurology,Non-RTT,82.0
+2022-04-30,Neurology,RTT First,51.0
+2022-04-30,Neurology,RTT Follow-up,117.0
+2022-04-30,Neurology,Non-RTT,94.0
+2022-05-31,Neurology,RTT First,64.0
+2022-05-31,Neurology,RTT Follow-up,126.0
+2022-05-31,Neurology,Non-RTT,83.0
+2022-06-30,Neurology,RTT First,51.0
+2022-06-30,Neurology,RTT Follow-up,137.0
+2022-06-30,Neurology,Non-RTT,65.0
+2022-07-31,Neurology,RTT First,64.0
+2022-07-31,Neurology,RTT Follow-up,129.0
+2022-07-31,Neurology,Non-RTT,87.0
+2022-08-31,Neurology,RTT First,59.0
+2022-08-31,Neurology,RTT Follow-up,116.0
+2022-08-31,Neurology,Non-RTT,69.0
+2022-09-30,Neurology,RTT First,53.0
+2022-09-30,Neurology,RTT Follow-up,109.0
+2022-09-30,Neurology,Non-RTT,88.0
+2022-10-31,Neurology,RTT First,66.0
+2022-10-31,Neurology,RTT Follow-up,109.0
+2022-10-31,Neurology,Non-RTT,81.0
+2022-11-30,Neurology,RTT First,69.0
+2022-11-30,Neurology,RTT Follow-up,123.0
+2022-11-30,Neurology,Non-RTT,69.0
+2022-12-31,Neurology,RTT First,51.0
+2022-12-31,Neurology,RTT Follow-up,105.0
+2022-12-31,Neurology,Non-RTT,85.0
+2023-01-31,Neurology,RTT First,52.8
+2023-01-31,Neurology,RTT Follow-up,114.5
+2023-01-31,Neurology,Non-RTT,95.2
+2023-02-28,Neurology,RTT First,61.8
+2023-02-28,Neurology,RTT Follow-up,112.5
+2023-02-28,Neurology,Non-RTT,84.2
+2023-03-31,Neurology,RTT First,65.8
+2023-03-31,Neurology,RTT Follow-up,124.5
+2023-03-31,Neurology,Non-RTT,88.2
+2023-04-30,Neurology,RTT First,66.8
+2023-04-30,Neurology,RTT Follow-up,132.5
+2023-04-30,Neurology,Non-RTT,76.2
+2023-05-31,Neurology,RTT First,66.8
+2023-05-31,Neurology,RTT Follow-up,109.5
+2023-05-31,Neurology,Non-RTT,69.2
+2023-06-30,Neurology,RTT First,58.8
+2023-06-30,Neurology,RTT Follow-up,105.5
+2023-06-30,Neurology,Non-RTT,89.2
+2023-07-31,Neurology,RTT First,53.8
+2023-07-31,Neurology,RTT Follow-up,133.5
+2023-07-31,Neurology,Non-RTT,68.2
+2023-08-31,Neurology,RTT First,68.8
+2023-08-31,Neurology,RTT Follow-up,120.5
+2023-08-31,Neurology,Non-RTT,86.2
+2023-09-30,Neurology,RTT First,55.8
+2023-09-30,Neurology,RTT Follow-up,119.5
+2023-09-30,Neurology,Non-RTT,93.2
+2023-10-31,Neurology,RTT First,60.8
+2023-10-31,Neurology,RTT Follow-up,123.5
+2023-10-31,Neurology,Non-RTT,86.2
+2023-11-30,Neurology,RTT First,56.8
+2023-11-30,Neurology,RTT Follow-up,102.5
+2023-11-30,Neurology,Non-RTT,70.2
+2023-12-31,Neurology,RTT First,59.8
+2023-12-31,Neurology,RTT Follow-up,113.5
+2023-12-31,Neurology,Non-RTT,91.2
+2024-01-31,Neurology,RTT First,66.6
+2024-01-31,Neurology,RTT Follow-up,138.0
+2024-01-31,Neurology,Non-RTT,83.4
+2024-02-29,Neurology,RTT First,66.6
+2024-02-29,Neurology,RTT Follow-up,130.0
+2024-02-29,Neurology,Non-RTT,79.4
+2024-03-31,Neurology,RTT First,61.6
+2024-03-31,Neurology,RTT Follow-up,130.0
+2024-03-31,Neurology,Non-RTT,91.4
+2024-04-30,Neurology,RTT First,67.6
+2024-04-30,Neurology,RTT Follow-up,126.0
+2024-04-30,Neurology,Non-RTT,81.4
+2024-05-31,Neurology,RTT First,63.6
+2024-05-31,Neurology,RTT Follow-up,121.0
+2024-05-31,Neurology,Non-RTT,92.4
+2024-06-30,Neurology,RTT First,56.6
+2024-06-30,Neurology,RTT Follow-up,105.0
+2024-06-30,Neurology,Non-RTT,74.4
+2024-07-31,Neurology,RTT First,69.6
+2024-07-31,Neurology,RTT Follow-up,139.0
+2024-07-31,Neurology,Non-RTT,95.4
+2024-08-31,Neurology,RTT First,72.6
+2024-08-31,Neurology,RTT Follow-up,119.0
+2024-08-31,Neurology,Non-RTT,81.4
+2024-09-30,Neurology,RTT First,66.6
+2024-09-30,Neurology,RTT Follow-up,130.0
+2024-09-30,Neurology,Non-RTT,94.4
+2024-10-31,Neurology,RTT First,66.6
+2024-10-31,Neurology,RTT Follow-up,128.0
+2024-10-31,Neurology,Non-RTT,68.4
+2024-11-30,Neurology,RTT First,65.6
+2024-11-30,Neurology,RTT Follow-up,130.0
+2024-11-30,Neurology,Non-RTT,80.4
+2024-12-31,Neurology,RTT First,71.6
+2024-12-31,Neurology,RTT Follow-up,111.0
+2024-12-31,Neurology,Non-RTT,69.4
+2022-01-31,Ophthalmology,RTT First,64.0
+2022-01-31,Ophthalmology,RTT Follow-up,122.0
+2022-01-31,Ophthalmology,Non-RTT,78.0
+2022-02-28,Ophthalmology,RTT First,60.0
+2022-02-28,Ophthalmology,RTT Follow-up,117.0
+2022-02-28,Ophthalmology,Non-RTT,90.0
+2022-03-31,Ophthalmology,RTT First,55.0
+2022-03-31,Ophthalmology,RTT Follow-up,134.0
+2022-03-31,Ophthalmology,Non-RTT,83.0
+2022-04-30,Ophthalmology,RTT First,64.0
+2022-04-30,Ophthalmology,RTT Follow-up,124.0
+2022-04-30,Ophthalmology,Non-RTT,87.0
+2022-05-31,Ophthalmology,RTT First,54.0
+2022-05-31,Ophthalmology,RTT Follow-up,127.0
+2022-05-31,Ophthalmology,Non-RTT,74.0
+2022-06-30,Ophthalmology,RTT First,56.0
+2022-06-30,Ophthalmology,RTT Follow-up,116.0
+2022-06-30,Ophthalmology,Non-RTT,71.0
+2022-07-31,Ophthalmology,RTT First,61.0
+2022-07-31,Ophthalmology,RTT Follow-up,124.0
+2022-07-31,Ophthalmology,Non-RTT,81.0
+2022-08-31,Ophthalmology,RTT First,62.0
+2022-08-31,Ophthalmology,RTT Follow-up,119.0
+2022-08-31,Ophthalmology,Non-RTT,89.0
+2022-09-30,Ophthalmology,RTT First,53.0
+2022-09-30,Ophthalmology,RTT Follow-up,109.0
+2022-09-30,Ophthalmology,Non-RTT,67.0
+2022-10-31,Ophthalmology,RTT First,58.0
+2022-10-31,Ophthalmology,RTT Follow-up,117.0
+2022-10-31,Ophthalmology,Non-RTT,79.0
+2022-11-30,Ophthalmology,RTT First,53.0
+2022-11-30,Ophthalmology,RTT Follow-up,121.0
+2022-11-30,Ophthalmology,Non-RTT,66.0
+2022-12-31,Ophthalmology,RTT First,64.0
+2022-12-31,Ophthalmology,RTT Follow-up,107.0
+2022-12-31,Ophthalmology,Non-RTT,72.0
+2023-01-31,Ophthalmology,RTT First,67.8
+2023-01-31,Ophthalmology,RTT Follow-up,120.5
+2023-01-31,Ophthalmology,Non-RTT,75.2
+2023-02-28,Ophthalmology,RTT First,59.8
+2023-02-28,Ophthalmology,RTT Follow-up,138.5
+2023-02-28,Ophthalmology,Non-RTT,71.2
+2023-03-31,Ophthalmology,RTT First,70.8
+2023-03-31,Ophthalmology,RTT Follow-up,127.5
+2023-03-31,Ophthalmology,Non-RTT,67.2
+2023-04-30,Ophthalmology,RTT First,63.8
+2023-04-30,Ophthalmology,RTT Follow-up,107.5
+2023-04-30,Ophthalmology,Non-RTT,70.2
+2023-05-31,Ophthalmology,RTT First,51.8
+2023-05-31,Ophthalmology,RTT Follow-up,123.5
+2023-05-31,Ophthalmology,Non-RTT,86.2
+2023-06-30,Ophthalmology,RTT First,56.8
+2023-06-30,Ophthalmology,RTT Follow-up,107.5
+2023-06-30,Ophthalmology,Non-RTT,88.2
+2023-07-31,Ophthalmology,RTT First,66.8
+2023-07-31,Ophthalmology,RTT Follow-up,105.5
+2023-07-31,Ophthalmology,Non-RTT,95.2
+2023-08-31,Ophthalmology,RTT First,61.8
+2023-08-31,Ophthalmology,RTT Follow-up,131.5
+2023-08-31,Ophthalmology,Non-RTT,89.2
+2023-09-30,Ophthalmology,RTT First,59.8
+2023-09-30,Ophthalmology,RTT Follow-up,104.5
+2023-09-30,Ophthalmology,Non-RTT,84.2
+2023-10-31,Ophthalmology,RTT First,58.8
+2023-10-31,Ophthalmology,RTT Follow-up,138.5
+2023-10-31,Ophthalmology,Non-RTT,69.2
+2023-11-30,Ophthalmology,RTT First,56.8
+2023-11-30,Ophthalmology,RTT Follow-up,103.5
+2023-11-30,Ophthalmology,Non-RTT,85.2
+2023-12-31,Ophthalmology,RTT First,61.8
+2023-12-31,Ophthalmology,RTT Follow-up,105.5
+2023-12-31,Ophthalmology,Non-RTT,80.2
+2024-01-31,Ophthalmology,RTT First,58.6
+2024-01-31,Ophthalmology,RTT Follow-up,134.0
+2024-01-31,Ophthalmology,Non-RTT,90.4
+2024-02-29,Ophthalmology,RTT First,58.6
+2024-02-29,Ophthalmology,RTT Follow-up,106.0
+2024-02-29,Ophthalmology,Non-RTT,81.4
+2024-03-31,Ophthalmology,RTT First,63.6
+2024-03-31,Ophthalmology,RTT Follow-up,112.0
+2024-03-31,Ophthalmology,Non-RTT,92.4
+2024-04-30,Ophthalmology,RTT First,71.6
+2024-04-30,Ophthalmology,RTT Follow-up,109.0
+2024-04-30,Ophthalmology,Non-RTT,72.4
+2024-05-31,Ophthalmology,RTT First,56.6
+2024-05-31,Ophthalmology,RTT Follow-up,123.0
+2024-05-31,Ophthalmology,Non-RTT,86.4
+2024-06-30,Ophthalmology,RTT First,53.6
+2024-06-30,Ophthalmology,RTT Follow-up,124.0
+2024-06-30,Ophthalmology,Non-RTT,83.4
+2024-07-31,Ophthalmology,RTT First,64.6
+2024-07-31,Ophthalmology,RTT Follow-up,105.0
+2024-07-31,Ophthalmology,Non-RTT,92.4
+2024-08-31,Ophthalmology,RTT First,66.6
+2024-08-31,Ophthalmology,RTT Follow-up,142.0
+2024-08-31,Ophthalmology,Non-RTT,71.4
+2024-09-30,Ophthalmology,RTT First,63.6
+2024-09-30,Ophthalmology,RTT Follow-up,140.0
+2024-09-30,Ophthalmology,Non-RTT,79.4
+2024-10-31,Ophthalmology,RTT First,63.6
+2024-10-31,Ophthalmology,RTT Follow-up,107.0
+2024-10-31,Ophthalmology,Non-RTT,67.4
+2024-11-30,Ophthalmology,RTT First,58.6
+2024-11-30,Ophthalmology,RTT Follow-up,114.0
+2024-11-30,Ophthalmology,Non-RTT,71.4
+2024-12-31,Ophthalmology,RTT First,62.6
+2024-12-31,Ophthalmology,RTT Follow-up,106.0
+2024-12-31,Ophthalmology,Non-RTT,79.4
+2022-01-31,Orthopaedics,RTT First,57.0
+2022-01-31,Orthopaedics,RTT Follow-up,101.0
+2022-01-31,Orthopaedics,Non-RTT,84.0
+2022-02-28,Orthopaedics,RTT First,50.0
+2022-02-28,Orthopaedics,RTT Follow-up,136.0
+2022-02-28,Orthopaedics,Non-RTT,73.0
+2022-03-31,Orthopaedics,RTT First,66.0
+2022-03-31,Orthopaedics,RTT Follow-up,108.0
+2022-03-31,Orthopaedics,Non-RTT,75.0
+2022-04-30,Orthopaedics,RTT First,64.0
+2022-04-30,Orthopaedics,RTT Follow-up,123.0
+2022-04-30,Orthopaedics,Non-RTT,70.0
+2022-05-31,Orthopaedics,RTT First,52.0
+2022-05-31,Orthopaedics,RTT Follow-up,129.0
+2022-05-31,Orthopaedics,Non-RTT,81.0
+2022-06-30,Orthopaedics,RTT First,54.0
+2022-06-30,Orthopaedics,RTT Follow-up,113.0
+2022-06-30,Orthopaedics,Non-RTT,85.0
+2022-07-31,Orthopaedics,RTT First,60.0
+2022-07-31,Orthopaedics,RTT Follow-up,108.0
+2022-07-31,Orthopaedics,Non-RTT,66.0
+2022-08-31,Orthopaedics,RTT First,61.0
+2022-08-31,Orthopaedics,RTT Follow-up,134.0
+2022-08-31,Orthopaedics,Non-RTT,67.0
+2022-09-30,Orthopaedics,RTT First,50.0
+2022-09-30,Orthopaedics,RTT Follow-up,139.0
+2022-09-30,Orthopaedics,Non-RTT,86.0
+2022-10-31,Orthopaedics,RTT First,57.0
+2022-10-31,Orthopaedics,RTT Follow-up,110.0
+2022-10-31,Orthopaedics,Non-RTT,73.0
+2022-11-30,Orthopaedics,RTT First,54.0
+2022-11-30,Orthopaedics,RTT Follow-up,113.0
+2022-11-30,Orthopaedics,Non-RTT,92.0
+2022-12-31,Orthopaedics,RTT First,52.0
+2022-12-31,Orthopaedics,RTT Follow-up,120.0
+2022-12-31,Orthopaedics,Non-RTT,69.0
+2023-01-31,Orthopaedics,RTT First,55.8
+2023-01-31,Orthopaedics,RTT Follow-up,120.5
+2023-01-31,Orthopaedics,Non-RTT,92.2
+2023-02-28,Orthopaedics,RTT First,64.8
+2023-02-28,Orthopaedics,RTT Follow-up,127.5
+2023-02-28,Orthopaedics,Non-RTT,95.2
+2023-03-31,Orthopaedics,RTT First,54.8
+2023-03-31,Orthopaedics,RTT Follow-up,126.5
+2023-03-31,Orthopaedics,Non-RTT,78.2
+2023-04-30,Orthopaedics,RTT First,60.8
+2023-04-30,Orthopaedics,RTT Follow-up,126.5
+2023-04-30,Orthopaedics,Non-RTT,83.2
+2023-05-31,Orthopaedics,RTT First,58.8
+2023-05-31,Orthopaedics,RTT Follow-up,109.5
+2023-05-31,Orthopaedics,Non-RTT,72.2
+2023-06-30,Orthopaedics,RTT First,58.8
+2023-06-30,Orthopaedics,RTT Follow-up,115.5
+2023-06-30,Orthopaedics,Non-RTT,84.2
+2023-07-31,Orthopaedics,RTT First,56.8
+2023-07-31,Orthopaedics,RTT Follow-up,134.5
+2023-07-31,Orthopaedics,Non-RTT,88.2
+2023-08-31,Orthopaedics,RTT First,65.8
+2023-08-31,Orthopaedics,RTT Follow-up,134.5
+2023-08-31,Orthopaedics,Non-RTT,90.2
+2023-09-30,Orthopaedics,RTT First,67.8
+2023-09-30,Orthopaedics,RTT Follow-up,134.5
+2023-09-30,Orthopaedics,Non-RTT,80.2
+2023-10-31,Orthopaedics,RTT First,52.8
+2023-10-31,Orthopaedics,RTT Follow-up,115.5
+2023-10-31,Orthopaedics,Non-RTT,86.2
+2023-11-30,Orthopaedics,RTT First,58.8
+2023-11-30,Orthopaedics,RTT Follow-up,141.5
+2023-11-30,Orthopaedics,Non-RTT,84.2
+2023-12-31,Orthopaedics,RTT First,57.8
+2023-12-31,Orthopaedics,RTT Follow-up,107.5
+2023-12-31,Orthopaedics,Non-RTT,71.2
+2024-01-31,Orthopaedics,RTT First,55.6
+2024-01-31,Orthopaedics,RTT Follow-up,111.0
+2024-01-31,Orthopaedics,Non-RTT,85.4
+2024-02-29,Orthopaedics,RTT First,60.6
+2024-02-29,Orthopaedics,RTT Follow-up,119.0
+2024-02-29,Orthopaedics,Non-RTT,81.4
+2024-03-31,Orthopaedics,RTT First,53.6
+2024-03-31,Orthopaedics,RTT Follow-up,134.0
+2024-03-31,Orthopaedics,Non-RTT,73.4
+2024-04-30,Orthopaedics,RTT First,56.6
+2024-04-30,Orthopaedics,RTT Follow-up,133.0
+2024-04-30,Orthopaedics,Non-RTT,72.4
+2024-05-31,Orthopaedics,RTT First,53.6
+2024-05-31,Orthopaedics,RTT Follow-up,141.0
+2024-05-31,Orthopaedics,Non-RTT,93.4
+2024-06-30,Orthopaedics,RTT First,53.6
+2024-06-30,Orthopaedics,RTT Follow-up,108.0
+2024-06-30,Orthopaedics,Non-RTT,88.4
+2024-07-31,Orthopaedics,RTT First,54.6
+2024-07-31,Orthopaedics,RTT Follow-up,114.0
+2024-07-31,Orthopaedics,Non-RTT,71.4
+2024-08-31,Orthopaedics,RTT First,62.6
+2024-08-31,Orthopaedics,RTT Follow-up,137.0
+2024-08-31,Orthopaedics,Non-RTT,88.4
+2024-09-30,Orthopaedics,RTT First,58.6
+2024-09-30,Orthopaedics,RTT Follow-up,117.0
+2024-09-30,Orthopaedics,Non-RTT,81.4
+2024-10-31,Orthopaedics,RTT First,56.6
+2024-10-31,Orthopaedics,RTT Follow-up,128.0
+2024-10-31,Orthopaedics,Non-RTT,86.4
+2024-11-30,Orthopaedics,RTT First,67.6
+2024-11-30,Orthopaedics,RTT Follow-up,133.0
+2024-11-30,Orthopaedics,Non-RTT,74.4
+2024-12-31,Orthopaedics,RTT First,57.6
+2024-12-31,Orthopaedics,RTT Follow-up,133.0
+2024-12-31,Orthopaedics,Non-RTT,81.4

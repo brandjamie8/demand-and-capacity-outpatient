@@ -1,0 +1,541 @@
+month,specialty,priority,referrals
+2022-01-31,Cardiology,2-week wait,46.0
+2022-01-31,Cardiology,Urgent,104.0
+2022-01-31,Cardiology,Routine,158.0
+2022-02-28,Cardiology,2-week wait,54.0
+2022-02-28,Cardiology,Urgent,95.0
+2022-02-28,Cardiology,Routine,137.0
+2022-03-31,Cardiology,2-week wait,46.0
+2022-03-31,Cardiology,Urgent,110.0
+2022-03-31,Cardiology,Routine,148.0
+2022-04-30,Cardiology,2-week wait,50.0
+2022-04-30,Cardiology,Urgent,95.0
+2022-04-30,Cardiology,Routine,153.0
+2022-05-31,Cardiology,2-week wait,43.0
+2022-05-31,Cardiology,Urgent,92.0
+2022-05-31,Cardiology,Routine,153.0
+2022-06-30,Cardiology,2-week wait,42.0
+2022-06-30,Cardiology,Urgent,106.0
+2022-06-30,Cardiology,Routine,131.0
+2022-07-31,Cardiology,2-week wait,51.0
+2022-07-31,Cardiology,Urgent,114.0
+2022-07-31,Cardiology,Routine,167.0
+2022-08-31,Cardiology,2-week wait,41.0
+2022-08-31,Cardiology,Urgent,112.0
+2022-08-31,Cardiology,Routine,150.0
+2022-09-30,Cardiology,2-week wait,40.0
+2022-09-30,Cardiology,Urgent,96.0
+2022-09-30,Cardiology,Routine,151.0
+2022-10-31,Cardiology,2-week wait,51.0
+2022-10-31,Cardiology,Urgent,109.0
+2022-10-31,Cardiology,Routine,156.0
+2022-11-30,Cardiology,2-week wait,49.0
+2022-11-30,Cardiology,Urgent,112.0
+2022-11-30,Cardiology,Routine,145.0
+2022-12-31,Cardiology,2-week wait,54.0
+2022-12-31,Cardiology,Urgent,114.0
+2022-12-31,Cardiology,Routine,132.0
+2023-01-31,Cardiology,2-week wait,46.0
+2023-01-31,Cardiology,Urgent,104.5
+2023-01-31,Cardiology,Routine,137.0
+2023-02-28,Cardiology,2-week wait,50.0
+2023-02-28,Cardiology,Urgent,92.5
+2023-02-28,Cardiology,Routine,148.0
+2023-03-31,Cardiology,2-week wait,45.0
+2023-03-31,Cardiology,Urgent,110.5
+2023-03-31,Cardiology,Routine,144.0
+2023-04-30,Cardiology,2-week wait,59.0
+2023-04-30,Cardiology,Urgent,111.5
+2023-04-30,Cardiology,Routine,139.0
+2023-05-31,Cardiology,2-week wait,43.0
+2023-05-31,Cardiology,Urgent,105.5
+2023-05-31,Cardiology,Routine,158.0
+2023-06-30,Cardiology,2-week wait,56.0
+2023-06-30,Cardiology,Urgent,113.5
+2023-06-30,Cardiology,Routine,137.0
+2023-07-31,Cardiology,2-week wait,53.0
+2023-07-31,Cardiology,Urgent,114.5
+2023-07-31,Cardiology,Routine,138.0
+2023-08-31,Cardiology,2-week wait,56.0
+2023-08-31,Cardiology,Urgent,88.5
+2023-08-31,Cardiology,Routine,144.0
+2023-09-30,Cardiology,2-week wait,58.0
+2023-09-30,Cardiology,Urgent,89.5
+2023-09-30,Cardiology,Routine,170.0
+2023-10-31,Cardiology,2-week wait,45.0
+2023-10-31,Cardiology,Urgent,87.5
+2023-10-31,Cardiology,Routine,136.0
+2023-11-30,Cardiology,2-week wait,51.0
+2023-11-30,Cardiology,Urgent,89.5
+2023-11-30,Cardiology,Routine,159.0
+2023-12-31,Cardiology,2-week wait,59.0
+2023-12-31,Cardiology,Urgent,111.5
+2023-12-31,Cardiology,Routine,164.0
+2024-01-31,Cardiology,2-week wait,53.0
+2024-01-31,Cardiology,Urgent,117.0
+2024-01-31,Cardiology,Routine,167.0
+2024-02-29,Cardiology,2-week wait,57.0
+2024-02-29,Cardiology,Urgent,103.0
+2024-02-29,Cardiology,Routine,146.0
+2024-03-31,Cardiology,2-week wait,51.0
+2024-03-31,Cardiology,Urgent,101.0
+2024-03-31,Cardiology,Routine,154.0
+2024-04-30,Cardiology,2-week wait,51.0
+2024-04-30,Cardiology,Urgent,108.0
+2024-04-30,Cardiology,Routine,147.0
+2024-05-31,Cardiology,2-week wait,56.0
+2024-05-31,Cardiology,Urgent,105.0
+2024-05-31,Cardiology,Routine,155.0
+2024-06-30,Cardiology,2-week wait,56.0
+2024-06-30,Cardiology,Urgent,96.0
+2024-06-30,Cardiology,Routine,160.0
+2024-07-31,Cardiology,2-week wait,58.0
+2024-07-31,Cardiology,Urgent,100.0
+2024-07-31,Cardiology,Routine,132.0
+2024-08-31,Cardiology,2-week wait,50.0
+2024-08-31,Cardiology,Urgent,96.0
+2024-08-31,Cardiology,Routine,155.0
+2024-09-30,Cardiology,2-week wait,44.0
+2024-09-30,Cardiology,Urgent,99.0
+2024-09-30,Cardiology,Routine,139.0
+2024-10-31,Cardiology,2-week wait,54.0
+2024-10-31,Cardiology,Urgent,106.0
+2024-10-31,Cardiology,Routine,148.0
+2024-11-30,Cardiology,2-week wait,51.0
+2024-11-30,Cardiology,Urgent,90.0
+2024-11-30,Cardiology,Routine,166.0
+2024-12-31,Cardiology,2-week wait,44.0
+2024-12-31,Cardiology,Urgent,114.0
+2024-12-31,Cardiology,Routine,136.0
+2022-01-31,Dermatology,2-week wait,49.0
+2022-01-31,Dermatology,Urgent,91.0
+2022-01-31,Dermatology,Routine,157.0
+2022-02-28,Dermatology,2-week wait,46.0
+2022-02-28,Dermatology,Urgent,93.0
+2022-02-28,Dermatology,Routine,137.0
+2022-03-31,Dermatology,2-week wait,51.0
+2022-03-31,Dermatology,Urgent,86.0
+2022-03-31,Dermatology,Routine,162.0
+2022-04-30,Dermatology,2-week wait,55.0
+2022-04-30,Dermatology,Urgent,107.0
+2022-04-30,Dermatology,Routine,152.0
+2022-05-31,Dermatology,2-week wait,44.0
+2022-05-31,Dermatology,Urgent,87.0
+2022-05-31,Dermatology,Routine,169.0
+2022-06-30,Dermatology,2-week wait,42.0
+2022-06-30,Dermatology,Urgent,85.0
+2022-06-30,Dermatology,Routine,164.0
+2022-07-31,Dermatology,2-week wait,44.0
+2022-07-31,Dermatology,Urgent,99.0
+2022-07-31,Dermatology,Routine,143.0
+2022-08-31,Dermatology,2-week wait,42.0
+2022-08-31,Dermatology,Urgent,85.0
+2022-08-31,Dermatology,Routine,134.0
+2022-09-30,Dermatology,2-week wait,53.0
+2022-09-30,Dermatology,Urgent,91.0
+2022-09-30,Dermatology,Routine,156.0
+2022-10-31,Dermatology,2-week wait,48.0
+2022-10-31,Dermatology,Urgent,99.0
+2022-10-31,Dermatology,Routine,144.0
+2022-11-30,Dermatology,2-week wait,49.0
+2022-11-30,Dermatology,Urgent,112.0
+2022-11-30,Dermatology,Routine,142.0
+2022-12-31,Dermatology,2-week wait,58.0
+2022-12-31,Dermatology,Urgent,91.0
+2022-12-31,Dermatology,Routine,161.0
+2023-01-31,Dermatology,2-week wait,45.0
+2023-01-31,Dermatology,Urgent,115.5
+2023-01-31,Dermatology,Routine,167.0
+2023-02-28,Dermatology,2-week wait,48.0
+2023-02-28,Dermatology,Urgent,98.5
+2023-02-28,Dermatology,Routine,145.0
+2023-03-31,Dermatology,2-week wait,52.0
+2023-03-31,Dermatology,Urgent,114.5
+2023-03-31,Dermatology,Routine,166.0
+2023-04-30,Dermatology,2-week wait,54.0
+2023-04-30,Dermatology,Urgent,92.5
+2023-04-30,Dermatology,Routine,152.0
+2023-05-31,Dermatology,2-week wait,43.0
+2023-05-31,Dermatology,Urgent,95.5
+2023-05-31,Dermatology,Routine,136.0
+2023-06-30,Dermatology,2-week wait,53.0
+2023-06-30,Dermatology,Urgent,97.5
+2023-06-30,Dermatology,Routine,150.0
+2023-07-31,Dermatology,2-week wait,52.0
+2023-07-31,Dermatology,Urgent,111.5
+2023-07-31,Dermatology,Routine,158.0
+2023-08-31,Dermatology,2-week wait,48.0
+2023-08-31,Dermatology,Urgent,115.5
+2023-08-31,Dermatology,Routine,163.0
+2023-09-30,Dermatology,2-week wait,42.0
+2023-09-30,Dermatology,Urgent,110.5
+2023-09-30,Dermatology,Routine,157.0
+2023-10-31,Dermatology,2-week wait,61.0
+2023-10-31,Dermatology,Urgent,98.5
+2023-10-31,Dermatology,Routine,133.0
+2023-11-30,Dermatology,2-week wait,48.0
+2023-11-30,Dermatology,Urgent,91.5
+2023-11-30,Dermatology,Routine,138.0
+2023-12-31,Dermatology,2-week wait,50.0
+2023-12-31,Dermatology,Urgent,115.5
+2023-12-31,Dermatology,Routine,167.0
+2024-01-31,Dermatology,2-week wait,44.0
+2024-01-31,Dermatology,Urgent,106.0
+2024-01-31,Dermatology,Routine,155.0
+2024-02-29,Dermatology,2-week wait,58.0
+2024-02-29,Dermatology,Urgent,114.0
+2024-02-29,Dermatology,Routine,163.0
+2024-03-31,Dermatology,2-week wait,52.0
+2024-03-31,Dermatology,Urgent,107.0
+2024-03-31,Dermatology,Routine,143.0
+2024-04-30,Dermatology,2-week wait,50.0
+2024-04-30,Dermatology,Urgent,89.0
+2024-04-30,Dermatology,Routine,134.0
+2024-05-31,Dermatology,2-week wait,60.0
+2024-05-31,Dermatology,Urgent,92.0
+2024-05-31,Dermatology,Routine,148.0
+2024-06-30,Dermatology,2-week wait,60.0
+2024-06-30,Dermatology,Urgent,89.0
+2024-06-30,Dermatology,Routine,133.0
+2024-07-31,Dermatology,2-week wait,48.0
+2024-07-31,Dermatology,Urgent,88.0
+2024-07-31,Dermatology,Routine,132.0
+2024-08-31,Dermatology,2-week wait,62.0
+2024-08-31,Dermatology,Urgent,117.0
+2024-08-31,Dermatology,Routine,133.0
+2024-09-30,Dermatology,2-week wait,55.0
+2024-09-30,Dermatology,Urgent,113.0
+2024-09-30,Dermatology,Routine,163.0
+2024-10-31,Dermatology,2-week wait,49.0
+2024-10-31,Dermatology,Urgent,110.0
+2024-10-31,Dermatology,Routine,135.0
+2024-11-30,Dermatology,2-week wait,54.0
+2024-11-30,Dermatology,Urgent,111.0
+2024-11-30,Dermatology,Routine,148.0
+2024-12-31,Dermatology,2-week wait,49.0
+2024-12-31,Dermatology,Urgent,111.0
+2024-12-31,Dermatology,Routine,136.0
+2022-01-31,Neurology,2-week wait,59.0
+2022-01-31,Neurology,Urgent,86.0
+2022-01-31,Neurology,Routine,135.0
+2022-02-28,Neurology,2-week wait,50.0
+2022-02-28,Neurology,Urgent,100.0
+2022-02-28,Neurology,Routine,145.0
+2022-03-31,Neurology,2-week wait,40.0
+2022-03-31,Neurology,Urgent,93.0
+2022-03-31,Neurology,Routine,135.0
+2022-04-30,Neurology,2-week wait,55.0
+2022-04-30,Neurology,Urgent,113.0
+2022-04-30,Neurology,Routine,132.0
+2022-05-31,Neurology,2-week wait,59.0
+2022-05-31,Neurology,Urgent,112.0
+2022-05-31,Neurology,Routine,165.0
+2022-06-30,Neurology,2-week wait,58.0
+2022-06-30,Neurology,Urgent,110.0
+2022-06-30,Neurology,Routine,132.0
+2022-07-31,Neurology,2-week wait,58.0
+2022-07-31,Neurology,Urgent,104.0
+2022-07-31,Neurology,Routine,161.0
+2022-08-31,Neurology,2-week wait,46.0
+2022-08-31,Neurology,Urgent,104.0
+2022-08-31,Neurology,Routine,162.0
+2022-09-30,Neurology,2-week wait,47.0
+2022-09-30,Neurology,Urgent,91.0
+2022-09-30,Neurology,Routine,147.0
+2022-10-31,Neurology,2-week wait,47.0
+2022-10-31,Neurology,Urgent,85.0
+2022-10-31,Neurology,Routine,140.0
+2022-11-30,Neurology,2-week wait,57.0
+2022-11-30,Neurology,Urgent,107.0
+2022-11-30,Neurology,Routine,160.0
+2022-12-31,Neurology,2-week wait,49.0
+2022-12-31,Neurology,Urgent,87.0
+2022-12-31,Neurology,Routine,136.0
+2023-01-31,Neurology,2-week wait,57.0
+2023-01-31,Neurology,Urgent,111.5
+2023-01-31,Neurology,Routine,132.0
+2023-02-28,Neurology,2-week wait,42.0
+2023-02-28,Neurology,Urgent,101.5
+2023-02-28,Neurology,Routine,142.0
+2023-03-31,Neurology,2-week wait,46.0
+2023-03-31,Neurology,Urgent,90.5
+2023-03-31,Neurology,Routine,162.0
+2023-04-30,Neurology,2-week wait,50.0
+2023-04-30,Neurology,Urgent,94.5
+2023-04-30,Neurology,Routine,165.0
+2023-05-31,Neurology,2-week wait,60.0
+2023-05-31,Neurology,Urgent,101.5
+2023-05-31,Neurology,Routine,146.0
+2023-06-30,Neurology,2-week wait,44.0
+2023-06-30,Neurology,Urgent,105.5
+2023-06-30,Neurology,Routine,154.0
+2023-07-31,Neurology,2-week wait,42.0
+2023-07-31,Neurology,Urgent,109.5
+2023-07-31,Neurology,Routine,141.0
+2023-08-31,Neurology,2-week wait,58.0
+2023-08-31,Neurology,Urgent,93.5
+2023-08-31,Neurology,Routine,166.0
+2023-09-30,Neurology,2-week wait,47.0
+2023-09-30,Neurology,Urgent,93.5
+2023-09-30,Neurology,Routine,150.0
+2023-10-31,Neurology,2-week wait,44.0
+2023-10-31,Neurology,Urgent,101.5
+2023-10-31,Neurology,Routine,155.0
+2023-11-30,Neurology,2-week wait,44.0
+2023-11-30,Neurology,Urgent,110.5
+2023-11-30,Neurology,Routine,159.0
+2023-12-31,Neurology,2-week wait,59.0
+2023-12-31,Neurology,Urgent,99.5
+2023-12-31,Neurology,Routine,148.0
+2024-01-31,Neurology,2-week wait,45.0
+2024-01-31,Neurology,Urgent,109.0
+2024-01-31,Neurology,Routine,166.0
+2024-02-29,Neurology,2-week wait,59.0
+2024-02-29,Neurology,Urgent,116.0
+2024-02-29,Neurology,Routine,167.0
+2024-03-31,Neurology,2-week wait,44.0
+2024-03-31,Neurology,Urgent,91.0
+2024-03-31,Neurology,Routine,164.0
+2024-04-30,Neurology,2-week wait,57.0
+2024-04-30,Neurology,Urgent,108.0
+2024-04-30,Neurology,Routine,151.0
+2024-05-31,Neurology,2-week wait,51.0
+2024-05-31,Neurology,Urgent,94.0
+2024-05-31,Neurology,Routine,134.0
+2024-06-30,Neurology,2-week wait,60.0
+2024-06-30,Neurology,Urgent,88.0
+2024-06-30,Neurology,Routine,143.0
+2024-07-31,Neurology,2-week wait,62.0
+2024-07-31,Neurology,Urgent,109.0
+2024-07-31,Neurology,Routine,153.0
+2024-08-31,Neurology,2-week wait,57.0
+2024-08-31,Neurology,Urgent,117.0
+2024-08-31,Neurology,Routine,169.0
+2024-09-30,Neurology,2-week wait,49.0
+2024-09-30,Neurology,Urgent,100.0
+2024-09-30,Neurology,Routine,139.0
+2024-10-31,Neurology,2-week wait,45.0
+2024-10-31,Neurology,Urgent,108.0
+2024-10-31,Neurology,Routine,161.0
+2024-11-30,Neurology,2-week wait,44.0
+2024-11-30,Neurology,Urgent,115.0
+2024-11-30,Neurology,Routine,164.0
+2024-12-31,Neurology,2-week wait,48.0
+2024-12-31,Neurology,Urgent,115.0
+2024-12-31,Neurology,Routine,150.0
+2022-01-31,Ophthalmology,2-week wait,43.0
+2022-01-31,Ophthalmology,Urgent,87.0
+2022-01-31,Ophthalmology,Routine,146.0
+2022-02-28,Ophthalmology,2-week wait,51.0
+2022-02-28,Ophthalmology,Urgent,112.0
+2022-02-28,Ophthalmology,Routine,159.0
+2022-03-31,Ophthalmology,2-week wait,53.0
+2022-03-31,Ophthalmology,Urgent,105.0
+2022-03-31,Ophthalmology,Routine,135.0
+2022-04-30,Ophthalmology,2-week wait,42.0
+2022-04-30,Ophthalmology,Urgent,112.0
+2022-04-30,Ophthalmology,Routine,166.0
+2022-05-31,Ophthalmology,2-week wait,56.0
+2022-05-31,Ophthalmology,Urgent,98.0
+2022-05-31,Ophthalmology,Routine,160.0
+2022-06-30,Ophthalmology,2-week wait,42.0
+2022-06-30,Ophthalmology,Urgent,112.0
+2022-06-30,Ophthalmology,Routine,162.0
+2022-07-31,Ophthalmology,2-week wait,59.0
+2022-07-31,Ophthalmology,Urgent,113.0
+2022-07-31,Ophthalmology,Routine,150.0
+2022-08-31,Ophthalmology,2-week wait,40.0
+2022-08-31,Ophthalmology,Urgent,87.0
+2022-08-31,Ophthalmology,Routine,147.0
+2022-09-30,Ophthalmology,2-week wait,49.0
+2022-09-30,Ophthalmology,Urgent,106.0
+2022-09-30,Ophthalmology,Routine,132.0
+2022-10-31,Ophthalmology,2-week wait,47.0
+2022-10-31,Ophthalmology,Urgent,98.0
+2022-10-31,Ophthalmology,Routine,153.0
+2022-11-30,Ophthalmology,2-week wait,57.0
+2022-11-30,Ophthalmology,Urgent,99.0
+2022-11-30,Ophthalmology,Routine,151.0
+2022-12-31,Ophthalmology,2-week wait,41.0
+2022-12-31,Ophthalmology,Urgent,111.0
+2022-12-31,Ophthalmology,Routine,131.0
+2023-01-31,Ophthalmology,2-week wait,58.0
+2023-01-31,Ophthalmology,Urgent,93.5
+2023-01-31,Ophthalmology,Routine,163.0
+2023-02-28,Ophthalmology,2-week wait,50.0
+2023-02-28,Ophthalmology,Urgent,96.5
+2023-02-28,Ophthalmology,Routine,169.0
+2023-03-31,Ophthalmology,2-week wait,51.0
+2023-03-31,Ophthalmology,Urgent,108.5
+2023-03-31,Ophthalmology,Routine,156.0
+2023-04-30,Ophthalmology,2-week wait,44.0
+2023-04-30,Ophthalmology,Urgent,103.5
+2023-04-30,Ophthalmology,Routine,155.0
+2023-05-31,Ophthalmology,2-week wait,54.0
+2023-05-31,Ophthalmology,Urgent,113.5
+2023-05-31,Ophthalmology,Routine,137.0
+2023-06-30,Ophthalmology,2-week wait,45.0
+2023-06-30,Ophthalmology,Urgent,98.5
+2023-06-30,Ophthalmology,Routine,150.0
+2023-07-31,Ophthalmology,2-week wait,42.0
+2023-07-31,Ophthalmology,Urgent,93.5
+2023-07-31,Ophthalmology,Routine,146.0
+2023-08-31,Ophthalmology,2-week wait,55.0
+2023-08-31,Ophthalmology,Urgent,97.5
+2023-08-31,Ophthalmology,Routine,153.0
+2023-09-30,Ophthalmology,2-week wait,56.0
+2023-09-30,Ophthalmology,Urgent,113.5
+2023-09-30,Ophthalmology,Routine,164.0
+2023-10-31,Ophthalmology,2-week wait,43.0
+2023-10-31,Ophthalmology,Urgent,108.5
+2023-10-31,Ophthalmology,Routine,152.0
+2023-11-30,Ophthalmology,2-week wait,60.0
+2023-11-30,Ophthalmology,Urgent,110.5
+2023-11-30,Ophthalmology,Routine,152.0
+2023-12-31,Ophthalmology,2-week wait,58.0
+2023-12-31,Ophthalmology,Urgent,105.5
+2023-12-31,Ophthalmology,Routine,136.0
+2024-01-31,Ophthalmology,2-week wait,58.0
+2024-01-31,Ophthalmology,Urgent,109.0
+2024-01-31,Ophthalmology,Routine,168.0
+2024-02-29,Ophthalmology,2-week wait,44.0
+2024-02-29,Ophthalmology,Urgent,95.0
+2024-02-29,Ophthalmology,Routine,136.0
+2024-03-31,Ophthalmology,2-week wait,50.0
+2024-03-31,Ophthalmology,Urgent,91.0
+2024-03-31,Ophthalmology,Routine,137.0
+2024-04-30,Ophthalmology,2-week wait,56.0
+2024-04-30,Ophthalmology,Urgent,107.0
+2024-04-30,Ophthalmology,Routine,161.0
+2024-05-31,Ophthalmology,2-week wait,58.0
+2024-05-31,Ophthalmology,Urgent,90.0
+2024-05-31,Ophthalmology,Routine,171.0
+2024-06-30,Ophthalmology,2-week wait,63.0
+2024-06-30,Ophthalmology,Urgent,103.0
+2024-06-30,Ophthalmology,Routine,144.0
+2024-07-31,Ophthalmology,2-week wait,61.0
+2024-07-31,Ophthalmology,Urgent,115.0
+2024-07-31,Ophthalmology,Routine,161.0
+2024-08-31,Ophthalmology,2-week wait,62.0
+2024-08-31,Ophthalmology,Urgent,104.0
+2024-08-31,Ophthalmology,Routine,150.0
+2024-09-30,Ophthalmology,2-week wait,48.0
+2024-09-30,Ophthalmology,Urgent,113.0
+2024-09-30,Ophthalmology,Routine,154.0
+2024-10-31,Ophthalmology,2-week wait,52.0
+2024-10-31,Ophthalmology,Urgent,99.0
+2024-10-31,Ophthalmology,Routine,132.0
+2024-11-30,Ophthalmology,2-week wait,44.0
+2024-11-30,Ophthalmology,Urgent,102.0
+2024-11-30,Ophthalmology,Routine,165.0
+2024-12-31,Ophthalmology,2-week wait,59.0
+2024-12-31,Ophthalmology,Urgent,112.0
+2024-12-31,Ophthalmology,Routine,171.0
+2022-01-31,Orthopaedics,2-week wait,52.0
+2022-01-31,Orthopaedics,Urgent,105.0
+2022-01-31,Orthopaedics,Routine,130.0
+2022-02-28,Orthopaedics,2-week wait,55.0
+2022-02-28,Orthopaedics,Urgent,113.0
+2022-02-28,Orthopaedics,Routine,168.0
+2022-03-31,Orthopaedics,2-week wait,44.0
+2022-03-31,Orthopaedics,Urgent,106.0
+2022-03-31,Orthopaedics,Routine,158.0
+2022-04-30,Orthopaedics,2-week wait,42.0
+2022-04-30,Orthopaedics,Urgent,96.0
+2022-04-30,Orthopaedics,Routine,155.0
+2022-05-31,Orthopaedics,2-week wait,55.0
+2022-05-31,Orthopaedics,Urgent,103.0
+2022-05-31,Orthopaedics,Routine,166.0
+2022-06-30,Orthopaedics,2-week wait,53.0
+2022-06-30,Orthopaedics,Urgent,112.0
+2022-06-30,Orthopaedics,Routine,134.0
+2022-07-31,Orthopaedics,2-week wait,54.0
+2022-07-31,Orthopaedics,Urgent,101.0
+2022-07-31,Orthopaedics,Routine,159.0
+2022-08-31,Orthopaedics,2-week wait,53.0
+2022-08-31,Orthopaedics,Urgent,114.0
+2022-08-31,Orthopaedics,Routine,134.0
+2022-09-30,Orthopaedics,2-week wait,51.0
+2022-09-30,Orthopaedics,Urgent,100.0
+2022-09-30,Orthopaedics,Routine,155.0
+2022-10-31,Orthopaedics,2-week wait,55.0
+2022-10-31,Orthopaedics,Urgent,105.0
+2022-10-31,Orthopaedics,Routine,168.0
+2022-11-30,Orthopaedics,2-week wait,43.0
+2022-11-30,Orthopaedics,Urgent,85.0
+2022-11-30,Orthopaedics,Routine,159.0
+2022-12-31,Orthopaedics,2-week wait,44.0
+2022-12-31,Orthopaedics,Urgent,107.0
+2022-12-31,Orthopaedics,Routine,139.0
+2023-01-31,Orthopaedics,2-week wait,46.0
+2023-01-31,Orthopaedics,Urgent,89.5
+2023-01-31,Orthopaedics,Routine,164.0
+2023-02-28,Orthopaedics,2-week wait,61.0
+2023-02-28,Orthopaedics,Urgent,95.5
+2023-02-28,Orthopaedics,Routine,149.0
+2023-03-31,Orthopaedics,2-week wait,42.0
+2023-03-31,Orthopaedics,Urgent,109.5
+2023-03-31,Orthopaedics,Routine,135.0
+2023-04-30,Orthopaedics,2-week wait,54.0
+2023-04-30,Orthopaedics,Urgent,89.5
+2023-04-30,Orthopaedics,Routine,146.0
+2023-05-31,Orthopaedics,2-week wait,57.0
+2023-05-31,Orthopaedics,Urgent,108.5
+2023-05-31,Orthopaedics,Routine,132.0
+2023-06-30,Orthopaedics,2-week wait,58.0
+2023-06-30,Orthopaedics,Urgent,113.5
+2023-06-30,Orthopaedics,Routine,162.0
+2023-07-31,Orthopaedics,2-week wait,61.0
+2023-07-31,Orthopaedics,Urgent,109.5
+2023-07-31,Orthopaedics,Routine,142.0
+2023-08-31,Orthopaedics,2-week wait,59.0
+2023-08-31,Orthopaedics,Urgent,88.5
+2023-08-31,Orthopaedics,Routine,163.0
+2023-09-30,Orthopaedics,2-week wait,42.0
+2023-09-30,Orthopaedics,Urgent,114.5
+2023-09-30,Orthopaedics,Routine,167.0
+2023-10-31,Orthopaedics,2-week wait,53.0
+2023-10-31,Orthopaedics,Urgent,88.5
+2023-10-31,Orthopaedics,Routine,131.0
+2023-11-30,Orthopaedics,2-week wait,42.0
+2023-11-30,Orthopaedics,Urgent,93.5
+2023-11-30,Orthopaedics,Routine,140.0
+2023-12-31,Orthopaedics,2-week wait,52.0
+2023-12-31,Orthopaedics,Urgent,97.5
+2023-12-31,Orthopaedics,Routine,159.0
+2024-01-31,Orthopaedics,2-week wait,56.0
+2024-01-31,Orthopaedics,Urgent,99.0
+2024-01-31,Orthopaedics,Routine,162.0
+2024-02-29,Orthopaedics,2-week wait,57.0
+2024-02-29,Orthopaedics,Urgent,89.0
+2024-02-29,Orthopaedics,Routine,166.0
+2024-03-31,Orthopaedics,2-week wait,60.0
+2024-03-31,Orthopaedics,Urgent,113.0
+2024-03-31,Orthopaedics,Routine,139.0
+2024-04-30,Orthopaedics,2-week wait,53.0
+2024-04-30,Orthopaedics,Urgent,113.0
+2024-04-30,Orthopaedics,Routine,165.0
+2024-05-31,Orthopaedics,2-week wait,62.0
+2024-05-31,Orthopaedics,Urgent,96.0
+2024-05-31,Orthopaedics,Routine,138.0
+2024-06-30,Orthopaedics,2-week wait,47.0
+2024-06-30,Orthopaedics,Urgent,113.0
+2024-06-30,Orthopaedics,Routine,142.0
+2024-07-31,Orthopaedics,2-week wait,47.0
+2024-07-31,Orthopaedics,Urgent,112.0
+2024-07-31,Orthopaedics,Routine,152.0
+2024-08-31,Orthopaedics,2-week wait,47.0
+2024-08-31,Orthopaedics,Urgent,97.0
+2024-08-31,Orthopaedics,Routine,168.0
+2024-09-30,Orthopaedics,2-week wait,52.0
+2024-09-30,Orthopaedics,Urgent,111.0
+2024-09-30,Orthopaedics,Routine,166.0
+2024-10-31,Orthopaedics,2-week wait,60.0
+2024-10-31,Orthopaedics,Urgent,90.0
+2024-10-31,Orthopaedics,Routine,167.0
+2024-11-30,Orthopaedics,2-week wait,61.0
+2024-11-30,Orthopaedics,Urgent,104.0
+2024-11-30,Orthopaedics,Routine,170.0
+2024-12-31,Orthopaedics,2-week wait,48.0
+2024-12-31,Orthopaedics,Urgent,99.0
+2024-12-31,Orthopaedics,Routine,144.0
