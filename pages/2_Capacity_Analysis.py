@@ -36,7 +36,7 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
         # Allow user to adjust baseline period
         st.subheader("Select Baseline Period")
 
-        col1, col2, _ = st.columns(3)  
+        col1, col2, _, _ = st.columns(4)  
         with col1:
            baseline_start = st.date_input('Baseline Start Date', value=default_baseline_start, min_value=specialty_appointment_df['month'].min(), max_value=max_date)
         with col2:
@@ -102,12 +102,10 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
         # Display the table without index and make the "Total" row bold
         def highlight_total_row(row):
             return ['font-weight: bold' if row['appointment_type'] == 'Total' else '' for _ in row]
-      
-        st.table(baseline_summary.style.apply(highlight_total_row, axis=1).set_properties(**{'text-align': 'left'}).set_caption("Baseline Appointments Summary (Scaled to 12 Months)"))
 
-
-
-          
+        col1, _ = st.columns(2)
+        with col1:
+           st.table(baseline_summary.style.apply(highlight_total_row, axis=1).set_properties(**{'text-align': 'left'}).set_caption("Baseline Appointments Summary (Scaled to 12 Months)"))
 
         # Comparison: Number of Referrals vs. First Appointments (scaled for 12 months)
         st.subheader("Comparison of Referrals vs. First Appointments (Scaled to 12-Month Equivalent)")
