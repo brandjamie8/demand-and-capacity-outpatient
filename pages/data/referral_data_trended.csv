@@ -1,0 +1,361 @@
+month,specialty,priority,referrals
+2023-01-01,Cardiology,2-week wait,105
+2023-01-01,Cardiology,Urgent,147
+2023-01-01,Cardiology,Routine,273
+2023-01-01,Neurology,2-week wait,105
+2023-01-01,Neurology,Urgent,147
+2023-01-01,Neurology,Routine,297
+2023-01-01,Orthopedics,2-week wait,105
+2023-01-01,Orthopedics,Urgent,147
+2023-01-01,Orthopedics,Routine,327
+2023-01-01,Gastroenterology,2-week wait,105
+2023-01-01,Gastroenterology,Urgent,147
+2023-01-01,Gastroenterology,Routine,277
+2023-01-01,Dermatology,2-week wait,105
+2023-01-01,Dermatology,Urgent,147
+2023-01-01,Dermatology,Routine,303
+2023-02-01,Cardiology,2-week wait,110
+2023-02-01,Cardiology,Urgent,144
+2023-02-01,Cardiology,Routine,315
+2023-02-01,Neurology,2-week wait,110
+2023-02-01,Neurology,Urgent,144
+2023-02-01,Neurology,Routine,300
+2023-02-01,Orthopedics,2-week wait,110
+2023-02-01,Orthopedics,Urgent,144
+2023-02-01,Orthopedics,Routine,278
+2023-02-01,Gastroenterology,2-week wait,110
+2023-02-01,Gastroenterology,Urgent,144
+2023-02-01,Gastroenterology,Routine,323
+2023-02-01,Dermatology,2-week wait,110
+2023-02-01,Dermatology,Urgent,144
+2023-02-01,Dermatology,Routine,301
+2023-03-01,Cardiology,2-week wait,115
+2023-03-01,Cardiology,Urgent,141
+2023-03-01,Cardiology,Routine,322
+2023-03-01,Neurology,2-week wait,115
+2023-03-01,Neurology,Urgent,141
+2023-03-01,Neurology,Routine,321
+2023-03-01,Orthopedics,2-week wait,115
+2023-03-01,Orthopedics,Urgent,141
+2023-03-01,Orthopedics,Routine,292
+2023-03-01,Gastroenterology,2-week wait,115
+2023-03-01,Gastroenterology,Urgent,141
+2023-03-01,Gastroenterology,Routine,298
+2023-03-01,Dermatology,2-week wait,115
+2023-03-01,Dermatology,Urgent,141
+2023-03-01,Dermatology,Routine,284
+2023-04-01,Cardiology,2-week wait,120
+2023-04-01,Cardiology,Urgent,138
+2023-04-01,Cardiology,Routine,286
+2023-04-01,Neurology,2-week wait,120
+2023-04-01,Neurology,Urgent,138
+2023-04-01,Neurology,Routine,300
+2023-04-01,Orthopedics,2-week wait,120
+2023-04-01,Orthopedics,Urgent,138
+2023-04-01,Orthopedics,Routine,286
+2023-04-01,Gastroenterology,2-week wait,120
+2023-04-01,Gastroenterology,Urgent,138
+2023-04-01,Gastroenterology,Routine,277
+2023-04-01,Dermatology,2-week wait,120
+2023-04-01,Dermatology,Urgent,138
+2023-04-01,Dermatology,Routine,303
+2023-05-01,Cardiology,2-week wait,125
+2023-05-01,Cardiology,Urgent,135
+2023-05-01,Cardiology,Routine,300
+2023-05-01,Neurology,2-week wait,125
+2023-05-01,Neurology,Urgent,135
+2023-05-01,Neurology,Routine,308
+2023-05-01,Orthopedics,2-week wait,125
+2023-05-01,Orthopedics,Urgent,135
+2023-05-01,Orthopedics,Routine,289
+2023-05-01,Gastroenterology,2-week wait,125
+2023-05-01,Gastroenterology,Urgent,135
+2023-05-01,Gastroenterology,Routine,301
+2023-05-01,Dermatology,2-week wait,125
+2023-05-01,Dermatology,Urgent,135
+2023-05-01,Dermatology,Routine,327
+2023-06-01,Cardiology,2-week wait,130
+2023-06-01,Cardiology,Urgent,132
+2023-06-01,Cardiology,Routine,324
+2023-06-01,Neurology,2-week wait,130
+2023-06-01,Neurology,Urgent,132
+2023-06-01,Neurology,Routine,303
+2023-06-01,Orthopedics,2-week wait,130
+2023-06-01,Orthopedics,Urgent,132
+2023-06-01,Orthopedics,Routine,306
+2023-06-01,Gastroenterology,2-week wait,130
+2023-06-01,Gastroenterology,Urgent,132
+2023-06-01,Gastroenterology,Routine,295
+2023-06-01,Dermatology,2-week wait,130
+2023-06-01,Dermatology,Urgent,132
+2023-06-01,Dermatology,Routine,324
+2023-07-01,Cardiology,2-week wait,135
+2023-07-01,Cardiology,Urgent,129
+2023-07-01,Cardiology,Routine,312
+2023-07-01,Neurology,2-week wait,135
+2023-07-01,Neurology,Urgent,129
+2023-07-01,Neurology,Routine,314
+2023-07-01,Orthopedics,2-week wait,135
+2023-07-01,Orthopedics,Urgent,129
+2023-07-01,Orthopedics,Routine,305
+2023-07-01,Gastroenterology,2-week wait,135
+2023-07-01,Gastroenterology,Urgent,129
+2023-07-01,Gastroenterology,Routine,276
+2023-07-01,Dermatology,2-week wait,135
+2023-07-01,Dermatology,Urgent,129
+2023-07-01,Dermatology,Routine,297
+2023-08-01,Cardiology,2-week wait,140
+2023-08-01,Cardiology,Urgent,126
+2023-08-01,Cardiology,Routine,292
+2023-08-01,Neurology,2-week wait,140
+2023-08-01,Neurology,Urgent,126
+2023-08-01,Neurology,Routine,326
+2023-08-01,Orthopedics,2-week wait,140
+2023-08-01,Orthopedics,Urgent,126
+2023-08-01,Orthopedics,Routine,292
+2023-08-01,Gastroenterology,2-week wait,140
+2023-08-01,Gastroenterology,Urgent,126
+2023-08-01,Gastroenterology,Routine,321
+2023-08-01,Dermatology,2-week wait,140
+2023-08-01,Dermatology,Urgent,126
+2023-08-01,Dermatology,Routine,300
+2023-09-01,Cardiology,2-week wait,145
+2023-09-01,Cardiology,Urgent,123
+2023-09-01,Cardiology,Routine,329
+2023-09-01,Neurology,2-week wait,145
+2023-09-01,Neurology,Urgent,123
+2023-09-01,Neurology,Routine,295
+2023-09-01,Orthopedics,2-week wait,145
+2023-09-01,Orthopedics,Urgent,123
+2023-09-01,Orthopedics,Routine,318
+2023-09-01,Gastroenterology,2-week wait,145
+2023-09-01,Gastroenterology,Urgent,123
+2023-09-01,Gastroenterology,Routine,307
+2023-09-01,Dermatology,2-week wait,145
+2023-09-01,Dermatology,Urgent,123
+2023-09-01,Dermatology,Routine,292
+2023-10-01,Cardiology,2-week wait,150
+2023-10-01,Cardiology,Urgent,120
+2023-10-01,Cardiology,Routine,287
+2023-10-01,Neurology,2-week wait,150
+2023-10-01,Neurology,Urgent,120
+2023-10-01,Neurology,Routine,281
+2023-10-01,Orthopedics,2-week wait,150
+2023-10-01,Orthopedics,Urgent,120
+2023-10-01,Orthopedics,Routine,274
+2023-10-01,Gastroenterology,2-week wait,150
+2023-10-01,Gastroenterology,Urgent,120
+2023-10-01,Gastroenterology,Routine,317
+2023-10-01,Dermatology,2-week wait,150
+2023-10-01,Dermatology,Urgent,120
+2023-10-01,Dermatology,Routine,292
+2023-11-01,Cardiology,2-week wait,155
+2023-11-01,Cardiology,Urgent,117
+2023-11-01,Cardiology,Routine,292
+2023-11-01,Neurology,2-week wait,155
+2023-11-01,Neurology,Urgent,117
+2023-11-01,Neurology,Routine,274
+2023-11-01,Orthopedics,2-week wait,155
+2023-11-01,Orthopedics,Urgent,117
+2023-11-01,Orthopedics,Routine,280
+2023-11-01,Gastroenterology,2-week wait,155
+2023-11-01,Gastroenterology,Urgent,117
+2023-11-01,Gastroenterology,Routine,275
+2023-11-01,Dermatology,2-week wait,155
+2023-11-01,Dermatology,Urgent,117
+2023-11-01,Dermatology,Routine,329
+2023-12-01,Cardiology,2-week wait,160
+2023-12-01,Cardiology,Urgent,114
+2023-12-01,Cardiology,Routine,284
+2023-12-01,Neurology,2-week wait,160
+2023-12-01,Neurology,Urgent,114
+2023-12-01,Neurology,Routine,280
+2023-12-01,Orthopedics,2-week wait,160
+2023-12-01,Orthopedics,Urgent,114
+2023-12-01,Orthopedics,Routine,325
+2023-12-01,Gastroenterology,2-week wait,160
+2023-12-01,Gastroenterology,Urgent,114
+2023-12-01,Gastroenterology,Routine,304
+2023-12-01,Dermatology,2-week wait,160
+2023-12-01,Dermatology,Urgent,114
+2023-12-01,Dermatology,Routine,302
+2024-01-01,Cardiology,2-week wait,165
+2024-01-01,Cardiology,Urgent,111
+2024-01-01,Cardiology,Routine,278
+2024-01-01,Neurology,2-week wait,165
+2024-01-01,Neurology,Urgent,111
+2024-01-01,Neurology,Routine,325
+2024-01-01,Orthopedics,2-week wait,165
+2024-01-01,Orthopedics,Urgent,111
+2024-01-01,Orthopedics,Routine,308
+2024-01-01,Gastroenterology,2-week wait,165
+2024-01-01,Gastroenterology,Urgent,111
+2024-01-01,Gastroenterology,Routine,325
+2024-01-01,Dermatology,2-week wait,165
+2024-01-01,Dermatology,Urgent,111
+2024-01-01,Dermatology,Routine,291
+2024-02-01,Cardiology,2-week wait,170
+2024-02-01,Cardiology,Urgent,108
+2024-02-01,Cardiology,Routine,291
+2024-02-01,Neurology,2-week wait,170
+2024-02-01,Neurology,Urgent,108
+2024-02-01,Neurology,Routine,289
+2024-02-01,Orthopedics,2-week wait,170
+2024-02-01,Orthopedics,Urgent,108
+2024-02-01,Orthopedics,Routine,309
+2024-02-01,Gastroenterology,2-week wait,170
+2024-02-01,Gastroenterology,Urgent,108
+2024-02-01,Gastroenterology,Routine,308
+2024-02-01,Dermatology,2-week wait,170
+2024-02-01,Dermatology,Urgent,108
+2024-02-01,Dermatology,Routine,291
+2024-03-01,Cardiology,2-week wait,175
+2024-03-01,Cardiology,Urgent,105
+2024-03-01,Cardiology,Routine,278
+2024-03-01,Neurology,2-week wait,175
+2024-03-01,Neurology,Urgent,105
+2024-03-01,Neurology,Routine,317
+2024-03-01,Orthopedics,2-week wait,175
+2024-03-01,Orthopedics,Urgent,105
+2024-03-01,Orthopedics,Routine,322
+2024-03-01,Gastroenterology,2-week wait,175
+2024-03-01,Gastroenterology,Urgent,105
+2024-03-01,Gastroenterology,Routine,308
+2024-03-01,Dermatology,2-week wait,175
+2024-03-01,Dermatology,Urgent,105
+2024-03-01,Dermatology,Routine,296
+2024-04-01,Cardiology,2-week wait,180
+2024-04-01,Cardiology,Urgent,102
+2024-04-01,Cardiology,Routine,272
+2024-04-01,Neurology,2-week wait,180
+2024-04-01,Neurology,Urgent,102
+2024-04-01,Neurology,Routine,327
+2024-04-01,Orthopedics,2-week wait,180
+2024-04-01,Orthopedics,Urgent,102
+2024-04-01,Orthopedics,Routine,326
+2024-04-01,Gastroenterology,2-week wait,180
+2024-04-01,Gastroenterology,Urgent,102
+2024-04-01,Gastroenterology,Routine,284
+2024-04-01,Dermatology,2-week wait,180
+2024-04-01,Dermatology,Urgent,102
+2024-04-01,Dermatology,Routine,319
+2024-05-01,Cardiology,2-week wait,185
+2024-05-01,Cardiology,Urgent,99
+2024-05-01,Cardiology,Routine,300
+2024-05-01,Neurology,2-week wait,185
+2024-05-01,Neurology,Urgent,99
+2024-05-01,Neurology,Routine,311
+2024-05-01,Orthopedics,2-week wait,185
+2024-05-01,Orthopedics,Urgent,99
+2024-05-01,Orthopedics,Routine,284
+2024-05-01,Gastroenterology,2-week wait,185
+2024-05-01,Gastroenterology,Urgent,99
+2024-05-01,Gastroenterology,Routine,291
+2024-05-01,Dermatology,2-week wait,185
+2024-05-01,Dermatology,Urgent,99
+2024-05-01,Dermatology,Routine,325
+2024-06-01,Cardiology,2-week wait,190
+2024-06-01,Cardiology,Urgent,96
+2024-06-01,Cardiology,Routine,321
+2024-06-01,Neurology,2-week wait,190
+2024-06-01,Neurology,Urgent,96
+2024-06-01,Neurology,Routine,288
+2024-06-01,Orthopedics,2-week wait,190
+2024-06-01,Orthopedics,Urgent,96
+2024-06-01,Orthopedics,Routine,299
+2024-06-01,Gastroenterology,2-week wait,190
+2024-06-01,Gastroenterology,Urgent,96
+2024-06-01,Gastroenterology,Routine,289
+2024-06-01,Dermatology,2-week wait,190
+2024-06-01,Dermatology,Urgent,96
+2024-06-01,Dermatology,Routine,274
+2024-07-01,Cardiology,2-week wait,195
+2024-07-01,Cardiology,Urgent,93
+2024-07-01,Cardiology,Routine,325
+2024-07-01,Neurology,2-week wait,195
+2024-07-01,Neurology,Urgent,93
+2024-07-01,Neurology,Routine,280
+2024-07-01,Orthopedics,2-week wait,195
+2024-07-01,Orthopedics,Urgent,93
+2024-07-01,Orthopedics,Routine,300
+2024-07-01,Gastroenterology,2-week wait,195
+2024-07-01,Gastroenterology,Urgent,93
+2024-07-01,Gastroenterology,Routine,276
+2024-07-01,Dermatology,2-week wait,195
+2024-07-01,Dermatology,Urgent,93
+2024-07-01,Dermatology,Routine,313
+2024-08-01,Cardiology,2-week wait,200
+2024-08-01,Cardiology,Urgent,90
+2024-08-01,Cardiology,Routine,313
+2024-08-01,Neurology,2-week wait,200
+2024-08-01,Neurology,Urgent,90
+2024-08-01,Neurology,Routine,310
+2024-08-01,Orthopedics,2-week wait,200
+2024-08-01,Orthopedics,Urgent,90
+2024-08-01,Orthopedics,Routine,292
+2024-08-01,Gastroenterology,2-week wait,200
+2024-08-01,Gastroenterology,Urgent,90
+2024-08-01,Gastroenterology,Routine,295
+2024-08-01,Dermatology,2-week wait,200
+2024-08-01,Dermatology,Urgent,90
+2024-08-01,Dermatology,Routine,325
+2024-09-01,Cardiology,2-week wait,205
+2024-09-01,Cardiology,Urgent,87
+2024-09-01,Cardiology,Routine,285
+2024-09-01,Neurology,2-week wait,205
+2024-09-01,Neurology,Urgent,87
+2024-09-01,Neurology,Routine,301
+2024-09-01,Orthopedics,2-week wait,205
+2024-09-01,Orthopedics,Urgent,87
+2024-09-01,Orthopedics,Routine,281
+2024-09-01,Gastroenterology,2-week wait,205
+2024-09-01,Gastroenterology,Urgent,87
+2024-09-01,Gastroenterology,Routine,300
+2024-09-01,Dermatology,2-week wait,205
+2024-09-01,Dermatology,Urgent,87
+2024-09-01,Dermatology,Routine,290
+2024-10-01,Cardiology,2-week wait,210
+2024-10-01,Cardiology,Urgent,84
+2024-10-01,Cardiology,Routine,297
+2024-10-01,Neurology,2-week wait,210
+2024-10-01,Neurology,Urgent,84
+2024-10-01,Neurology,Routine,322
+2024-10-01,Orthopedics,2-week wait,210
+2024-10-01,Orthopedics,Urgent,84
+2024-10-01,Orthopedics,Routine,299
+2024-10-01,Gastroenterology,2-week wait,210
+2024-10-01,Gastroenterology,Urgent,84
+2024-10-01,Gastroenterology,Routine,302
+2024-10-01,Dermatology,2-week wait,210
+2024-10-01,Dermatology,Urgent,84
+2024-10-01,Dermatology,Routine,296
+2024-11-01,Cardiology,2-week wait,215
+2024-11-01,Cardiology,Urgent,81
+2024-11-01,Cardiology,Routine,304
+2024-11-01,Neurology,2-week wait,215
+2024-11-01,Neurology,Urgent,81
+2024-11-01,Neurology,Routine,329
+2024-11-01,Orthopedics,2-week wait,215
+2024-11-01,Orthopedics,Urgent,81
+2024-11-01,Orthopedics,Routine,305
+2024-11-01,Gastroenterology,2-week wait,215
+2024-11-01,Gastroenterology,Urgent,81
+2024-11-01,Gastroenterology,Routine,272
+2024-11-01,Dermatology,2-week wait,215
+2024-11-01,Dermatology,Urgent,81
+2024-11-01,Dermatology,Routine,320
+2024-12-01,Cardiology,2-week wait,220
+2024-12-01,Cardiology,Urgent,78
+2024-12-01,Cardiology,Routine,323
+2024-12-01,Neurology,2-week wait,220
+2024-12-01,Neurology,Urgent,78
+2024-12-01,Neurology,Routine,329
+2024-12-01,Orthopedics,2-week wait,220
+2024-12-01,Orthopedics,Urgent,78
+2024-12-01,Orthopedics,Routine,307
+2024-12-01,Gastroenterology,2-week wait,220
+2024-12-01,Gastroenterology,Urgent,78
+2024-12-01,Gastroenterology,Routine,292
+2024-12-01,Dermatology,2-week wait,220
+2024-12-01,Dermatology,Urgent,78
+2024-12-01,Dermatology,Routine,288
