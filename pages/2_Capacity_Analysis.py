@@ -214,7 +214,7 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
         )
       
         # Update layout to ensure readability and display the chart
-        fig_grand_total.update_traces(texttemplate='%{text:.0f}', textposition='outside', textbackgroundcolor='white')
+        fig_grand_total.update_traces(texttemplate='%{text:.0f}', textposition='outside')
         fig_grand_total.update_layout(
             xaxis_title='',
             yaxis_title='Number of Appointments',
