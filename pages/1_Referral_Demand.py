@@ -82,7 +82,7 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
             st.write(f"**Total Referrals (12-Month Equivalent):** {baseline_yearly_referrals:.0f}")
 
             # Calculate percentage of each referral priority in the baseline period
-            priority_percentages = baseline_referral_df.groupby('priority')['referrals'].sum() / total_referrals_baseline * 100
+            priority_percentages = baseline_referral_df.groupby('priority', observed=False)['referrals'].sum() / total_referrals_baseline * 100
 
             st.write("**Percentage of Referrals by Priority in Baseline Period:**")
             for priority in priority_order:
