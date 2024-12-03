@@ -200,7 +200,7 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
             y0=total_referrals_scaled,
             x1=2.5,
             y1=total_referrals_scaled,
-            line=dict(color='black', width=2, dash='dot'),
+            line=dict(color='red', width=2, dash='dot'),
             name='Total Referrals'
         )
       
@@ -214,7 +214,7 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
         )
       
         # Update layout to ensure readability and display the chart
-        fig_grand_total.update_traces(texttemplate='%{text:.0f}', textposition='outside')
+        fig_grand_total.update_traces(texttemplate='%{text:.0f}', textposition='outside', textbackgroundcolor='white')
         fig_grand_total.update_layout(
             xaxis_title='',
             yaxis_title='Number of Appointments',
