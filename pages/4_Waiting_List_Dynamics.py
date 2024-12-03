@@ -5,7 +5,7 @@ import plotly.graph_objects as go
 st.title("Waiting List Dynamics")
 
 st.write("""
-Analyze the dynamics of the waiting list over the year.
+Analyse the dynamics of the waiting list over the year.
 """)
 
 # Check if necessary variables are available in session state
