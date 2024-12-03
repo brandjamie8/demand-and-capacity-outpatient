@@ -86,7 +86,7 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
         baseline_summary = pd.concat([baseline_summary, total_row], ignore_index=True)
 
         # Display table without index
-        st.table(baseline_summary.reset_index(drop=True).style.set_properties(**{'text-align': 'left'}).set_caption("Baseline Appointments Summary").hide_index())
+        st.table(baseline_summary.reset_index(drop=True).style.set_properties(**{'text-align': 'left'}).set_caption("Baseline Appointments Summary"))
 
         # Comparison: Number of Referrals vs. First Appointments (scaled for 12 months)
         st.subheader("Comparison of Referrals vs. First Appointments (Scaled to 12-Month Equivalent)")
