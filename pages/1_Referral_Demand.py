@@ -132,7 +132,7 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
                     'trend_increase_percentage': trend_increase_percentage
                 })
 
-                st.write(f"**{priority} referrals trend increase (annualized):** {trend_increase_percentage:.2f}%")
+                st.write(f"**{priority} referrals trend increase:** {trend_increase_percentage:.2f}%")
 
         # Calculate the forecasted referrals for the next year including the trend increase
         st.subheader("Forecasted Referrals for the Next Year")
