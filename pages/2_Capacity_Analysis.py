@@ -36,7 +36,7 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
         # Plot all monthly appointments as a line chart
         st.subheader(f"Monthly Appointments Attended for {selected_specialty}")
         # Allow user to adjust baseline period
-        st.subheader("Select Baseline Period")
+        st.write("Select Baseline Period")
 
         col1, col2, _, _ = st.columns(4)  
         with col1:
