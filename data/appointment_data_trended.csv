@@ -1,0 +1,361 @@
+month,specialty,appointment type,appointments completed,did not attend rate
+2023-01-01,Cardiology,RTT first,110,0.04
+2023-01-01,Cardiology,RTT follow-up,22,0.04
+2023-01-01,Cardiology,non-RTT,181,0.09
+2023-01-01,Neurology,RTT first,35,0.12
+2023-01-01,Neurology,RTT follow-up,79,0.07
+2023-01-01,Neurology,non-RTT,61,0.05
+2023-01-01,Orthopedics,RTT first,148,0.1
+2023-01-01,Orthopedics,RTT follow-up,37,0.02
+2023-01-01,Orthopedics,non-RTT,197,0.13
+2023-01-01,Gastroenterology,RTT first,109,0.09
+2023-01-01,Gastroenterology,RTT follow-up,93,0.12
+2023-01-01,Gastroenterology,non-RTT,34,0.05
+2023-01-01,Dermatology,RTT first,93,0.15
+2023-01-01,Dermatology,RTT follow-up,38,0.05
+2023-01-01,Dermatology,non-RTT,168,0.07
+2023-02-01,Cardiology,RTT first,152,0.11
+2023-02-01,Cardiology,RTT follow-up,65,0.13
+2023-02-01,Cardiology,non-RTT,119,0.12
+2023-02-01,Neurology,RTT first,69,0.06
+2023-02-01,Neurology,RTT follow-up,199,0.07
+2023-02-01,Neurology,non-RTT,53,0.08
+2023-02-01,Orthopedics,RTT first,44,0.1
+2023-02-01,Orthopedics,RTT follow-up,174,0.02
+2023-02-01,Orthopedics,non-RTT,40,0.11
+2023-02-01,Gastroenterology,RTT first,117,0.13
+2023-02-01,Gastroenterology,RTT follow-up,85,0.13
+2023-02-01,Gastroenterology,non-RTT,111,0.07
+2023-02-01,Dermatology,RTT first,179,0.06
+2023-02-01,Dermatology,RTT follow-up,171,0.08
+2023-02-01,Dermatology,non-RTT,43,0.11
+2023-03-01,Cardiology,RTT first,56,0.1
+2023-03-01,Cardiology,RTT follow-up,141,0.13
+2023-03-01,Cardiology,non-RTT,70,0.04
+2023-03-01,Neurology,RTT first,130,0.05
+2023-03-01,Neurology,RTT follow-up,53,0.03
+2023-03-01,Neurology,non-RTT,146,0.13
+2023-03-01,Orthopedics,RTT first,62,0.15
+2023-03-01,Orthopedics,RTT follow-up,49,0.14
+2023-03-01,Orthopedics,non-RTT,86,0.12
+2023-03-01,Gastroenterology,RTT first,185,0.03
+2023-03-01,Gastroenterology,RTT follow-up,59,0.11
+2023-03-01,Gastroenterology,non-RTT,120,0.09
+2023-03-01,Dermatology,RTT first,186,0.11
+2023-03-01,Dermatology,RTT follow-up,56,0.11
+2023-03-01,Dermatology,non-RTT,176,0.03
+2023-04-01,Cardiology,RTT first,76,0.08
+2023-04-01,Cardiology,RTT follow-up,118,0.05
+2023-04-01,Cardiology,non-RTT,44,0.08
+2023-04-01,Neurology,RTT first,166,0.07
+2023-04-01,Neurology,RTT follow-up,165,0.06
+2023-04-01,Neurology,non-RTT,178,0.14
+2023-04-01,Orthopedics,RTT first,39,0.14
+2023-04-01,Orthopedics,RTT follow-up,142,0.1
+2023-04-01,Orthopedics,non-RTT,186,0.03
+2023-04-01,Gastroenterology,RTT first,81,0.1
+2023-04-01,Gastroenterology,RTT follow-up,57,0.07
+2023-04-01,Gastroenterology,non-RTT,161,0.03
+2023-04-01,Dermatology,RTT first,127,0.04
+2023-04-01,Dermatology,RTT follow-up,47,0.13
+2023-04-01,Dermatology,non-RTT,85,0.07
+2023-05-01,Cardiology,RTT first,162,0.09
+2023-05-01,Cardiology,RTT follow-up,101,0.03
+2023-05-01,Cardiology,non-RTT,106,0.12
+2023-05-01,Neurology,RTT first,143,0.09
+2023-05-01,Neurology,RTT follow-up,169,0.06
+2023-05-01,Neurology,non-RTT,166,0.06
+2023-05-01,Orthopedics,RTT first,83,0.12
+2023-05-01,Orthopedics,RTT follow-up,124,0.11
+2023-05-01,Orthopedics,non-RTT,20,0.06
+2023-05-01,Gastroenterology,RTT first,141,0.08
+2023-05-01,Gastroenterology,RTT follow-up,175,0.14
+2023-05-01,Gastroenterology,non-RTT,93,0.15
+2023-05-01,Dermatology,RTT first,154,0.1
+2023-05-01,Dermatology,RTT follow-up,136,0.13
+2023-05-01,Dermatology,non-RTT,95,0.13
+2023-06-01,Cardiology,RTT first,190,0.1
+2023-06-01,Cardiology,RTT follow-up,68,0.09
+2023-06-01,Cardiology,non-RTT,46,0.14
+2023-06-01,Neurology,RTT first,20,0.1
+2023-06-01,Neurology,RTT follow-up,61,0.07
+2023-06-01,Neurology,non-RTT,52,0.12
+2023-06-01,Orthopedics,RTT first,54,0.14
+2023-06-01,Orthopedics,RTT follow-up,40,0.04
+2023-06-01,Orthopedics,non-RTT,34,0.13
+2023-06-01,Gastroenterology,RTT first,90,0.15
+2023-06-01,Gastroenterology,RTT follow-up,68,0.03
+2023-06-01,Gastroenterology,non-RTT,80,0.07
+2023-06-01,Dermatology,RTT first,187,0.05
+2023-06-01,Dermatology,RTT follow-up,141,0.08
+2023-06-01,Dermatology,non-RTT,153,0.11
+2023-07-01,Cardiology,RTT first,21,0.05
+2023-07-01,Cardiology,RTT follow-up,126,0.06
+2023-07-01,Cardiology,non-RTT,42,0.09
+2023-07-01,Neurology,RTT first,87,0.06
+2023-07-01,Neurology,RTT follow-up,180,0.03
+2023-07-01,Neurology,non-RTT,191,0.07
+2023-07-01,Orthopedics,RTT first,38,0.07
+2023-07-01,Orthopedics,RTT follow-up,145,0.03
+2023-07-01,Orthopedics,non-RTT,168,0.05
+2023-07-01,Gastroenterology,RTT first,24,0.02
+2023-07-01,Gastroenterology,RTT follow-up,163,0.1
+2023-07-01,Gastroenterology,non-RTT,95,0.02
+2023-07-01,Dermatology,RTT first,124,0.05
+2023-07-01,Dermatology,RTT follow-up,62,0.09
+2023-07-01,Dermatology,non-RTT,193,0.09
+2023-08-01,Cardiology,RTT first,181,0.08
+2023-08-01,Cardiology,RTT follow-up,122,0.08
+2023-08-01,Cardiology,non-RTT,73,0.05
+2023-08-01,Neurology,RTT first,25,0.04
+2023-08-01,Neurology,RTT follow-up,148,0.14
+2023-08-01,Neurology,non-RTT,194,0.04
+2023-08-01,Orthopedics,RTT first,160,0.14
+2023-08-01,Orthopedics,RTT follow-up,112,0.08
+2023-08-01,Orthopedics,non-RTT,101,0.06
+2023-08-01,Gastroenterology,RTT first,119,0.14
+2023-08-01,Gastroenterology,RTT follow-up,107,0.08
+2023-08-01,Gastroenterology,non-RTT,32,0.08
+2023-08-01,Dermatology,RTT first,141,0.08
+2023-08-01,Dermatology,RTT follow-up,38,0.15
+2023-08-01,Dermatology,non-RTT,68,0.06
+2023-09-01,Cardiology,RTT first,86,0.08
+2023-09-01,Cardiology,RTT follow-up,143,0.04
+2023-09-01,Cardiology,non-RTT,197,0.09
+2023-09-01,Neurology,RTT first,115,0.03
+2023-09-01,Neurology,RTT follow-up,155,0.03
+2023-09-01,Neurology,non-RTT,102,0.15
+2023-09-01,Orthopedics,RTT first,39,0.05
+2023-09-01,Orthopedics,RTT follow-up,105,0.06
+2023-09-01,Orthopedics,non-RTT,57,0.13
+2023-09-01,Gastroenterology,RTT first,80,0.13
+2023-09-01,Gastroenterology,RTT follow-up,29,0.05
+2023-09-01,Gastroenterology,non-RTT,139,0.07
+2023-09-01,Dermatology,RTT first,97,0.05
+2023-09-01,Dermatology,RTT follow-up,37,0.11
+2023-09-01,Dermatology,non-RTT,156,0.06
+2023-10-01,Cardiology,RTT first,76,0.14
+2023-10-01,Cardiology,RTT follow-up,20,0.03
+2023-10-01,Cardiology,non-RTT,164,0.09
+2023-10-01,Neurology,RTT first,185,0.14
+2023-10-01,Neurology,RTT follow-up,140,0.06
+2023-10-01,Neurology,non-RTT,174,0.12
+2023-10-01,Orthopedics,RTT first,89,0.04
+2023-10-01,Orthopedics,RTT follow-up,55,0.13
+2023-10-01,Orthopedics,non-RTT,103,0.12
+2023-10-01,Gastroenterology,RTT first,186,0.08
+2023-10-01,Gastroenterology,RTT follow-up,50,0.08
+2023-10-01,Gastroenterology,non-RTT,148,0.02
+2023-10-01,Dermatology,RTT first,144,0.11
+2023-10-01,Dermatology,RTT follow-up,176,0.04
+2023-10-01,Dermatology,non-RTT,21,0.09
+2023-11-01,Cardiology,RTT first,179,0.15
+2023-11-01,Cardiology,RTT follow-up,95,0.06
+2023-11-01,Cardiology,non-RTT,169,0.05
+2023-11-01,Neurology,RTT first,179,0.07
+2023-11-01,Neurology,RTT follow-up,160,0.04
+2023-11-01,Neurology,non-RTT,40,0.09
+2023-11-01,Orthopedics,RTT first,133,0.11
+2023-11-01,Orthopedics,RTT follow-up,162,0.03
+2023-11-01,Orthopedics,non-RTT,145,0.14
+2023-11-01,Gastroenterology,RTT first,79,0.07
+2023-11-01,Gastroenterology,RTT follow-up,28,0.11
+2023-11-01,Gastroenterology,non-RTT,70,0.08
+2023-11-01,Dermatology,RTT first,103,0.07
+2023-11-01,Dermatology,RTT follow-up,107,0.1
+2023-11-01,Dermatology,non-RTT,166,0.05
+2023-12-01,Cardiology,RTT first,199,0.03
+2023-12-01,Cardiology,RTT follow-up,195,0.04
+2023-12-01,Cardiology,non-RTT,159,0.04
+2023-12-01,Neurology,RTT first,44,0.1
+2023-12-01,Neurology,RTT follow-up,122,0.13
+2023-12-01,Neurology,non-RTT,100,0.04
+2023-12-01,Orthopedics,RTT first,48,0.04
+2023-12-01,Orthopedics,RTT follow-up,124,0.09
+2023-12-01,Orthopedics,non-RTT,116,0.1
+2023-12-01,Gastroenterology,RTT first,69,0.06
+2023-12-01,Gastroenterology,RTT follow-up,51,0.03
+2023-12-01,Gastroenterology,non-RTT,74,0.15
+2023-12-01,Dermatology,RTT first,129,0.09
+2023-12-01,Dermatology,RTT follow-up,161,0.14
+2023-12-01,Dermatology,non-RTT,134,0.14
+2024-01-01,Cardiology,RTT first,120,0.03
+2024-01-01,Cardiology,RTT follow-up,149,0.13
+2024-01-01,Cardiology,non-RTT,139,0.14
+2024-01-01,Neurology,RTT first,77,0.14
+2024-01-01,Neurology,RTT follow-up,64,0.11
+2024-01-01,Neurology,non-RTT,23,0.14
+2024-01-01,Orthopedics,RTT first,42,0.1
+2024-01-01,Orthopedics,RTT follow-up,191,0.05
+2024-01-01,Orthopedics,non-RTT,134,0.1
+2024-01-01,Gastroenterology,RTT first,57,0.1
+2024-01-01,Gastroenterology,RTT follow-up,56,0.03
+2024-01-01,Gastroenterology,non-RTT,27,0.11
+2024-01-01,Dermatology,RTT first,123,0.08
+2024-01-01,Dermatology,RTT follow-up,103,0.1
+2024-01-01,Dermatology,non-RTT,73,0.05
+2024-02-01,Cardiology,RTT first,112,0.13
+2024-02-01,Cardiology,RTT follow-up,196,0.13
+2024-02-01,Cardiology,non-RTT,53,0.02
+2024-02-01,Neurology,RTT first,127,0.07
+2024-02-01,Neurology,RTT follow-up,138,0.05
+2024-02-01,Neurology,non-RTT,104,0.06
+2024-02-01,Orthopedics,RTT first,84,0.1
+2024-02-01,Orthopedics,RTT follow-up,52,0.13
+2024-02-01,Orthopedics,non-RTT,35,0.11
+2024-02-01,Gastroenterology,RTT first,22,0.07
+2024-02-01,Gastroenterology,RTT follow-up,45,0.06
+2024-02-01,Gastroenterology,non-RTT,193,0.1
+2024-02-01,Dermatology,RTT first,195,0.11
+2024-02-01,Dermatology,RTT follow-up,59,0.06
+2024-02-01,Dermatology,non-RTT,89,0.07
+2024-03-01,Cardiology,RTT first,96,0.12
+2024-03-01,Cardiology,RTT follow-up,173,0.06
+2024-03-01,Cardiology,non-RTT,28,0.06
+2024-03-01,Neurology,RTT first,188,0.09
+2024-03-01,Neurology,RTT follow-up,125,0.13
+2024-03-01,Neurology,non-RTT,197,0.05
+2024-03-01,Orthopedics,RTT first,133,0.13
+2024-03-01,Orthopedics,RTT follow-up,60,0.02
+2024-03-01,Orthopedics,non-RTT,72,0.11
+2024-03-01,Gastroenterology,RTT first,148,0.12
+2024-03-01,Gastroenterology,RTT follow-up,140,0.09
+2024-03-01,Gastroenterology,non-RTT,73,0.1
+2024-03-01,Dermatology,RTT first,159,0.1
+2024-03-01,Dermatology,RTT follow-up,180,0.09
+2024-03-01,Dermatology,non-RTT,125,0.12
+2024-04-01,Cardiology,RTT first,146,0.15
+2024-04-01,Cardiology,RTT follow-up,95,0.05
+2024-04-01,Cardiology,non-RTT,26,0.03
+2024-04-01,Neurology,RTT first,108,0.03
+2024-04-01,Neurology,RTT follow-up,26,0.08
+2024-04-01,Neurology,non-RTT,146,0.07
+2024-04-01,Orthopedics,RTT first,28,0.1
+2024-04-01,Orthopedics,RTT follow-up,40,0.05
+2024-04-01,Orthopedics,non-RTT,23,0.09
+2024-04-01,Gastroenterology,RTT first,158,0.11
+2024-04-01,Gastroenterology,RTT follow-up,116,0.09
+2024-04-01,Gastroenterology,non-RTT,31,0.04
+2024-04-01,Dermatology,RTT first,58,0.05
+2024-04-01,Dermatology,RTT follow-up,153,0.06
+2024-04-01,Dermatology,non-RTT,178,0.05
+2024-05-01,Cardiology,RTT first,161,0.04
+2024-05-01,Cardiology,RTT follow-up,115,0.14
+2024-05-01,Cardiology,non-RTT,165,0.15
+2024-05-01,Neurology,RTT first,180,0.07
+2024-05-01,Neurology,RTT follow-up,98,0.03
+2024-05-01,Neurology,non-RTT,150,0.04
+2024-05-01,Orthopedics,RTT first,170,0.11
+2024-05-01,Orthopedics,RTT follow-up,199,0.09
+2024-05-01,Orthopedics,non-RTT,139,0.11
+2024-05-01,Gastroenterology,RTT first,163,0.04
+2024-05-01,Gastroenterology,RTT follow-up,35,0.12
+2024-05-01,Gastroenterology,non-RTT,189,0.07
+2024-05-01,Dermatology,RTT first,132,0.03
+2024-05-01,Dermatology,RTT follow-up,34,0.08
+2024-05-01,Dermatology,non-RTT,54,0.13
+2024-06-01,Cardiology,RTT first,75,0.06
+2024-06-01,Cardiology,RTT follow-up,185,0.07
+2024-06-01,Cardiology,non-RTT,109,0.05
+2024-06-01,Neurology,RTT first,85,0.08
+2024-06-01,Neurology,RTT follow-up,33,0.12
+2024-06-01,Neurology,non-RTT,138,0.08
+2024-06-01,Orthopedics,RTT first,23,0.03
+2024-06-01,Orthopedics,RTT follow-up,146,0.12
+2024-06-01,Orthopedics,non-RTT,196,0.12
+2024-06-01,Gastroenterology,RTT first,184,0.15
+2024-06-01,Gastroenterology,RTT follow-up,68,0.11
+2024-06-01,Gastroenterology,non-RTT,41,0.07
+2024-06-01,Dermatology,RTT first,118,0.15
+2024-06-01,Dermatology,RTT follow-up,141,0.07
+2024-06-01,Dermatology,non-RTT,41,0.05
+2024-07-01,Cardiology,RTT first,139,0.02
+2024-07-01,Cardiology,RTT follow-up,49,0.08
+2024-07-01,Cardiology,non-RTT,175,0.1
+2024-07-01,Neurology,RTT first,29,0.09
+2024-07-01,Neurology,RTT follow-up,74,0.11
+2024-07-01,Neurology,non-RTT,148,0.09
+2024-07-01,Orthopedics,RTT first,48,0.06
+2024-07-01,Orthopedics,RTT follow-up,150,0.04
+2024-07-01,Orthopedics,non-RTT,34,0.07
+2024-07-01,Gastroenterology,RTT first,168,0.07
+2024-07-01,Gastroenterology,RTT follow-up,66,0.07
+2024-07-01,Gastroenterology,non-RTT,33,0.06
+2024-07-01,Dermatology,RTT first,175,0.13
+2024-07-01,Dermatology,RTT follow-up,45,0.11
+2024-07-01,Dermatology,non-RTT,104,0.1
+2024-08-01,Cardiology,RTT first,110,0.02
+2024-08-01,Cardiology,RTT follow-up,87,0.04
+2024-08-01,Cardiology,non-RTT,87,0.06
+2024-08-01,Neurology,RTT first,35,0.03
+2024-08-01,Neurology,RTT follow-up,53,0.04
+2024-08-01,Neurology,non-RTT,119,0.11
+2024-08-01,Orthopedics,RTT first,79,0.12
+2024-08-01,Orthopedics,RTT follow-up,98,0.13
+2024-08-01,Orthopedics,non-RTT,171,0.05
+2024-08-01,Gastroenterology,RTT first,66,0.04
+2024-08-01,Gastroenterology,RTT follow-up,43,0.03
+2024-08-01,Gastroenterology,non-RTT,155,0.05
+2024-08-01,Dermatology,RTT first,167,0.15
+2024-08-01,Dermatology,RTT follow-up,40,0.11
+2024-08-01,Dermatology,non-RTT,106,0.04
+2024-09-01,Cardiology,RTT first,127,0.14
+2024-09-01,Cardiology,RTT follow-up,149,0.1
+2024-09-01,Cardiology,non-RTT,154,0.12
+2024-09-01,Neurology,RTT first,162,0.1
+2024-09-01,Neurology,RTT follow-up,69,0.07
+2024-09-01,Neurology,non-RTT,38,0.13
+2024-09-01,Orthopedics,RTT first,185,0.11
+2024-09-01,Orthopedics,RTT follow-up,148,0.15
+2024-09-01,Orthopedics,non-RTT,92,0.12
+2024-09-01,Gastroenterology,RTT first,141,0.03
+2024-09-01,Gastroenterology,RTT follow-up,54,0.04
+2024-09-01,Gastroenterology,non-RTT,45,0.09
+2024-09-01,Dermatology,RTT first,110,0.1
+2024-09-01,Dermatology,RTT follow-up,49,0.15
+2024-09-01,Dermatology,non-RTT,78,0.14
+2024-10-01,Cardiology,RTT first,71,0.03
+2024-10-01,Cardiology,RTT follow-up,46,0.07
+2024-10-01,Cardiology,non-RTT,192,0.07
+2024-10-01,Neurology,RTT first,55,0.12
+2024-10-01,Neurology,RTT follow-up,45,0.11
+2024-10-01,Neurology,non-RTT,91,0.03
+2024-10-01,Orthopedics,RTT first,188,0.13
+2024-10-01,Orthopedics,RTT follow-up,111,0.1
+2024-10-01,Orthopedics,non-RTT,132,0.03
+2024-10-01,Gastroenterology,RTT first,93,0.05
+2024-10-01,Gastroenterology,RTT follow-up,120,0.04
+2024-10-01,Gastroenterology,non-RTT,106,0.04
+2024-10-01,Dermatology,RTT first,114,0.04
+2024-10-01,Dermatology,RTT follow-up,106,0.14
+2024-10-01,Dermatology,non-RTT,101,0.11
+2024-11-01,Cardiology,RTT first,109,0.07
+2024-11-01,Cardiology,RTT follow-up,141,0.1
+2024-11-01,Cardiology,non-RTT,28,0.04
+2024-11-01,Neurology,RTT first,77,0.04
+2024-11-01,Neurology,RTT follow-up,52,0.04
+2024-11-01,Neurology,non-RTT,160,0.11
+2024-11-01,Orthopedics,RTT first,185,0.08
+2024-11-01,Orthopedics,RTT follow-up,171,0.07
+2024-11-01,Orthopedics,non-RTT,190,0.05
+2024-11-01,Gastroenterology,RTT first,89,0.13
+2024-11-01,Gastroenterology,RTT follow-up,69,0.08
+2024-11-01,Gastroenterology,non-RTT,181,0.02
+2024-11-01,Dermatology,RTT first,136,0.05
+2024-11-01,Dermatology,RTT follow-up,191,0.1
+2024-11-01,Dermatology,non-RTT,132,0.05
+2024-12-01,Cardiology,RTT first,182,0.14
+2024-12-01,Cardiology,RTT follow-up,176,0.11
+2024-12-01,Cardiology,non-RTT,199,0.08
+2024-12-01,Neurology,RTT first,121,0.11
+2024-12-01,Neurology,RTT follow-up,112,0.14
+2024-12-01,Neurology,non-RTT,187,0.14
+2024-12-01,Orthopedics,RTT first,139,0.1
+2024-12-01,Orthopedics,RTT follow-up,35,0.06
+2024-12-01,Orthopedics,non-RTT,82,0.1
+2024-12-01,Gastroenterology,RTT first,180,0.1
+2024-12-01,Gastroenterology,RTT follow-up,51,0.14
+2024-12-01,Gastroenterology,non-RTT,78,0.05
+2024-12-01,Dermatology,RTT first,97,0.05
+2024-12-01,Dermatology,RTT follow-up,81,0.09
+2024-12-01,Dermatology,non-RTT,40,0.07
