@@ -60,11 +60,11 @@ if 'appointment_df' in st.session_state and st.session_state.appointment_df is n
                     st.warning("There is NOT enough RTT first appointment capacity for forecasted referrals.")
 
             # User Input for Utilization and DNA Rate
-            st.subheader("Adjust Utilization and DNA Rate")
+            st.subheader("Adjust Utilisation and DNA Rate")
 
             col1, col2 = st.columns(2)
             with col1:
-                utilization_rate = st.slider('Utilization Rate (%)', min_value=0, max_value=100, value=85) / 100.0
+                utilization_rate = st.slider('Utilisation Rate (%)', min_value=0, max_value=100, value=85) / 100.0
             with col2:
                 dna_rate = st.slider('Did Not Attend (DNA) Rate (%)', min_value=0, max_value=100, value=10) / 100.0
 
