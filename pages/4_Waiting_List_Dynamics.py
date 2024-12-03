@@ -5,7 +5,7 @@ import plotly.graph_objects as go
 st.title("Waiting List Dynamics")
 
 st.write("""
-Analyse the dynamics of the waiting list over the year.
+Analyze the dynamics of the waiting list over the year.
 """)
 
 # Check if necessary variables are available in session state
@@ -97,6 +97,18 @@ if 'forecasted_total' in st.session_state and \
     st.write(f"**RTT First Appointments Needed:** {waiting_list_additions:.0f}")
     st.write(f"**RTT Follow-up Appointments (Available Capacity):** {available_rtt_followup:.0f}")
     st.write(f"**Non-RTT Appointments (Available Capacity):** {available_non_rtt:.0f}")
+
+    # Calculate RTT first to follow-up ratios
+    if available_rtt_first > 0:
+        ratio_rtt_first_to_followup = available_rtt_followup / available_rtt_first
+        ratio_rtt_first_to_all_followups = (available_rtt_followup + available_non_rtt) / available_rtt_first
+    else:
+        ratio_rtt_first_to_followup = float('inf')
+        ratio_rtt_first_to_all_followups = float('inf')
+
+    st.subheader("RTT First to Follow-Up Ratios")
+    st.write(f"**RTT First to RTT Follow-Up Ratio:** {ratio_rtt_first_to_followup:.2f}")
+    st.write(f"**RTT First to All Follow-Up Ratio (Including Non-RTT):** {ratio_rtt_first_to_all_followups:.2f}")
 
     # Highlighting the impact of adjustments made to appointment capacity
     st.subheader("Impact of Adjustments to Appointment Capacity on Waiting List")
