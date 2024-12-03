@@ -10,7 +10,7 @@ st.set_page_config(
 st.title('Welcome to the Outpatient Demand and Capacity Analysis App')
 
 st.write("""
-This application allows you to analyze outpatient (non-admitted) demand and capacity, focusing on specialties and appointments.
+This application allows you to analyse outpatient (non-admitted) demand and capacity, focusing on specialties and appointments.
 Use the navigation on the left to select different sections of the analysis.
 """)
 
