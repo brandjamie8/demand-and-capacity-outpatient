@@ -72,35 +72,34 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
         
           
           
-         # Summary of appointments during the baseline period
-         st.subheader("Baseline Summary of Appointments Attended (Scaled to 12 Months)")
-         
-         # Calculate the number of baseline months
-         num_baseline_months = (baseline_end.year - baseline_start.year) * 12 + (baseline_end.month - baseline_start.month) + 1
-         
-         # Group the baseline data by appointment type and sum the appointments attended
-         baseline_summary = baseline_appointment_df.groupby('appointment_type', observed=False)['appointments_attended'].sum().reset_index()
-         
-         # Scale the appointments to a 12-month equivalent
-         baseline_summary['appointments_attended'] = (baseline_summary['appointments_attended'] / num_baseline_months) * 12
-         baseline_summary['appointments_attended'] = baseline_summary['appointments_attended'].astype(int)
-         
-         # Reorder rows and format titles
-         order = ['RTT First', 'RTT Follow-up', 'Non-RTT']
-         baseline_summary['appointment_type'] = pd.Categorical(baseline_summary['appointment_type'], categories=order, ordered=True)
-         baseline_summary = baseline_summary.sort_values('appointment_type')
-         
-         # Calculate grand total for the scaled values
-         grand_total_baseline = baseline_summary['appointments_attended'].sum()
-         total_row = pd.DataFrame({'appointment_type': ['Total'], 'appointments_attended': [grand_total_baseline]})
-         baseline_summary = pd.concat([baseline_summary, total_row], ignore_index=True)
-         
-         # Display the table without index and with proper formatting
-         st.table(baseline_summary.style.set_properties(**{'text-align': 'left'}).set_caption("Baseline Appointments Summary (Scaled to 12 Months)").set_table_styles([
-             {'selector': 'th', 'props': [('font-weight', 'bold')]},
-             {'selector': 'tr:nth-child(odd)', 'props': [('background-color', '#f2f2f2')]}
-         ]))
-
+        # Summary of appointments during the baseline period
+        st.subheader("Baseline Summary of Appointments Attended (Scaled to 12 Months)")
+      
+        # Calculate the number of baseline months
+        num_baseline_months = (baseline_end.year - baseline_start.year) * 12 + (baseline_end.month - baseline_start.month) + 1
+      
+        # Group the baseline data by appointment type and sum the appointments attended
+        baseline_summary = baseline_appointment_df.groupby('appointment_type', observed=False)['appointments_attended'].sum().reset_index()
+      
+        # Scale the appointments to a 12-month equivalent
+        baseline_summary['appointments_attended'] = (baseline_summary['appointments_attended'] / num_baseline_months) * 12
+        baseline_summary['appointments_attended'] = baseline_summary['appointments_attended'].astype(int)
+      
+        # Reorder rows and format titles
+        order = ['RTT First', 'RTT Follow-up', 'Non-RTT']
+        baseline_summary['appointment_type'] = pd.Categorical(baseline_summary['appointment_type'], categories=order, ordered=True)
+        baseline_summary = baseline_summary.sort_values('appointment_type')
+      
+        # Calculate grand total for the scaled values
+        grand_total_baseline = baseline_summary['appointments_attended'].sum()
+        total_row = pd.DataFrame({'appointment_type': ['Total'], 'appointments_attended': [grand_total_baseline]})
+        baseline_summary = pd.concat([baseline_summary, total_row], ignore_index=True)
+      
+        # Display the table without index and with proper formatting
+        st.table(baseline_summary.style.set_properties(**{'text-align': 'left'}).set_caption("Baseline Appointments Summary (Scaled to 12 Months)").set_table_styles([
+            {'selector': 'th', 'props': [('font-weight', 'bold')]},
+            {'selector': 'tr:nth-child(odd)', 'props': [('background-color', '#f2f2f2')]}
+        ]))
 
 
 
