@@ -69,24 +69,25 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
             )
 
         st.plotly_chart(fig, use_container_width=True)
+        
+          
+          
+          # Calculate scaled appointments for 12 months equivalent
+        num_baseline_months = (baseline_end.year - baseline_start.year) * 12 + (baseline_end.month - baseline_start.month) + 1
+        scaling_factor = 12 / num_baseline_months
+        scaled_appointments = baseline_appointment_df.groupby('appointment_type', observed=False)['appointments_attended'].sum() * scaling_factor
+        scaled_appointments = scaled_appointments.reset_index()
 
-        # Summary of appointments during the baseline period
-        st.subheader("Baseline Summary of Appointments Attended")
-        baseline_summary = baseline_appointment_df.groupby('appointment_type', observed=False)['appointments_attended'].sum().reset_index()
-        baseline_summary['appointments_attended'] = baseline_summary['appointments_attended'].astype(int)
+        # Add grand total row
+        grand_total_scaled = scaled_appointments['appointments_attended'].sum()
+        total_row = pd.DataFrame({'appointment_type': ['Total'], 'appointments_attended': [grand_total_scaled]})
+        scaled_appointments = pd.concat([scaled_appointments, total_row], ignore_index=True)
 
-        # Reorder rows and format titles
-        order = ['RTT First', 'RTT Follow-up', 'Non-RTT']
-        baseline_summary['appointment_type'] = pd.Categorical(baseline_summary['appointment_type'], categories=order, ordered=True)
-        baseline_summary = baseline_summary.sort_values('appointment_type')
+        # Display Baseline Summary of Scaled Appointments Attended
+        st.subheader("Baseline Summary of Appointments Attended (Scaled to 12 Months)")
+        st.table(scaled_appointments.style.set_caption("Baseline Appointments Summary (Scaled to 12 Months)").applymap(lambda x: 'font-weight: bold' if x == 'Total' else ''))
 
-        # Calculate grand total
-        grand_total_baseline = baseline_summary['appointments_attended'].sum()
-        total_row = pd.DataFrame({'appointment_type': ['Total'], 'appointments_attended': [grand_total_baseline]})
-        baseline_summary = pd.concat([baseline_summary, total_row], ignore_index=True)
 
-        # Display table without index
-        st.table(baseline_summary.style.set_properties(**{'text-align': 'left'}).set_caption("Baseline Appointments Summary"))
 
         # Comparison: Number of Referrals vs. First Appointments (scaled for 12 months)
         st.subheader("Comparison of Referrals vs. First Appointments (Scaled to 12-Month Equivalent)")
