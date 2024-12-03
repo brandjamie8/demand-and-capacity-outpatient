@@ -231,13 +231,13 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
                 font=dict(color='black'),
                 borderpad=3  # Padding between text and border
             )
-         fig_grand_total.update_layout(
+        fig_grand_total.update_layout(
               xaxis_title='',
               yaxis_title='Number of Appointments',
               yaxis_tickformat=',',
               title_x=0.5,
               title=''
-          )
+        )
       
         st.plotly_chart(fig_grand_total, use_container_width=True)
       
