@@ -213,13 +213,6 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
             font=dict(size=12, color='red')
         )
       
-        fig_grand_total.update_traces(
-            texttemplate='%{text:.0f}', 
-            textposition='outside', 
-            textfont=dict(color='black'),
-            textbackgroundcolor='white'  # Adding white background to the text labels
-        )
-      
         # Adding annotations with a white background
         for i, row in grand_total_df.iterrows():
             fig_grand_total.add_annotation(
