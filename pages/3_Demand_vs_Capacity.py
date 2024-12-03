@@ -13,7 +13,7 @@ if ('referral_df' in st.session_state and st.session_state.referral_df is not No
     selected_specialty = st.session_state.selected_specialty
 
     # Baseline Referral Analysis
-    st.subheader("Referral Demand Forecast")
+    st.subheader(f"Referral Demand Forecast for {selected_specialty}")
 
     # Get forecasted referral data from session state or calculate it again
     if 'forecasted_referrals' in st.session_state:
