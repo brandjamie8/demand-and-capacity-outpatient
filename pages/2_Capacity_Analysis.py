@@ -133,8 +133,8 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
       
         # Display ratios
         st.write("**RTT First to RTT Follow-up Ratios:**")
-        st.write(f"- **Attended Appointments:** {rtt_first_to_followup_ratio_attended:.2f}" if rtt_first_to_followup_ratio_attended is not None else "- **Attended Appointments:** Not calculable (no RTT First appointments)")
-        st.write(f"- **Appointments for Removals:** {rtt_first_to_followup_ratio_removals:.2f}" if rtt_first_to_followup_ratio_removals is not None else "- **Appointments for Removals:** Not calculable (no RTT First appointments for removals)")
+        st.write(f"- **Attended RTT Follow-up Appointments per RTT First Appointments:** {rtt_first_to_followup_ratio_attended:.2f}" if rtt_first_to_followup_ratio_attended is not None else "- **Attended Appointments:** Not calculable (no RTT First appointments)")
+        st.write(f"- **RTT Follow-up Appointments Required per Clock Stop:** {rtt_first_to_followup_ratio_removals:.2f}" if rtt_first_to_followup_ratio_removals is not None else "- **Appointments for Removals:** Not calculable (no RTT First appointments for removals)")
       
         # Evaluate alignment
         if rtt_first_to_followup_ratio_attended is not None and rtt_first_to_followup_ratio_removals is not None:
