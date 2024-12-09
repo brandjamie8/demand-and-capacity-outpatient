@@ -79,7 +79,7 @@ if ('referral_df' in st.session_state and st.session_state.referral_df is not No
             if row['Available Appointments'] < row['Required Appointments']:
                 gaps_exist = True
                 gap = row['Required Appointments'] - row['Available Appointments']
-                st.warning(f"Capacity gap for {row['Appointment Type']}: {gap} appointments")
+                st.warning(f"Capacity gap for {row['Appointment Type']}: {gap:.0f} appointments")
 
         if not gaps_exist:
             st.info("There are no capacity gaps. Current capacity is sufficient to meet forecasted demand.")
