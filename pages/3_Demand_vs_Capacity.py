@@ -28,8 +28,8 @@ if ('referral_df' in st.session_state and st.session_state.referral_df is not No
 
     # Ratios for waiting list removals
     st.subheader("Appointment Type Ratios Based on Waiting List Removals")
-    rtt_first_to_followup_ratio = st.session_state.get('rtt_first_to_followup_ratio', 2.0)  # Example ratio
-    rtt_first_to_non_rtt_ratio = st.session_state.get('rtt_first_to_non_rtt_ratio', 0.5)  # Example ratio
+    rtt_first_to_followup_ratio = st.session_state.first_followup_removals_ratio
+    rtt_first_to_non_rtt_ratio = st.session_state.first_non_rtt_removals_ratio
 
     st.write(f"**RTT First to Follow-up Ratio (Waiting List Removals):** {rtt_first_to_followup_ratio:.2f}")
     st.write(f"**RTT First to Non-RTT Ratio (Waiting List Removals):** {rtt_first_to_non_rtt_ratio:.2f}")
