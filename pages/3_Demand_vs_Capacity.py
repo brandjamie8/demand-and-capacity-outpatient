@@ -54,7 +54,7 @@ if ('referral_df' in st.session_state and st.session_state.referral_df is not No
         comparison_data = {
             'Appointment Type': ['RTT First', 'RTT Follow-up', 'Non-RTT'],
             'Required Appointments': [rtt_first_demand, rtt_followup_demand, non_rtt_demand],
-            'Future Attended Appointments<br>(Baseline Scaled to 12 Months)': [available_rtt_first, available_rtt_followup, available_non_rtt]
+            'Future Attended Appointments (Baseline Scaled to 12 Months)': [available_rtt_first, available_rtt_followup, available_non_rtt]
         }
         comparison_df = pd.DataFrame(comparison_data)
 
@@ -62,7 +62,7 @@ if ('referral_df' in st.session_state and st.session_state.referral_df is not No
         fig_comparison = px.bar(
             comparison_df,
             x='Appointment Type',
-            y=['Required Appointments', 'Future Attended Appointments<br>(Baseline Scaled to 12 Months)'],
+            y=['Required Appointments', 'Future Attended Appointments (Baseline Scaled to 12 Months)'],
             barmode='group',
             title='Required vs Available Appointments for Next Year',
             labels={'value': 'Number of Appointments', 'Appointment Type': 'Type'},
@@ -72,16 +72,17 @@ if ('referral_df' in st.session_state and st.session_state.referral_df is not No
 
         col1, _ = st.columns(2)
         with col1:
-           st.table(comparison_df.style.set_table_attributes("style='width: 50%'").set_table_styles([{'selector': 'th', 'props': [('white-space', 'pre-wrap')]}]))
+           comparison_df.columns = ['Appointment Type', 'Required Appointments', 'Future Attended Appointments\n(Baseline Scaled to 12 Months)']
+           st.table(comparison_df)
 
        
         # Highlight Capacity Gaps
         st.write("**Capacity Gaps**")
         gaps_exist = False
         for index, row in comparison_df.iterrows():
-            if row['Future Attended Appointments<br>(Baseline Scaled to 12 Months)'] < row['Required Appointments']:
+            if row['Future Attended Appointments (Baseline Scaled to 12 Months)'] < row['Required Appointments']:
                 gaps_exist = True
-                gap = row['Required Appointments'] - row['Future Attended Appointments<br>(Baseline Scaled to 12 Months)']
+                gap = row['Required Appointments'] - row['Future Attended Appointments (Baseline Scaled to 12 Months)']
                 st.warning(f"Capacity gap for {row['Appointment Type']}: {gap:.0f} appointments")
 
         if not gaps_exist:
