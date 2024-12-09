@@ -49,7 +49,9 @@ if ('referral_df' in st.session_state and st.session_state.referral_df is not No
         # Merge the data
         merged_df = pd.merge(appointment_specialty_df, referral_specialty_df, on=['month', 'specialty'], how='inner')
         # Convert 'month' column to datetime and adjust to end of month
-        merged_df['month'] = pd.to_datetime(merged_df['month']).dt.to_period('M').dt.to_timestamp('M')
+        merged_df['month'] = pd.to_datetime(merged_df['month'], errors='coerce').dt.to_period('M').dt.to_timestamp('M')
+        # Drop rows with NaT in 'month'
+        merged_df = merged_df.dropna(subset=['month'])
         # Sort by month
         merged_df = merged_df.sort_values('month')
 
@@ -80,29 +82,30 @@ if ('referral_df' in st.session_state and st.session_state.referral_df is not No
         with col1:
             baseline_start_date = st.date_input(
                 'Baseline Start Date',
-                value=max_date - pd.DateOffset(months=5)
+                value=max_date - pd.DateOffset(months=5) if pd.notnull(max_date) else None
             )
         with col2:
             baseline_end_date = st.date_input(
                 'Baseline End Date',
-                value=max_date
+                value=max_date if pd.notnull(max_date) else None
             )
 
         # Convert selected dates to datetime
-        baseline_start_date = pd.to_datetime(baseline_start_date).to_period('M').to_timestamp('M')
-        baseline_end_date = pd.to_datetime(baseline_end_date).to_period('M').to_timestamp('M')
+        if baseline_start_date and baseline_end_date:
+            baseline_start_date = pd.to_datetime(baseline_start_date).to_period('M').to_timestamp('M')
+            baseline_end_date = pd.to_datetime(baseline_end_date).to_period('M').to_timestamp('M')
 
-        # Highlight the baseline period in the chart
-        if baseline_start_date != baseline_end_date:
-            fig1.add_vrect(
-                x0=baseline_start_date,
-                x1=baseline_end_date,
-                fillcolor="LightGrey",
-                opacity=0.5,
-                layer="below",
-                line_width=0,
-            )
-            fig1_placeholder.plotly_chart(fig1, use_container_width=True)
+            # Highlight the baseline period in the chart
+            if baseline_start_date != baseline_end_date:
+                fig1.add_vrect(
+                    x0=baseline_start_date,
+                    x1=baseline_end_date,
+                    fillcolor="LightGrey",
+                    opacity=0.5,
+                    layer="below",
+                    line_width=0,
+                )
+                fig1_placeholder.plotly_chart(fig1, use_container_width=True)
 
         ### **3. Waiting List Over Time Plot**
         st.subheader("Total Size of the Waiting List Over Time")
