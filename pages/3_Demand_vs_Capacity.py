@@ -72,7 +72,7 @@ if ('referral_df' in st.session_state and st.session_state.referral_df is not No
 
         col1, _ = st.columns(2)
         with col1:
-           st.table(comparison_df.style.set_table_attributes("style='width: 50%'").set_table_styles([{'selector': 'th', 'props': [('white-space', 'pre-wrap')]}
+           st.table(comparison_df.style.set_table_attributes("style='width: 50%'").set_table_styles([{'selector': 'th', 'props': [('white-space', 'pre-wrap')]}]))
 
        
         # Highlight Capacity Gaps
