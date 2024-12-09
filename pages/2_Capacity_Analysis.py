@@ -110,13 +110,10 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
         # Comparison: Number of Referrals vs. First Appointments (scaled for 12 months)
         st.subheader("Comparison of Referrals vs. First Appointments (Scaled to 12-Month Equivalent)")
         num_baseline_months = (baseline_end.year - baseline_start.year) * 12 + (baseline_end.month - baseline_start.month) + 1
-        total_referrals_baseline = specialty_referral_df[(specialty_referral_df['month'] >= baseline_start) & (specialty_referral_df['month'] <= baseline_end)]['referrals'].sum()
-        total_referrals_scaled = (total_referrals_baseline / num_baseline_months) * 12
-
         total_first_appointments = baseline_summary.loc[baseline_summary['appointment_type'] == 'RTT First', 'appointments_attended'].sum()
         total_first_appointments_scaled = baseline_summary.loc[baseline_summary['appointment_type'] == 'RTT First', 'appointments_attended'].sum()
 
-        st.write(f"**Total Referrals for Next Year (Scaled):** {int(total_referrals_scaled)}")
+        st.write(f"**Total Referrals for Next Year (Scaled):** {int(st.session_state['forecasted_total'])}")
         st.write(f"**Total RTT First Appointments Attended for Next Year (Scaled):** {int(total_first_appointments_scaled)}")
 
         if total_first_appointments_scaled >= total_referrals_scaled:
