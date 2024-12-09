@@ -18,25 +18,25 @@ if ('referral_df' in st.session_state and st.session_state.referral_df is not No
     # Get forecasted referral data from session state or calculate it again
     if 'forecasted_referrals' in st.session_state:
         forecasted_referrals_df = st.session_state['forecasted_referrals']
-        forecasted_total = forecasted_referrals_df['forecasted_referrals'].sum()
+        forecasted_total = round(forecasted_referrals_df['forecasted_referrals'].sum())
     else:
         st.error("Please complete the referral demand analysis to forecast referrals.")
 
-    st.write(f"**Total Forecasted Referrals for Next Year:** {forecasted_total:.0f}")
+    st.write(f"**Total Forecasted Referrals for Next Year:** {forecasted_total}")
     st.write(forecasted_referrals_df)
 
     # Baseline Appointment Capacity
     st.subheader("Baseline and Projected Capacity Comparison")
 
     if ('available_rtt_first' in st.session_state and 'available_rtt_followup' in st.session_state and 'available_non_rtt' in st.session_state):
-        available_rtt_first = st.session_state.available_rtt_first
-        available_rtt_followup = st.session_state.available_rtt_followup
-        available_non_rtt = st.session_state.available_non_rtt
+        available_rtt_first = round(st.session_state.available_rtt_first)
+        available_rtt_followup = round(st.session_state.available_rtt_followup)
+        available_non_rtt = round(st.session_state.available_non_rtt)
 
         # Calculate total forecasted demand by appointment type
-        rtt_first_demand = forecasted_referrals_df[forecasted_referrals_df['priority'] == '2-week wait']['forecasted_referrals'].sum()
-        rtt_followup_demand = forecasted_referrals_df[forecasted_referrals_df['priority'] == 'Urgent']['forecasted_referrals'].sum()
-        non_rtt_demand = forecasted_referrals_df[forecasted_referrals_df['priority'] == 'Routine']['forecasted_referrals'].sum()
+        rtt_first_demand = round(forecasted_referrals_df[forecasted_referrals_df['priority'] == '2-week wait']['forecasted_referrals'].sum())
+        rtt_followup_demand = round(forecasted_referrals_df[forecasted_referrals_df['priority'] == 'Urgent']['forecasted_referrals'].sum())
+        non_rtt_demand = round(forecasted_referrals_df[forecasted_referrals_df['priority'] == 'Routine']['forecasted_referrals'].sum())
 
         # Create a DataFrame to compare demand and capacity
         comparison_data = {
@@ -60,10 +60,15 @@ if ('referral_df' in st.session_state and st.session_state.referral_df is not No
 
         # Highlight Capacity Gaps
         st.write("**Capacity Gaps**")
+        gaps_exist = False
         for index, row in comparison_df.iterrows():
             if row['Available Appointments'] < row['Required Appointments']:
+                gaps_exist = True
                 gap = row['Required Appointments'] - row['Available Appointments']
-                st.warning(f"Capacity gap for {row['Appointment Type']}: {gap:.0f} appointments")
+                st.warning(f"Capacity gap for {row['Appointment Type']}: {gap} appointments")
+
+        if not gaps_exist:
+            st.info("There are no capacity gaps. Current capacity is sufficient to meet forecasted demand.")
 
     else:
         st.error("Please complete the capacity analysis to project next year's capacity.")
