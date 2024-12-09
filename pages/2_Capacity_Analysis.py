@@ -115,7 +115,12 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
         # Calculate the RTT First to RTT Follow-up ratio from the displayed table
         rtt_first_attended = baseline_summary.loc[baseline_summary['appointment_type'] == 'RTT First', 'appointments_attended'].sum()
         rtt_followup_attended = baseline_summary.loc[baseline_summary['appointment_type'] == 'RTT Follow-up', 'appointments_attended'].sum()
-      
+        non_rtt_attended = baseline_summary.loc[baseline_summary['appointment_type'] == 'Non-RTT', 'appointments_attended'].sum()
+
+        st.session_state.available_rtt_first = rtt_first_attended
+        st.session_state.available_rtt_followup = rtt_followup_attended
+        st.session_state.available_non_rtt = non_rtt_attended
+          
         if rtt_first_attended > 0:
             rtt_first_to_followup_ratio_attended = rtt_followup_attended / rtt_first_attended
         else:
