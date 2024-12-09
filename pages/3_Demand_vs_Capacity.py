@@ -18,12 +18,29 @@ if ('referral_df' in st.session_state and st.session_state.referral_df is not No
     # Get forecasted referral data from session state or calculate it again
     if 'forecasted_referrals' in st.session_state:
         forecasted_referrals_df = st.session_state['forecasted_referrals']
-        forecasted_total = round(forecasted_referrals_df['forecasted_referrals'].sum())
+        forecasted_referrals_df['forecasted_referrals'] = forecasted_referrals_df['forecasted_referrals'].round()
+        forecasted_total = forecasted_referrals_df['forecasted_referrals'].sum()
     else:
         st.error("Please complete the referral demand analysis to forecast referrals.")
 
     st.write(f"**Total Forecasted Referrals for Next Year:** {forecasted_total}")
     st.write(forecasted_referrals_df)
+
+    # Ratios for waiting list removals
+    st.subheader("Appointment Type Ratios Based on Waiting List Removals")
+    rtt_first_to_followup_ratio = st.session_state.get('rtt_first_to_followup_ratio', 2.0)  # Example ratio
+    rtt_first_to_non_rtt_ratio = st.session_state.get('rtt_first_to_non_rtt_ratio', 0.5)  # Example ratio
+
+    st.write(f"**RTT First to Follow-up Ratio (Waiting List Removals):** {rtt_first_to_followup_ratio:.2f}")
+    st.write(f"**RTT First to Non-RTT Ratio (Waiting List Removals):** {rtt_first_to_non_rtt_ratio:.2f}")
+
+    # Calculate required appointments
+    rtt_first_demand = forecasted_total  # Total referrals equal RTT First demand
+    rtt_followup_demand = round(rtt_first_demand * rtt_first_to_followup_ratio)
+    non_rtt_demand = round(rtt_first_demand * rtt_first_to_non_rtt_ratio)
+
+    # Display methodology
+    st.write("The required number of first appointments is equal to the total forecasted referrals. Follow-up and Non-RTT appointments are calculated using the ratios derived from waiting list removals.")
 
     # Baseline Appointment Capacity
     st.subheader("Baseline and Projected Capacity Comparison")
@@ -33,11 +50,6 @@ if ('referral_df' in st.session_state and st.session_state.referral_df is not No
         available_rtt_followup = round(st.session_state.available_rtt_followup)
         available_non_rtt = round(st.session_state.available_non_rtt)
 
-        # Calculate total forecasted demand by appointment type
-        rtt_first_demand = round(forecasted_referrals_df[forecasted_referrals_df['priority'] == '2-week wait']['forecasted_referrals'].sum())
-        rtt_followup_demand = round(forecasted_referrals_df[forecasted_referrals_df['priority'] == 'Urgent']['forecasted_referrals'].sum())
-        non_rtt_demand = round(forecasted_referrals_df[forecasted_referrals_df['priority'] == 'Routine']['forecasted_referrals'].sum())
-
         # Create a DataFrame to compare demand and capacity
         comparison_data = {
             'Appointment Type': ['RTT First', 'RTT Follow-up', 'Non-RTT'],
@@ -45,6 +57,8 @@ if ('referral_df' in st.session_state and st.session_state.referral_df is not No
             'Available Appointments': [available_rtt_first, available_rtt_followup, available_non_rtt]
         }
         comparison_df = pd.DataFrame(comparison_data)
+        comparison_df['Required Appointments'] = comparison_df['Required Appointments'].round()
+        comparison_df['Available Appointments'] = comparison_df['Available Appointments'].round()
 
         # Bar Chart to compare required vs available appointments
         fig_comparison = px.bar(
@@ -69,6 +83,12 @@ if ('referral_df' in st.session_state and st.session_state.referral_df is not No
 
         if not gaps_exist:
             st.info("There are no capacity gaps. Current capacity is sufficient to meet forecasted demand.")
+
+        # Evaluate waiting list impact
+        if gaps_exist:
+            st.write("The capacity gaps indicate that the waiting list is likely to grow. This will be explored further on the next page under **Waiting List Dynamics**.")
+        else:
+            st.write("Since there are no capacity gaps, the waiting list is likely to shrink, assuming referrals remain consistent. This will be analyzed further under **Waiting List Dynamics**.")
 
     else:
         st.error("Please complete the capacity analysis to project next year's capacity.")
