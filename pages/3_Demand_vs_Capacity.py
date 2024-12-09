@@ -70,9 +70,8 @@ if ('referral_df' in st.session_state and st.session_state.referral_df is not No
         )
         st.plotly_chart(fig_comparison, use_container_width=True)
 
-        col1, _ = st.columns(2)
+        col1, _, _ = st.columns(3)
         with col1:
-           comparison_df.columns = ['Appointment Type', 'Required Appointments', 'Future Attended Appointments\n(Baseline Scaled to 12 Months)']
            st.table(comparison_df)
 
        
