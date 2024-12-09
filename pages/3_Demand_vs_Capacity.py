@@ -40,7 +40,7 @@ if ('referral_df' in st.session_state and st.session_state.referral_df is not No
     non_rtt_demand = round(rtt_first_demand * rtt_first_to_non_rtt_ratio)
 
     # Display methodology
-    st.write("The required number of first appointments is equal to the total forecasted referrals. Follow-up and Non-RTT appointments are calculated using the ratios derived from waiting list removals.")
+    st.write("The required number of first appointments attended should at least be equal to the total forecasted referrals. Follow-up and Non-RTT appointments are calculated using the ratios derived from waiting list removals.")
 
     # Baseline Appointment Capacity
     st.subheader("Baseline and Projected Capacity Comparison")
