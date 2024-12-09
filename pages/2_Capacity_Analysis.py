@@ -107,6 +107,49 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
         with col1:
            st.table(baseline_summary.style.apply(highlight_total_row, axis=1).set_properties(**{'text-align': 'left'}).set_caption("Baseline Appointments Summary (Scaled to 12 Months)"))
 
+
+
+        # Add a section to analyze the ratio of RTT First to RTT Follow-up appointments
+        st.subheader("RTT First to RTT Follow-up Ratio Analysis")
+      
+        # Calculate the RTT First to RTT Follow-up ratio from the displayed table
+        rtt_first_attended = baseline_summary.loc[baseline_summary['appointment_type'] == 'RTT First', 'appointments_attended'].sum()
+        rtt_followup_attended = baseline_summary.loc[baseline_summary['appointment_type'] == 'RTT Follow-up', 'appointments_attended'].sum()
+      
+        if rtt_first_attended > 0:
+            rtt_first_to_followup_ratio_attended = rtt_followup_attended / rtt_first_attended
+        else:
+            rtt_first_to_followup_ratio_attended = None
+      
+        # Extract appointments for removals
+        appointments_for_removals = baseline_appointment_df.groupby('appointment_type')['appointments_for_removals'].sum().reset_index()
+        rtt_first_removals = appointments_for_removals.loc[appointments_for_removals['appointment_type'] == 'RTT First', 'appointments_for_removals'].sum()
+        rtt_followup_removals = appointments_for_removals.loc[appointments_for_removals['appointment_type'] == 'RTT Follow-up', 'appointments_for_removals'].sum()
+      
+        if rtt_first_removals > 0:
+            rtt_first_to_followup_ratio_removals = rtt_followup_removals / rtt_first_removals
+        else:
+            rtt_first_to_followup_ratio_removals = None
+      
+        # Display ratios
+        st.write("**RTT First to RTT Follow-up Ratios:**")
+        st.write(f"- **Attended Appointments:** {rtt_first_to_followup_ratio_attended:.2f}" if rtt_first_to_followup_ratio_attended is not None else "- **Attended Appointments:** Not calculable (no RTT First appointments)")
+        st.write(f"- **Appointments for Removals:** {rtt_first_to_followup_ratio_removals:.2f}" if rtt_first_to_followup_ratio_removals is not None else "- **Appointments for Removals:** Not calculable (no RTT First appointments for removals)")
+      
+        # Evaluate alignment
+        if rtt_first_to_followup_ratio_attended is not None and rtt_first_to_followup_ratio_removals is not None:
+            if abs(rtt_first_to_followup_ratio_attended - rtt_first_to_followup_ratio_removals) <= 0.1:
+                st.success("The ratio of RTT First to RTT Follow-up appointments is well-aligned with the ratio required for removals. This suggests that the balance of appointment types aligns with what is needed to manage the waiting list.")
+            elif rtt_first_to_followup_ratio_attended > rtt_first_to_followup_ratio_removals:
+                st.warning("The ratio of RTT First to RTT Follow-up appointments is higher than the ratio required for removals. This might indicate an over-focus on first appointments, which could lead to a bottleneck in follow-ups.")
+            else:
+                st.warning("The ratio of RTT First to RTT Follow-up appointments is lower than the ratio required for removals. This could indicate insufficient follow-ups, potentially causing delays in clearing the waiting list.")
+        else:
+            st.error("One or both ratios could not be calculated. Ensure data availability for both attended appointments and removals to perform this analysis.")
+      
+
+
+          
         # Comparison: Number of Referrals vs. First Appointments (scaled for 12 months)
         st.subheader("Comparison of Referrals vs. First Appointments (Scaled to 12-Month Equivalent)")
         num_baseline_months = (baseline_end.year - baseline_start.year) * 12 + (baseline_end.month - baseline_start.month) + 1
