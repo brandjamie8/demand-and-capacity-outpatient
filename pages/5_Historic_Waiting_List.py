@@ -20,13 +20,15 @@ if ('referral_df' in st.session_state and st.session_state.referral_df is not No
     appointment_df = st.session_state.appointment_df
     selected_specialty = st.session_state.selected_specialty
 
-    # Ensure required columns are present
-    required_columns = ['month', 'specialty', 'referrals', 'removals', 'waiting_list']
+    # Ensure required columns are present in both datasets
+    referral_required_columns = ['month', 'specialty', 'referrals']
+    appointment_required_columns = ['month', 'specialty', 'removals', 'waiting_list']
 
-    if all(column in appointment_df.columns for column in required_columns):
+    if all(column in referral_df.columns for column in referral_required_columns) and \
+       all(column in appointment_df.columns for column in appointment_required_columns):
 
         # Select specialty
-        specialties = appointment_df['specialty'].unique()
+        specialties = referral_df['specialty'].unique()
         if st.session_state.get('selected_specialty') is None:
             st.session_state.selected_specialty = specialties[0]
 
@@ -38,16 +40,23 @@ if ('referral_df' in st.session_state and st.session_state.referral_df is not No
         st.session_state.selected_specialty = selected_specialty
 
         # Filter data based on selected specialty
-        specialty_df = appointment_df[appointment_df['specialty'] == selected_specialty]
+        referral_specialty_df = referral_df[referral_df['specialty'] == selected_specialty]
+        appointment_specialty_df = appointment_df[appointment_df['specialty'] == selected_specialty]
+
+        # Aggregate referrals by month and specialty
+        referral_specialty_df = referral_specialty_df.groupby(['month', 'specialty'], as_index=False).sum()
+
+        # Merge the data
+        merged_df = pd.merge(appointment_specialty_df, referral_specialty_df, on=['month', 'specialty'], how='inner')
         # Convert 'month' column to datetime and adjust to end of month
-        specialty_df['month'] = pd.to_datetime(specialty_df['month']).dt.to_period('M').dt.to_timestamp('M')
+        merged_df['month'] = pd.to_datetime(merged_df['month']).dt.to_period('M').dt.to_timestamp('M')
         # Sort by month
-        specialty_df = specialty_df.sort_values('month')
+        merged_df = merged_df.sort_values('month')
 
         ### **1. Additions and Removals Plot**
         st.subheader("Additions (Referrals) and Removals Over Time")
         fig1 = px.line(
-            specialty_df,
+            merged_df,
             x='month',
             y=['referrals', 'removals'],
             labels={'value': 'Number of Patients', 'variable': 'Legend'},
@@ -65,7 +74,7 @@ if ('referral_df' in st.session_state and st.session_state.referral_df is not No
         Select the start and end dates for the baseline period. The model will use data from this period to simulate future additions and removals from the waiting list. The selected period should reflect typical activity.
         """)
 
-        max_date = specialty_df['month'].max()
+        max_date = merged_df['month'].max()
 
         col1, col2, _, _ = st.columns(4)
         with col1:
@@ -100,7 +109,7 @@ if ('referral_df' in st.session_state and st.session_state.referral_df is not No
 
         # Plot total waiting list over time
         fig2 = px.line(
-            specialty_df,
+            merged_df,
             x='month',
             y='waiting_list',
             labels={'waiting_list': 'Total Waiting List'},
