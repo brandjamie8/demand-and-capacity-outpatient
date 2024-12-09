@@ -70,8 +70,9 @@ if ('referral_df' in st.session_state and st.session_state.referral_df is not No
         )
         st.plotly_chart(fig_comparison, use_container_width=True)
 
-
-        st.table(comparison_df.style.set_table_attributes("style='width: 50%'"))
+        col1, _ = st.columns(2)
+        with col1:
+           st.table(comparison_df)
 
        
         # Highlight Capacity Gaps
