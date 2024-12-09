@@ -72,6 +72,10 @@ if ('referral_df' in st.session_state and st.session_state.referral_df is not No
         )
         st.plotly_chart(fig_comparison, use_container_width=True)
 
+
+        st.table(comparison_df)
+
+       
         # Highlight Capacity Gaps
         st.write("**Capacity Gaps**")
         gaps_exist = False
