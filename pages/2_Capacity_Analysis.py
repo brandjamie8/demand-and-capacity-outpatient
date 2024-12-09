@@ -114,7 +114,7 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
         total_referrals_scaled = (total_referrals_baseline / num_baseline_months) * 12
 
         total_first_appointments = baseline_summary.loc[baseline_summary['appointment_type'] == 'RTT First', 'appointments_attended'].sum()
-        total_first_appointments_scaled = (total_first_appointments / num_baseline_months) * 12
+        total_first_appointments_scaled = baseline_summary.loc[baseline_summary['appointment_type'] == 'RTT First', 'appointments_attended'].sum()
 
         st.write(f"**Total Referrals for Next Year (Scaled):** {int(total_referrals_scaled)}")
         st.write(f"**Total RTT First Appointments Attended for Next Year (Scaled):** {int(total_first_appointments_scaled)}")
