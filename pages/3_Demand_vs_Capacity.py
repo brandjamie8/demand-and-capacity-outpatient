@@ -46,25 +46,23 @@ if ('referral_df' in st.session_state and st.session_state.referral_df is not No
     st.subheader("Baseline and Projected Capacity Comparison")
 
     if ('available_rtt_first' in st.session_state and 'available_rtt_followup' in st.session_state and 'available_non_rtt' in st.session_state):
-        available_rtt_first = round(st.session_state.available_rtt_first)
-        available_rtt_followup = round(st.session_state.available_rtt_followup)
-        available_non_rtt = round(st.session_state.available_non_rtt)
+        available_rtt_first = int(round(st.session_state.available_rtt_first))
+        available_rtt_followup = int(round(st.session_state.available_rtt_followup))
+        available_non_rtt = int(round(st.session_state.available_non_rtt))
 
         # Create a DataFrame to compare demand and capacity
         comparison_data = {
             'Appointment Type': ['RTT First', 'RTT Follow-up', 'Non-RTT'],
             'Required Appointments': [rtt_first_demand, rtt_followup_demand, non_rtt_demand],
-            'Available Appointments': [available_rtt_first, available_rtt_followup, available_non_rtt]
+            'Future Attended Appointments (Baseline Scaled to 12 Months)': [available_rtt_first, available_rtt_followup, available_non_rtt]
         }
         comparison_df = pd.DataFrame(comparison_data)
-        comparison_df['Required Appointments'] = comparison_df['Required Appointments'].round()
-        comparison_df['Available Appointments'] = comparison_df['Available Appointments'].round()
 
         # Bar Chart to compare required vs available appointments
         fig_comparison = px.bar(
             comparison_df,
             x='Appointment Type',
-            y=['Required Appointments', 'Available Appointments'],
+            y=['Required Appointments', 'Future Attended Appointments (Baseline Scaled to 12 Months)'],
             barmode='group',
             title='Required vs Available Appointments for Next Year',
             labels={'value': 'Number of Appointments', 'Appointment Type': 'Type'},
@@ -73,7 +71,7 @@ if ('referral_df' in st.session_state and st.session_state.referral_df is not No
         st.plotly_chart(fig_comparison, use_container_width=True)
 
 
-        st.table(comparison_df)
+        st.table(comparison_df.style.set_table_attributes("style='width: 50%'"))
 
        
         # Highlight Capacity Gaps
