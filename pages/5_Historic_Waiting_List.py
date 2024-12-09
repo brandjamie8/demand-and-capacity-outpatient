@@ -12,16 +12,21 @@ This page analyses the historic non-admitted waiting list data and provides a pr
 """)
 
 # Check if data is available in session state
-if 'appointments_df' in st.session_state and st.session_state.appointments_df is not None:
-    appointments_df = st.session_state.appointments_df
+if ('referral_df' in st.session_state and st.session_state.referral_df is not None) and \
+   ('appointment_df' in st.session_state and st.session_state.appointment_df is not None):
+
+    # Load the data from session state
+    referral_df = st.session_state.referral_df
+    appointment_df = st.session_state.appointment_df
+    selected_specialty = st.session_state.selected_specialty
 
     # Ensure required columns are present
     required_columns = ['month', 'specialty', 'referrals', 'removals', 'waiting_list']
 
-    if all(column in appointments_df.columns for column in required_columns):
+    if all(column in appointment_df.columns for column in required_columns):
 
         # Select specialty
-        specialties = appointments_df['specialty'].unique()
+        specialties = appointment_df['specialty'].unique()
         if st.session_state.get('selected_specialty') is None:
             st.session_state.selected_specialty = specialties[0]
 
@@ -33,7 +38,7 @@ if 'appointments_df' in st.session_state and st.session_state.appointments_df is
         st.session_state.selected_specialty = selected_specialty
 
         # Filter data based on selected specialty
-        specialty_df = appointments_df[appointments_df['specialty'] == selected_specialty]
+        specialty_df = appointment_df[appointment_df['specialty'] == selected_specialty]
         # Convert 'month' column to datetime and adjust to end of month
         specialty_df['month'] = pd.to_datetime(specialty_df['month']).dt.to_period('M').dt.to_timestamp('M')
         # Sort by month
@@ -109,4 +114,4 @@ if 'appointments_df' in st.session_state and st.session_state.appointments_df is
     else:
         st.error("Uploaded files do not contain the required columns.")
 else:
-    st.write("Please upload the Appointment Data in the sidebar on the **Home** page.")
+    st.write("Please upload the Referral and Appointment Data in the sidebar on the **Home** page.")
