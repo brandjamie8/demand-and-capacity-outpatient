@@ -110,7 +110,7 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
 
 
         # Add a section to analyze the ratio of RTT First to RTT Follow-up appointments
-        st.subheader("RTT First to RTT Follow-up Ratio Analysis")
+        st.subheader("First to Follow-up Ratio Analysis")
       
         # Calculate the RTT First to RTT Follow-up ratio from the displayed table
         rtt_first_attended = baseline_summary.loc[baseline_summary['appointment_type'] == 'RTT First', 'appointments_attended'].sum()
@@ -165,9 +165,6 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
                 st.warning("The ratio of RTT First to RTT Follow-up appointments is lower than the ratio required for removals. This could indicate insufficient follow-ups, potentially causing delays in clearing the waiting list.")
         else:
             st.error("One or both ratios could not be calculated. Ensure data availability for both attended appointments and removals to perform this analysis.")
-      
-        # Display ratios for RTT First to Non-RTT
-        st.subheader("RTT First to Non-RTT Ratios")
    
         # Display ratios
         st.write("**RTT First to Non-RTT Ratios:**")
