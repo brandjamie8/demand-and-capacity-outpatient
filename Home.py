@@ -18,7 +18,7 @@ Use the navigation on the left to select different sections of the analysis.
 try:
     # Load referral and appointment data
     referral_df = pd.read_csv("data/referrals_trended_updated.csv")
-    appointment_df = pd.read_csv("data/appointments_trended_updated.csv")
+    appointment_df = pd.read_csv("data/appointments_trended_updated2.csv")
 
     # Save loaded data to session state
     st.session_state.referral_df = referral_df
