@@ -78,9 +78,9 @@ if ('referral_df' in st.session_state and st.session_state.referral_df is not No
         st.write("**Capacity Gaps**")
         gaps_exist = False
         for index, row in comparison_df.iterrows():
-            if row['Available Appointments'] < row['Required Appointments']:
+            if row['Future Attended Appointments (Baseline Scaled to 12 Months)'] < row['Required Appointments']:
                 gaps_exist = True
-                gap = row['Required Appointments'] - row['Available Appointments']
+                gap = row['Required Appointments'] - row['Future Attended Appointments (Baseline Scaled to 12 Months)']
                 st.warning(f"Capacity gap for {row['Appointment Type']}: {gap:.0f} appointments")
 
         if not gaps_exist:
