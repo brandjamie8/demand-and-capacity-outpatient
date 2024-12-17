@@ -15,7 +15,6 @@ if ('referral_df' in st.session_state and st.session_state.referral_df is not No
     # Baseline Referral Analysis
     st.subheader(f"Referral Demand Forecast for {selected_specialty}")
 
-    # Get forecasted referral data from session state or calculate it again
     if 'forecasted_referrals' in st.session_state:
         forecasted_referrals_df = st.session_state['forecasted_referrals']
         forecasted_referrals_df['forecasted_referrals'] = forecasted_referrals_df['forecasted_referrals'].round()
@@ -35,66 +34,68 @@ if ('referral_df' in st.session_state and st.session_state.referral_df is not No
     st.write(f"**RTT First to Non-RTT Ratio (Waiting List Removals):** {rtt_first_to_non_rtt_ratio:.2f}")
 
     # Calculate required appointments
-    rtt_first_demand = forecasted_total  # Total referrals equal RTT First demand
+    rtt_first_demand = forecasted_total
     rtt_followup_demand = round(rtt_first_demand * rtt_first_to_followup_ratio)
     non_rtt_demand = round(rtt_first_demand * rtt_first_to_non_rtt_ratio)
 
-    # Display methodology
-    st.write("The required number of first appointments attended should at least be equal to the total forecasted referrals. Follow-up and Non-RTT appointments are calculated using the ratios derived from waiting list removals.")
+    # Sliders to Adjust Appointment Percentages
+    st.subheader("Adjust Appointment Capacity Distribution")
+    st.write("Use the sliders below to adjust the percentage allocation of appointments for RTT First, RTT Follow-up, and Non-RTT.")
 
-    # Baseline Appointment Capacity
-    st.subheader("Baseline and Projected Capacity Comparison")
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        pct_rtt_first = st.slider("RTT First (%)", min_value=0, max_value=100, value=50, step=1)
+    with col2:
+        pct_rtt_followup = st.slider("RTT Follow-up (%)", min_value=0, max_value=100, value=30, step=1)
+    with col3:
+        pct_non_rtt = st.slider("Non-RTT (%)", min_value=0, max_value=100, value=20, step=1)
 
-    if ('available_rtt_first' in st.session_state and 'available_rtt_followup' in st.session_state and 'available_non_rtt' in st.session_state):
-        available_rtt_first = int(round(st.session_state.available_rtt_first))
-        available_rtt_followup = int(round(st.session_state.available_rtt_followup))
-        available_non_rtt = int(round(st.session_state.available_non_rtt))
+    total_percentage = pct_rtt_first + pct_rtt_followup + pct_non_rtt
+    if total_percentage != 100:
+        st.error("The percentages must add up to 100%. Please adjust the sliders.")
+    else:
+        # Recalculate available appointments based on percentages
+        total_available_capacity = st.session_state.available_rtt_first + st.session_state.available_rtt_followup + st.session_state.available_non_rtt
 
-        # Create a DataFrame to compare demand and capacity
+        allocated_rtt_first = int(round(total_available_capacity * (pct_rtt_first / 100)))
+        allocated_rtt_followup = int(round(total_available_capacity * (pct_rtt_followup / 100)))
+        allocated_non_rtt = int(round(total_available_capacity * (pct_non_rtt / 100)))
+
         comparison_data = {
             'Appointment Type': ['RTT First', 'RTT Follow-up', 'Non-RTT'],
             'Required Appointments': [rtt_first_demand, rtt_followup_demand, non_rtt_demand],
-            'Future Attended Appointments (Baseline Scaled to 12 Months)': [available_rtt_first, available_rtt_followup, available_non_rtt]
+            'Future Attended Appointments (Adjusted)': [allocated_rtt_first, allocated_rtt_followup, allocated_non_rtt]
         }
         comparison_df = pd.DataFrame(comparison_data)
 
-        # Bar Chart to compare required vs available appointments
+        # Display Table
+        st.table(comparison_df)
+
+        # Check Capacity Gaps
+        st.subheader("Capacity Gap Analysis")
+        gaps_exist = False
+        for index, row in comparison_df.iterrows():
+            if row['Future Attended Appointments (Adjusted)'] < row['Required Appointments']:
+                gaps_exist = True
+                gap = row['Required Appointments'] - row['Future Attended Appointments (Adjusted)']
+                st.warning(f"Capacity gap for {row['Appointment Type']}: {gap:.0f} appointments")
+
+        if not gaps_exist:
+            st.success("The adjusted capacity meets or exceeds the required appointments!")
+        else:
+            st.error("Capacity gaps still exist. Adjust the percentages or consider increasing capacity.")
+
+        # Bar Chart for Visual Comparison
         fig_comparison = px.bar(
             comparison_df,
             x='Appointment Type',
-            y=['Required Appointments', 'Future Attended Appointments (Baseline Scaled to 12 Months)'],
+            y=['Required Appointments', 'Future Attended Appointments (Adjusted)'],
             barmode='group',
-            title='Required vs Available Appointments for Next Year',
+            title='Adjusted Capacity vs Required Appointments',
             labels={'value': 'Number of Appointments', 'Appointment Type': 'Type'},
             text_auto=True
         )
         st.plotly_chart(fig_comparison, use_container_width=True)
-
-        col1, _, _ = st.columns(3)
-        with col1:
-           st.table(comparison_df)
-
-       
-        # Highlight Capacity Gaps
-        st.write("**Capacity Gaps**")
-        gaps_exist = False
-        for index, row in comparison_df.iterrows():
-            if row['Future Attended Appointments (Baseline Scaled to 12 Months)'] < row['Required Appointments']:
-                gaps_exist = True
-                gap = row['Required Appointments'] - row['Future Attended Appointments (Baseline Scaled to 12 Months)']
-                st.warning(f"Capacity gap for {row['Appointment Type']}: {gap:.0f} appointments")
-
-        if not gaps_exist:
-            st.info("There are no capacity gaps. Current capacity is sufficient to meet forecasted demand.")
-
-        # Evaluate waiting list impact
-        if gaps_exist:
-            st.write("The capacity gaps indicate that the waiting list is likely to grow. This will be explored further on the next page under **Waiting List Dynamics**.")
-        else:
-            st.write("Since there are no capacity gaps, the waiting list is likely to shrink, assuming referrals remain consistent. This will be analyzed further under **Waiting List Dynamics**.")
-
-    else:
-        st.error("Please complete the capacity analysis to project next year's capacity.")
 
 else:
     st.write("Please upload the required data files in the **Home** page.")
