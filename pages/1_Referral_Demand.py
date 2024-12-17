@@ -30,7 +30,7 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
         max_date = specialty_referral_df['month'].max()
         default_baseline_start = max_date - pd.DateOffset(months=5)  # Last 6 months
 
-        col1, col2 = st.columns(2)
+        col1, col2, _, _ = st.columns(4)
         with col1:
             baseline_start = st.date_input('Baseline Start Date', value=default_baseline_start, min_value=specialty_referral_df['month'].min(), max_value=max_date)
         with col2:
