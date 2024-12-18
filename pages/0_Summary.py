@@ -44,21 +44,16 @@ if baseline_df.empty:
     st.error("No data available for the selected baseline period.")
     st.stop()
 
-# Get referrals and removals grouped by specialty
+# Group referrals and removals by specialty
 specialty_summary = baseline_df.groupby('specialty').agg({
     'referrals': 'sum',
-    'removals': 'sum',
-    'sessions': 'sum',
-    'cancelled sessions': 'sum',
-    'minutes utilised': 'sum',
-    'cases': 'sum'
+    'removals': 'sum'
 }).reset_index()
 
 # Calculate extrapolated values
 scaling_factor = 12 / num_baseline_months
 specialty_summary['Referrals (12-Month)'] = specialty_summary['referrals'] * scaling_factor
 specialty_summary['Removals (12-Month)'] = specialty_summary['removals'] * scaling_factor
-specialty_summary['Cases (12-Month)'] = specialty_summary['cases'] * scaling_factor
 
 # Calculate deficit
 specialty_summary['Deficit (12-Month)'] = specialty_summary['Referrals (12-Month)'] - specialty_summary['Removals (12-Month)']
@@ -73,36 +68,21 @@ specialty_summary['Expected Change'] = specialty_summary.apply(
     axis=1
 )
 
-# Determine capacity status message
-session_duration_hours = 4
-specialty_summary['Capacity Status'] = specialty_summary.apply(
-    lambda row: (
-        "Surplus capacity, waiting list will reduce" if row['Removals (12-Month)'] > row['Referrals (12-Month)'] else
-        "Sufficient capacity to meet demand" if row['Removals (12-Month)'] == row['Referrals (12-Month)'] else
-        "Insufficient capacity but more sessions would meet demand" if (row['sessions'] + row['cancelled sessions']) * session_duration_hours * 60 >= row['minutes utilised'] * scaling_factor else
-        "Not meeting capacity, waiting list expected to grow"
-    ),
-    axis=1
-)
-
 # Select relevant columns to display
 columns_to_display = [
     'specialty', 
     'referrals',
-    'cases',
     'removals',
     'Expected Change',
     'Referrals (12-Month)',
-    'Removals (12-Month)',
-    'Capacity Status'
+    'Removals (12-Month)'
 ]
 
 # Rename columns for better readability
 specialty_summary_display = specialty_summary[columns_to_display].rename(columns={
     'specialty': 'Specialty',
     'referrals': 'Referrals (Baseline)',
-    'removals': 'Removals (Baseline)',
-    'cases': 'Cases (Baseline)'
+    'removals': 'Removals (Baseline)'
 })
 
 # Display the summary table
