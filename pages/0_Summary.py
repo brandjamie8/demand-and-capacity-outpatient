@@ -3,21 +3,27 @@ import pandas as pd
 
 st.title("Specialty Summary Table")
 
-# Ensure appointment data is available
+# Ensure both dataframes are available
 if 'appointment_df' not in st.session_state or st.session_state.appointment_df is None:
     st.error("Appointment data is not available. Please upload the data in the previous section.")
     st.stop()
 
+if 'referral_df' not in st.session_state or st.session_state.referral_df is None:
+    st.error("Referral data is not available. Please upload the data in the previous section.")
+    st.stop()
+
 appointment_df = st.session_state.appointment_df
+referral_df = st.session_state.referral_df
 
 # Convert the 'month' column to datetime if not already
-if not pd.api.types.is_datetime64_any_dtype(appointment_df['month']):
-    appointment_df['month'] = pd.to_datetime(appointment_df['month'])
+for df in [appointment_df, referral_df]:
+    if not pd.api.types.is_datetime64_any_dtype(df['month']):
+        df['month'] = pd.to_datetime(df['month'])
 
 # User input for baseline period
 st.subheader("Select Baseline Period")
-min_date = appointment_df['month'].min().date()
-max_date = appointment_df['month'].max().date()
+min_date = max(referral_df['month'].min().date(), appointment_df['month'].min().date())
+max_date = min(referral_df['month'].max().date(), appointment_df['month'].max().date())
 
 col1, col2, _, _ = st.columns(4)
 with col1:
@@ -30,28 +36,25 @@ if baseline_start > baseline_end:
     st.error("Baseline start date must be before or equal to the end date.")
     st.stop()
 
-# Filter appointment data for the baseline period
+# Filter dataframes for the baseline period
 baseline_start = pd.to_datetime(baseline_start).to_period('M').to_timestamp('M')
 baseline_end = pd.to_datetime(baseline_end).to_period('M').to_timestamp('M')
 
-baseline_df = appointment_df[(appointment_df['month'] >= baseline_start) & (appointment_df['month'] <= baseline_end)]
+referral_baseline_df = referral_df[(referral_df['month'] >= baseline_start) & (referral_df['month'] <= baseline_end)]
+appointment_baseline_df = appointment_df[(appointment_df['month'] >= baseline_start) & (appointment_df['month'] <= baseline_end)]
 
-# Get the number of months in the baseline period
-num_baseline_months = baseline_df['month'].nunique()
+# Aggregate both dataframes by specialty
+referral_aggregated = referral_baseline_df.groupby('specialty').agg({'referrals': 'sum'}).reset_index()
+appointment_aggregated = appointment_baseline_df.groupby('specialty').agg({'removals': 'sum'}).reset_index()
 
-# Check if there is sufficient data
-if baseline_df.empty:
-    st.error("No data available for the selected baseline period.")
-    st.stop()
+# Merge the aggregated dataframes on 'specialty'
+specialty_summary = pd.merge(referral_aggregated, appointment_aggregated, on='specialty', how='outer').fillna(0)
 
-# Group referrals and removals by specialty
-specialty_summary = baseline_df.groupby('specialty').agg({
-    'referrals': 'sum',
-    'removals': 'sum'
-}).reset_index()
+# Calculate the number of months in the baseline period
+num_baseline_months = (baseline_end.year - baseline_start.year) * 12 + (baseline_end.month - baseline_start.month) + 1
+scaling_factor = 12 / num_baseline_months
 
 # Calculate extrapolated values
-scaling_factor = 12 / num_baseline_months
 specialty_summary['Referrals (12-Month)'] = specialty_summary['referrals'] * scaling_factor
 specialty_summary['Removals (12-Month)'] = specialty_summary['removals'] * scaling_factor
 
