@@ -10,10 +10,10 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
     referral_df = st.session_state.referral_df
 
     # Ensure required columns are present
-    required_columns = ['month', 'specialty', 'priority', 'referrals']
+    required_columns = ['month', 'specialty', 'additions']
     if all(column in referral_df.columns for column in required_columns):
         # Consistent order of priorities
-        priority_order = ['2-week wait', 'Urgent', 'Routine']
+        #priority_order = ['2-week wait', 'Urgent', 'Routine']
         
         selected_specialty = st.session_state.selected_specialty
 
@@ -22,7 +22,7 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
         specialty_referral_df.loc[:, 'month'] = pd.to_datetime(specialty_referral_df['month']).dt.to_period('M').dt.to_timestamp('M')
 
         # Set the priority category order
-        specialty_referral_df['priority'] = pd.Categorical(specialty_referral_df['priority'], categories=priority_order, ordered=True)
+        #specialty_referral_df['priority'] = pd.Categorical(specialty_referral_df['priority'], categories=priority_order, ordered=True)
 
         st.subheader(f"Referral Trends for {selected_specialty}")
 
@@ -47,11 +47,10 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
         fig = px.line(
             specialty_referral_df,
             x='month',
-            y='referrals',
-            color='priority',
+            y='additions',
             labels={'referrals': 'Number of Referrals'},
             title=f'Referrals Over Time for {selected_specialty}',
-            color_discrete_sequence=px.colors.qualitative.Prism  # Different color scheme without red
+            #color_discrete_sequence=px.colors.qualitative.Prism  # Different color scheme without red
         )
 
         if baseline_start != baseline_end:
@@ -79,17 +78,17 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
         # Extrapolate baseline referrals to a year's worth
         if not baseline_referral_df.empty:
             num_baseline_months = (baseline_end.year - baseline_start.year) * 12 + (baseline_end.month - baseline_start.month) + 1
-            total_referrals_baseline = baseline_referral_df['referrals'].sum()
+            total_referrals_baseline = baseline_referral_df['additions'].sum()
             baseline_yearly_referrals = (total_referrals_baseline / num_baseline_months) * 12
             st.write(f"**Total Referrals (12-Month Equivalent):** {baseline_yearly_referrals:.0f}")
 
             # Calculate percentage of each referral priority in the baseline period
-            priority_percentages = baseline_referral_df.groupby('priority', observed=False)['referrals'].sum() / total_referrals_baseline * 100
+            #priority_percentages = baseline_referral_df.groupby('priority', observed=False)['referrals'].sum() / total_referrals_baseline * 100
 
-            st.write("**Percentage of Referrals by Priority in Baseline Period:**")
-            for priority in priority_order:
-                if priority in priority_percentages:
-                    st.write(f"- **{priority}:** {priority_percentages[priority]:.2f}%")
+           # st.write("**Percentage of Referrals by Priority in Baseline Period:**")
+            #for priority in priority_order:
+               # if priority in priority_percentages:
+                   # st.write(f"- **{priority}:** {priority_percentages[priority]:.2f}%")
 
             # Create a bar chart for total referrals (12-month equivalent) by priority
             baseline_priority_totals = baseline_referral_df.groupby('priority')['referrals'].sum() / num_baseline_months * 12
