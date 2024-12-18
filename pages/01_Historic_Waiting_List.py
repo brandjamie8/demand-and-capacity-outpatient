@@ -27,11 +27,11 @@ color_map = {
 
 
 # Check if data is available in session state
-if st.session_state.waiting_list_df is not None and st.session_state.procedure_df is not None:
-    waiting_list_df = st.session_state.waiting_list_df
+if st.session_state.referral_df is not None and st.session_state.appointments_df is not None:
+    waiting_list_df = st.session_state.referral_df
 
     # Ensure required columns are present
-    waiting_list_required_columns = ['month', 'specialty', 'additions to waiting list', 'removals from waiting list', 'total waiting list']
+    waiting_list_required_columns = ['month', 'specialty', 'additions', 'removals', 'waiting_list']
 
     if all(column in waiting_list_df.columns for column in waiting_list_required_columns):
 
@@ -59,7 +59,7 @@ if st.session_state.waiting_list_df is not None and st.session_state.procedure_d
         fig1 = px.line(
             waiting_list_specialty_df,
             x='month',
-            y=['additions to waiting list', 'removals from waiting list'],
+            y=['additions', 'removalst'],
             labels={'value': 'Number of Patients', 'variable': 'Legend'},
             title='Additions and Removals from Waiting List',
             height=600,
@@ -137,8 +137,8 @@ if st.session_state.waiting_list_df is not None and st.session_state.procedure_d
         fig2 = px.line(
             waiting_list_specialty_df,
             x='month',
-            y='total waiting list',
-            labels={'total waiting list': 'Total Waiting List'},
+            y='waiting list',
+            labels={'waiting list': 'Total Waiting List'},
             title='Total Size of the Waiting List',
             height=600,
             color_discrete_map=color_map
@@ -207,7 +207,7 @@ if st.session_state.waiting_list_df is not None and st.session_state.procedure_d
                     st.error("No data available in the selected baseline period.")
                 else:
                     # Get the last known total waiting list size
-                    last_total_waiting_list = waiting_list_specialty_df.iloc[-1]['total waiting list']
+                    last_total_waiting_list = waiting_list_specialty_df.iloc[-1]['waiting list']
 
                     # Create date range for future months, including the modeling start date
                     future_months = pd.date_range(
@@ -226,8 +226,8 @@ if st.session_state.waiting_list_df is not None and st.session_state.procedure_d
                         current_total = last_total_waiting_list
                         predicted_totals = []
                         for month in future_months:
-                            sampled_addition = baseline_data['additions to waiting list'].sample(n=1).values[0]
-                            sampled_removal = baseline_data['removals from waiting list'].sample(n=1).values[0]
+                            sampled_addition = baseline_data['additions'].sample(n=1).values[0]
+                            sampled_removal = baseline_data['removals'].sample(n=1).values[0]
                             current_total = current_total + sampled_addition - sampled_removal
                             predicted_totals.append(current_total)
                         # Add the predicted totals to the DataFrame
@@ -242,7 +242,7 @@ if st.session_state.waiting_list_df is not None and st.session_state.procedure_d
                     simulation_results = pd.concat([simulation_results[['month']], percentile_values], axis=1)
     
                     # Use the 50th percentile (median) as the average prediction
-                    predictions_df = simulation_results[['month', 'percentile_50']].rename(columns={'percentile_50': 'total waiting list'})
+                    predictions_df = simulation_results[['month', 'percentile_50']].rename(columns={'percentile_50': 'waiting list'})
                     predictions_df['Data Type'] = 'Predicted'
 
                     # Prepare combined data
@@ -255,10 +255,10 @@ if st.session_state.waiting_list_df is not None and st.session_state.procedure_d
                     fig2 = px.line(
                         combined_df,
                         x='month',
-                        y='total waiting list',
+                        y='waiting list',
                         color='Data Type',
                         line_dash='Data Type',
-                        labels={'total waiting list': 'Total Waiting List', 'month': 'Month'},
+                        labels={'waiting list': 'Total Waiting List', 'month': 'Month'},
                         title='Total Size of the Waiting List with Predictions',
                         height=600,
                         color_discrete_map=color_map
@@ -356,11 +356,11 @@ if st.session_state.waiting_list_df is not None and st.session_state.procedure_d
             num_simulations = 100  # Number of simulations
         
             for sim in range(num_simulations):
-                current_total = validation_data.iloc[-1]['total waiting list']  # Last total from validation period
+                current_total = validation_data.iloc[-1]['waiting list']  # Last total from validation period
                 simulated_totals = []
                 for _, row in actual_baseline_data.iterrows():
-                    sampled_addition = validation_data['additions to waiting list'].sample(n=1).values[0]
-                    sampled_removal = validation_data['removals from waiting list'].sample(n=1).values[0]
+                    sampled_addition = validation_data['additions'].sample(n=1).values[0]
+                    sampled_removal = validation_data['removals'].sample(n=1).values[0]
                     current_total = current_total + sampled_addition - sampled_removal
                     simulated_totals.append(current_total)
                 simulation_results[f'simulation_{sim + 1}'] = simulated_totals
@@ -373,13 +373,13 @@ if st.session_state.waiting_list_df is not None and st.session_state.procedure_d
             simulation_results = pd.concat([simulation_results[['month']], percentile_values], axis=1)
         
             # Include all historic waiting list data
-            historic_data = waiting_list_specialty_df[['month', 'total waiting list']].rename(
-                columns={'total waiting list': 'Historic Total Waiting List'}
+            historic_data = waiting_list_specialty_df[['month', 'waiting list']].rename(
+                columns={'waiting list': 'Historic Total Waiting List'}
             )
         
             # Combine data for visualization
-            actual_baseline = actual_baseline_data[['month', 'total waiting list']].rename(
-                columns={'total waiting list': 'Actual Total Waiting List'}
+            actual_baseline = actual_baseline_data[['month', 'waiting list']].rename(
+                columns={'waiting list': 'Actual Total Waiting List'}
             )
             comparison_df = pd.merge(
                 historic_data, actual_baseline, on='month', how='outer'
@@ -454,7 +454,7 @@ if st.session_state.waiting_list_df is not None and st.session_state.procedure_d
             
             # Compare final month mean prediction to actual value
             final_month = comparison_actual_predicted.iloc[-1]
-            final_actual = final_month['total waiting list']
+            final_actual = final_month['waiting list']
             final_predicted = final_month['Predicted Total Waiting List']
             st.write(f"**Final Month Comparison:** The actual value for the final month is {final_actual:.0f}, "
                      f"Mean predicted value is {final_predicted:.0f}.")
