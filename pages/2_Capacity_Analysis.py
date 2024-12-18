@@ -74,7 +74,7 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
 
         st.plotly_chart(fig, use_container_width=True)
         
-          
+        
           
         # Summary of appointments during the baseline period
         st.subheader("Baseline Summary of Appointments Attended (Scaled to 12 Months)")
