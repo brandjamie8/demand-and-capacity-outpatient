@@ -27,7 +27,7 @@ max_date = min(referral_df['month'].max().date(), appointment_df['month'].max().
 
 col1, col2, _, _ = st.columns(4)
 with col1:
-    baseline_start = st.date_input("Baseline Start Month", min_value=min_date, max_value=max_date)
+    baseline_start = st.date_input("Baseline Start Month", '2024-04-01', min_value=min_date, max_value=max_date)
 with col2:
     baseline_end = st.date_input("Baseline End Month", min_value=baseline_start, max_value=max_date)
 
