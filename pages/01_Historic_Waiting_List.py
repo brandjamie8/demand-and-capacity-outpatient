@@ -59,7 +59,7 @@ if st.session_state.referral_df is not None and st.session_state.appointment_df 
         fig1 = px.line(
             waiting_list_specialty_df,
             x='month',
-            y=['additions', 'removalst'],
+            y=['additions', 'removals'],
             labels={'value': 'Number of Patients', 'variable': 'Legend'},
             title='Additions and Removals from Waiting List',
             height=600,
