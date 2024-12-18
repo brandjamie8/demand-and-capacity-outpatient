@@ -17,8 +17,8 @@ Use the navigation on the left to select different sections of the analysis.
 # Load data from CSV files (located in the same directory as this script or in a data folder in the repository)
 try:
     # Load referral and appointment data
-    referral_df = pd.read_csv("data/referrals_trended_updated.csv")
-    appointment_df = pd.read_csv("data/appointments_trended_updated2.csv")
+    referral_df = pd.read_csv("data/waiting_list_opa.csv")
+    appointment_df = pd.read_csv("data/appointments_opa.csv")
 
     # Save loaded data to session state
     st.session_state.referral_df = referral_df
