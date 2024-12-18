@@ -20,14 +20,14 @@ color_map = {
     'Actual': '#006cb5',
     'Predicted Total Waiting List': '#f5136f',
     'Predicted': '#f5136f',
-    'additions to waiting list': 'orange',
-    'removals from waiting list': 'purple',
+    'additions': 'orange',
+    'removals': 'purple',
     'Mean Prediction': '#f5136f'
 }
 
 
 # Check if data is available in session state
-if st.session_state.referral_df is not None and st.session_state.appointments_df is not None:
+if st.session_state.referral_df is not None and st.session_state.appointment_df is not None:
     waiting_list_df = st.session_state.referral_df
 
     # Ensure required columns are present
