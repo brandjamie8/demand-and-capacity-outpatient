@@ -144,15 +144,6 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
             future_months_ordinal = future_months.map(pd.Timestamp.toordinal)
             future_predictions = intercept + slope * future_months_ordinal
 
-        # --- Predict Future Demand ---
-        st.subheader("Predict Future Demand")
-        future_months = pd.date_range(start=pd.to_datetime(st.session_state.model_start_date), periods=12, freq='M')
-        if best_fit == "Average":
-            future_predictions = [baseline_scaled_additions / 12] * len(future_months)
-        else:
-            future_months_ordinal = future_months.map(pd.Timestamp.toordinal)
-            future_predictions = intercept + slope * future_months_ordinal
-
         # Create DataFrame for future predictions
         future_df = pd.DataFrame({
             'month': future_months,
