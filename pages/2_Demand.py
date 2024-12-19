@@ -195,6 +195,7 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
 
         # Display ratios
         st.write(f"**Baseline Period (April 2023 - March 2024):**")
+        st.write("The last financial year is used as baseline as more recent clock stops will not have had post-stop appointments yet.")
         st.write(f"**RTT First to RTT Follow-Up Ratio:** {first_to_followup_ratio:.2f}" if first_to_followup_ratio else "N/A")
         st.write(f"**RTT First to All Follow-Up (Including Non-RTT) Ratio:** {first_to_all_followup_ratio:.2f}" if first_to_all_followup_ratio else "N/A")
 
@@ -207,7 +208,8 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
         non_rtt_needed = predicted_yearly_referrals * (first_to_all_followup_ratio - first_to_followup_ratio) if first_to_all_followup_ratio else 0
 
         # Display predictions
-        st.write(f"**Predicted Yearly Referrals:** {predicted_yearly_referrals:.0f}")
+        st.write("Assuming each referral needs one RTT First appointment")
+        st.write(f"**Predicted Yearly Referrals (and RTT First appointments):** {predicted_yearly_referrals:.0f}")
         st.write(f"**RTT Follow-Up Appointments Needed:** {rtt_followup_needed:.0f}")
         st.write(f"**Non-RTT Appointments Needed:** {non_rtt_needed:.0f}")
 
