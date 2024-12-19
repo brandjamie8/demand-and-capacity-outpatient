@@ -44,7 +44,7 @@ referral_baseline_df = referral_df[(referral_df['month'] >= baseline_start) & (r
 appointment_baseline_df = appointment_df[(appointment_df['month'] >= baseline_start) & (appointment_df['month'] <= baseline_end)]
 
 # Aggregate both dataframes by specialty
-referral_aggregated = referral_baseline_df.groupby('specialty').agg({'referrals': 'sum'}).reset_index()
+referral_aggregated = referral_baseline_df.groupby('specialty').agg({'additions': 'sum'}).reset_index()
 appointment_aggregated = appointment_baseline_df.groupby('specialty').agg({'removals': 'sum'}).reset_index()
 
 # Merge the aggregated dataframes on 'specialty'
@@ -55,7 +55,7 @@ num_baseline_months = (baseline_end.year - baseline_start.year) * 12 + (baseline
 scaling_factor = 12 / num_baseline_months
 
 # Calculate extrapolated values
-specialty_summary['Referrals (12-Month)'] = specialty_summary['referrals'] * scaling_factor
+specialty_summary['Referrals (12-Month)'] = specialty_summary['additions'] * scaling_factor
 specialty_summary['Removals (12-Month)'] = specialty_summary['removals'] * scaling_factor
 
 # Calculate deficit
@@ -74,7 +74,7 @@ specialty_summary['Expected Change'] = specialty_summary.apply(
 # Select relevant columns to display
 columns_to_display = [
     'specialty', 
-    'referrals',
+    'additions',
     'removals',
     'Expected Change',
     'Referrals (12-Month)',
@@ -84,7 +84,7 @@ columns_to_display = [
 # Rename columns for better readability
 specialty_summary_display = specialty_summary[columns_to_display].rename(columns={
     'specialty': 'Specialty',
-    'referrals': 'Referrals (Baseline)',
+    'additions': 'Referrals (Baseline)',
     'removals': 'Removals (Baseline)'
 })
 
