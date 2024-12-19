@@ -1716,11 +1716,9 @@ month,specialty,appointment_type,appointments_attended,appointments_attended_rou
 30/06/2023,Rheumatology,N/A,284,252,31,1,42,NULL,NULL
 31/10/2022,ENT,N/A,400,255,125,20,171,NULL,NULL
 31/07/2022,Gastroenterology,N/A,341,289,49,3,72,NULL,NULL
-31/12/2024,Breast Surgery,Non-RTT,58,25,7,26,3,NULL,NULL
 31/10/2024,General Surgery,N/A,438,409,26,3,89,NULL,NULL
 30/06/2023,Respiratory,N/A,735,598,122,15,123,NULL,NULL
 31/08/2022,Diabetes,N/A,456,336,120,0,83,NULL,NULL
-31/07/2025,Colorectal Surgery,RTT First,0,0,0,0,2,NULL,NULL
 31/10/2022,Paediatrics,N/A,730,716,14,0,103,NULL,NULL
 30/06/2022,Urology,N/A,189,121,36,32,32,NULL,NULL
 31/08/2024,General Surgery,N/A,436,413,18,5,62,NULL,NULL
@@ -1728,12 +1726,10 @@ month,specialty,appointment_type,appointments_attended,appointments_attended_rou
 31/08/2024,Gynaecology,N/A,1807,1206,560,41,205,NULL,NULL
 31/03/2023,Trauma & Orthopaedics,N/A,2204,2078,126,0,412,NULL,NULL
 30/09/2022,Urology,N/A,224,134,64,26,33,NULL,NULL
-31/12/2024,General Surgery,N/A,197,179,16,2,27,NULL,NULL
 30/06/2024,Breast Surgery,N/A,328,163,67,98,31,NULL,NULL
 30/11/2022,Diabetes,N/A,504,410,94,0,138,NULL,NULL
 30/06/2024,Neurology,N/A,130,117,13,0,39,NULL,NULL
 31/01/2023,ENT,N/A,583,344,218,21,181,NULL,NULL
-31/12/2024,Gastroenterology,Non-RTT,303,239,52,12,31,NULL,NULL
 31/05/2023,General Medicine,N/A,599,584,11,4,80,NULL,NULL
 30/06/2024,Respiratory,N/A,671,513,152,6,159,NULL,NULL
 31/07/2024,Gynaecology,N/A,2015,1228,728,59,222,NULL,NULL
@@ -1748,16 +1744,12 @@ month,specialty,appointment_type,appointments_attended,appointments_attended_rou
 31/08/2022,Neurology,N/A,104,86,18,0,54,NULL,NULL
 31/05/2024,Paediatrics,N/A,725,707,18,0,100,NULL,NULL
 31/03/2024,Diabetes,N/A,341,304,37,0,98,NULL,NULL
-31/12/2024,Dermatology,Non-RTT,738,532,112,94,83,NULL,NULL
 30/09/2022,Neurology,N/A,117,99,17,1,67,NULL,NULL
 30/09/2022,Diabetes,N/A,488,366,122,0,93,NULL,NULL
-31/12/2024,Paediatric ENT,RTT Follow-up,78,61,17,0,5,NULL,NULL
 31/01/2024,Breast Surgery,N/A,273,126,65,82,42,NULL,NULL
 31/08/2023,Paediatric ENT,N/A,109,63,46,0,38,NULL,NULL
 30/11/2024,Paediatric ENT,N/A,63,25,38,0,43,NULL,NULL
 31/05/2023,Respiratory,N/A,610,498,95,17,86,NULL,NULL
-31/12/2024,Neurology,Non-RTT,330,252,71,7,48,NULL,NULL
-31/12/2024,Gastroenterology,N/A,171,164,6,1,66,NULL,NULL
 31/08/2024,Paediatric ENT,N/A,95,40,55,0,47,NULL,NULL
 31/10/2023,Dermatology,N/A,283,189,42,52,120,NULL,NULL
 31/12/2022,Clinical Haematology,N/A,325,226,84,15,61,NULL,NULL
@@ -1781,16 +1773,13 @@ month,specialty,appointment_type,appointments_attended,appointments_attended_rou
 31/12/2022,Cardiology,N/A,2237,2038,199,0,376,NULL,NULL
 30/04/2023,Paediatrics,N/A,544,523,21,0,63,NULL,NULL
 28/02/2023,Paediatric ENT,N/A,107,82,25,0,56,NULL,NULL
-31/12/2024,Paediatric ENT,RTT First,68,53,14,1,6,NULL,NULL
 29/02/2024,Trauma & Orthopaedics,N/A,2390,2330,60,0,367,NULL,NULL
 31/10/2024,Dermatology,N/A,200,141,43,16,58,NULL,NULL
 31/07/2023,Clinical Haematology,N/A,402,275,109,18,60,NULL,NULL
 31/03/2024,Neurology,N/A,141,128,13,0,54,NULL,NULL
 31/01/2024,General Surgery,N/A,507,376,117,14,87,NULL,NULL
 28/02/2023,General Surgery,N/A,369,288,75,6,69,NULL,NULL
-31/12/2024,Colorectal Surgery,RTT Follow-up,89,40,18,31,6,NULL,NULL
 31/08/2024,Neurology,N/A,164,151,12,1,52,NULL,NULL
-31/12/2024,General Medicine,RTT First,225,126,48,51,3,NULL,NULL
 31/12/2022,Neurology,N/A,103,85,18,0,59,NULL,NULL
 31/08/2023,Respiratory,N/A,719,569,138,12,140,NULL,NULL
 30/11/2022,General Medicine,N/A,614,565,43,6,80,NULL,NULL
@@ -1805,17 +1794,14 @@ month,specialty,appointment_type,appointments_attended,appointments_attended_rou
 30/06/2022,Paediatrics,N/A,622,603,19,0,117,NULL,NULL
 30/06/2024,Clinical Haematology,N/A,433,289,124,20,63,NULL,NULL
 30/11/2023,Vascular Surgery,N/A,112,96,16,0,12,NULL,NULL
-31/12/2024,Rheumatology,RTT Follow-up,121,95,26,0,3,NULL,NULL
 31/08/2023,Neurology,N/A,116,98,16,2,85,NULL,NULL
 31/03/2023,Respiratory,N/A,777,687,67,23,136,NULL,NULL
 30/11/2024,Paediatrics,N/A,750,731,19,0,83,NULL,NULL
-31/12/2024,Neurology,RTT First,196,126,60,10,40,NULL,NULL
 30/04/2024,Paediatric ENT,N/A,99,64,35,0,25,NULL,NULL
 31/12/2023,Vascular Surgery,N/A,89,72,17,0,15,NULL,NULL
 31/08/2023,Breast Surgery,N/A,299,182,64,53,80,NULL,NULL
 31/12/2022,Dermatology,N/A,169,138,17,14,80,NULL,NULL
 30/06/2022,Breast Surgery,N/A,202,79,50,73,21,NULL,NULL
-31/12/2024,Trauma & Orthopaedics,RTT Follow-up,468,425,43,0,37,NULL,NULL
 30/06/2024,Cardiology,N/A,3456,3218,238,0,469,NULL,NULL
 28/02/2023,ENT,N/A,509,318,168,23,149,NULL,NULL
 30/11/2024,Vascular Surgery,N/A,83,67,15,1,16,NULL,NULL
@@ -1830,12 +1816,10 @@ month,specialty,appointment_type,appointments_attended,appointments_attended_rou
 31/08/2024,Diabetes,N/A,329,291,38,0,89,NULL,NULL
 31/07/2022,Vascular Surgery,N/A,91,76,15,0,4,NULL,NULL
 31/10/2023,Cardiology,N/A,3126,2880,246,0,404,NULL,NULL
-31/12/2024,Urology,RTT Follow-up,220,83,39,98,15,NULL,NULL
 31/08/2024,Breast Surgery,N/A,264,149,52,63,43,NULL,NULL
 29/02/2024,Colorectal Surgery,N/A,165,50,64,51,40,NULL,NULL
 30/11/2022,Urology,N/A,225,138,62,25,48,NULL,NULL
 31/08/2023,Dermatology,N/A,253,169,45,39,114,NULL,NULL
-31/12/2024,Urology,RTT First,274,87,86,101,23,NULL,NULL
 31/07/2022,Cardiology,N/A,2630,2425,204,1,338,NULL,NULL
 31/07/2022,Clinical Haematology,N/A,376,272,91,13,66,NULL,NULL
 31/08/2023,Gynaecology,N/A,1700,1198,453,49,175,NULL,NULL
@@ -1851,29 +1835,23 @@ month,specialty,appointment_type,appointments_attended,appointments_attended_rou
 31/05/2023,Dermatology,N/A,253,193,33,27,64,NULL,NULL
 30/09/2023,Paediatrics,N/A,694,655,39,0,97,NULL,NULL
 31/07/2023,Cardiology,N/A,3209,2967,242,0,381,NULL,NULL
-31/12/2024,ENT,N/A,256,67,188,1,87,NULL,NULL
 31/10/2023,General Surgery,N/A,351,258,85,8,63,NULL,NULL
 30/06/2022,General Medicine,N/A,427,418,3,6,47,NULL,NULL
 30/09/2022,Paediatric ENT,N/A,87,67,20,0,56,NULL,NULL
-31/12/2024,Clinical Haematology,Non-RTT,564,346,87,131,35,NULL,NULL
-31/12/2024,Cardiology,Non-RTT,164,137,27,0,21,NULL,NULL
 29/02/2024,Gynaecology,N/A,2182,1372,747,63,219,NULL,NULL
 30/09/2023,General Medicine,N/A,541,508,29,4,109,NULL,NULL
 30/06/2022,Paediatric ENT,N/A,99,86,13,0,56,NULL,NULL
 31/03/2024,Vascular Surgery,N/A,94,76,17,1,10,NULL,NULL
 31/03/2023,Dermatology,N/A,233,166,27,40,66,NULL,NULL
-31/12/2024,Respiratory,Non-RTT,285,211,67,7,50,NULL,NULL
 31/03/2024,Respiratory,N/A,730,595,131,4,123,NULL,NULL
 30/06/2024,Dermatology,N/A,244,151,64,29,70,NULL,NULL
 31/10/2022,Gynaecology,N/A,1511,1068,382,61,195,NULL,NULL
-31/12/2024,ENT,Non-RTT,501,366,85,50,75,NULL,NULL
 30/11/2023,Diabetes,N/A,366,320,46,0,97,NULL,NULL
 31/12/2023,Gynaecology,N/A,1917,1083,760,74,200,NULL,NULL
 30/04/2023,Gastroenterology,N/A,291,261,27,3,74,NULL,NULL
 30/09/2022,Dermatology,N/A,247,173,37,37,109,NULL,NULL
 31/03/2024,Breast Surgery,N/A,293,149,68,76,52,NULL,NULL
 31/07/2023,Gynaecology,N/A,1590,1051,470,69,144,NULL,NULL
-28/02/2025,Colorectal Surgery,RTT First,0,0,0,0,1,NULL,NULL
 30/09/2023,Cardiology,N/A,3011,2776,235,0,378,NULL,NULL
 30/04/2023,Paediatric ENT,N/A,101,63,36,2,31,NULL,NULL
 30/06/2022,Diabetes,N/A,422,342,80,0,80,NULL,NULL
@@ -1898,7 +1876,6 @@ month,specialty,appointment_type,appointments_attended,appointments_attended_rou
 30/09/2022,Breast Surgery,N/A,211,127,35,49,42,NULL,NULL
 30/09/2022,Respiratory,N/A,679,565,101,13,119,NULL,NULL
 30/06/2022,Vascular Surgery,N/A,76,68,7,1,9,NULL,NULL
-31/12/2024,Trauma & Orthopaedics,RTT First,438,378,60,0,23,NULL,NULL
 31/12/2023,Dermatology,N/A,250,170,49,31,74,NULL,NULL
 31/07/2024,Gastroenterology,N/A,512,454,50,8,133,NULL,NULL
 30/04/2024,Paediatrics,N/A,789,764,24,1,79,NULL,NULL
@@ -1906,7 +1883,6 @@ month,specialty,appointment_type,appointments_attended,appointments_attended_rou
 30/06/2023,Paediatric ENT,N/A,101,66,34,1,41,NULL,NULL
 31/12/2022,General Medicine,N/A,500,464,34,2,75,NULL,NULL
 30/06/2024,General Medicine,N/A,647,618,20,9,72,NULL,NULL
-31/12/2024,General Surgery,Non-RTT,176,151,20,5,22,NULL,NULL
 29/02/2024,Paediatrics,N/A,706,672,34,0,82,NULL,NULL
 30/06/2023,Neurology,N/A,107,89,18,0,75,NULL,NULL
 31/01/2023,Breast Surgery,N/A,255,125,51,79,47,NULL,NULL
@@ -1914,18 +1890,11 @@ month,specialty,appointment_type,appointments_attended,appointments_attended_rou
 31/03/2023,General Surgery,N/A,391,278,108,5,75,NULL,NULL
 30/11/2024,Diabetes,N/A,299,266,33,0,54,NULL,NULL
 30/09/2024,Trauma & Orthopaedics,N/A,2658,2604,54,0,498,NULL,NULL
-31/12/2024,Colorectal Surgery,RTT First,295,53,39,203,6,NULL,NULL
-31/12/2024,Gynaecology,N/A,1169,741,414,14,110,NULL,NULL
 30/09/2024,Urology,N/A,247,137,94,16,71,NULL,NULL
-31/12/2024,Gynaecology,Non-RTT,380,241,89,50,44,NULL,NULL
 31/05/2023,ENT,N/A,469,272,181,16,147,NULL,NULL
-31/12/2024,Respiratory,RTT First,237,167,41,29,30,NULL,NULL
 31/05/2024,Vascular Surgery,N/A,105,84,17,4,14,NULL,NULL
-31/12/2024,Diabetes,RTT Follow-up,62,48,14,0,8,NULL,NULL
 30/04/2024,Gynaecology,N/A,2126,1222,851,53,215,NULL,NULL
-31/01/2025,Vascular Surgery,RTT First,0,0,0,0,1,NULL,NULL
 30/06/2024,Trauma & Orthopaedics,N/A,2469,2408,61,0,380,NULL,NULL
-31/12/2024,Cardiology,N/A,2154,1954,200,0,242,NULL,NULL
 31/07/2022,Urology,N/A,179,105,47,27,36,NULL,NULL
 30/09/2024,Rheumatology,N/A,269,234,34,1,21,NULL,NULL
 30/11/2024,Trauma & Orthopaedics,N/A,2163,2125,38,0,363,NULL,NULL
@@ -1934,7 +1903,6 @@ month,specialty,appointment_type,appointments_attended,appointments_attended_rou
 31/10/2022,Clinical Haematology,N/A,353,258,78,17,76,NULL,NULL
 31/03/2023,ENT,N/A,528,311,180,37,136,NULL,NULL
 31/05/2023,Gynaecology,N/A,1747,1049,630,68,211,NULL,NULL
-31/12/2024,Dermatology,RTT First,578,145,34,399,33,NULL,NULL
 31/05/2023,Diabetes,N/A,530,446,84,0,111,NULL,NULL
 31/03/2023,General Medicine,N/A,694,684,8,2,96,NULL,NULL
 30/09/2024,Gastroenterology,N/A,366,317,44,5,117,NULL,NULL
@@ -1947,12 +1915,9 @@ month,specialty,appointment_type,appointments_attended,appointments_attended_rou
 31/10/2024,Diabetes,N/A,333,303,30,0,83,NULL,NULL
 31/08/2023,Cardiology,N/A,3203,2924,279,0,362,NULL,NULL
 31/12/2023,ENT,N/A,358,184,155,19,113,NULL,NULL
-31/12/2024,Rheumatology,RTT First,289,234,55,0,28,NULL,NULL
-31/12/2024,Vascular Surgery,N/A,54,42,11,1,4,NULL,NULL
 31/10/2024,Gynaecology,N/A,2178,1230,911,37,209,NULL,NULL
 30/11/2023,Paediatrics,N/A,749,706,43,0,145,NULL,NULL
 31/03/2024,Colorectal Surgery,N/A,167,56,60,51,38,NULL,NULL
-31/12/2024,Clinical Haematology,N/A,279,183,90,6,30,NULL,NULL
 31/05/2024,Gastroenterology,N/A,548,475,67,6,165,NULL,NULL
 30/09/2023,Rheumatology,N/A,261,226,34,1,40,NULL,NULL
 30/06/2024,Rheumatology,N/A,228,197,31,0,27,NULL,NULL
@@ -1960,7 +1925,6 @@ month,specialty,appointment_type,appointments_attended,appointments_attended_rou
 31/12/2023,Cardiology,N/A,2768,2536,231,1,358,NULL,NULL
 31/01/2023,Gynaecology,N/A,1955,1344,531,80,213,NULL,NULL
 29/02/2024,General Surgery,N/A,510,450,54,6,58,NULL,NULL
-31/12/2999,Vascular Surgery,Non-RTT,0,0,0,0,1,NULL,NULL
 30/06/2023,Colorectal Surgery,N/A,179,46,66,67,22,NULL,NULL
 31/07/2024,Vascular Surgery,N/A,100,75,22,3,9,NULL,NULL
 28/02/2023,Paediatrics,N/A,1004,991,13,0,133,NULL,NULL
@@ -1987,19 +1951,15 @@ month,specialty,appointment_type,appointments_attended,appointments_attended_rou
 31/08/2023,Clinical Haematology,N/A,470,339,109,22,67,NULL,NULL
 31/05/2023,Neurology,N/A,132,119,13,0,60,NULL,NULL
 30/06/2024,Colorectal Surgery,N/A,131,53,54,24,24,NULL,NULL
-31/12/2024,General Medicine,RTT Follow-up,75,74,1,0,0,NULL,NULL
 31/01/2024,Colorectal Surgery,N/A,179,68,60,51,27,NULL,NULL
 31/08/2024,ENT,N/A,501,186,293,22,173,NULL,NULL
-31/12/2024,Diabetes,RTT First,84,71,13,0,14,NULL,NULL
 31/03/2024,General Medicine,N/A,629,595,29,5,96,NULL,NULL
 30/06/2022,Rheumatology,N/A,242,215,27,0,44,NULL,NULL
 30/09/2022,Trauma & Orthopaedics,N/A,2200,2098,102,0,490,NULL,NULL
 31/12/2022,Rheumatology,N/A,215,196,18,1,68,NULL,NULL
-31/12/2024,Paediatrics,RTT Follow-up,20,17,3,0,1,NULL,NULL
 30/06/2023,Trauma & Orthopaedics,N/A,2273,2192,81,0,345,NULL,NULL
 31/07/2022,Gynaecology,N/A,1451,871,513,67,237,NULL,NULL
 31/01/2024,Trauma & Orthopaedics,N/A,2428,2372,56,0,431,NULL,NULL
-31/12/2024,Breast Surgery,RTT First,265,0,2,263,4,NULL,NULL
 30/11/2023,General Medicine,N/A,695,658,29,8,113,NULL,NULL
 31/05/2024,Gynaecology,N/A,1999,1115,820,64,240,NULL,NULL
 31/07/2023,Paediatrics,N/A,706,680,26,0,87,NULL,NULL
@@ -2010,7 +1970,6 @@ month,specialty,appointment_type,appointments_attended,appointments_attended_rou
 29/02/2024,Gastroenterology,N/A,463,410,51,2,121,NULL,NULL
 30/06/2023,Urology,N/A,315,178,103,34,63,NULL,NULL
 31/07/2024,Cardiology,N/A,3652,3254,398,0,480,NULL,NULL
-31/12/2024,Vascular Surgery,RTT Follow-up,46,38,8,0,2,NULL,NULL
 31/07/2022,Trauma & Orthopaedics,N/A,2055,1962,93,0,401,NULL,NULL
 31/07/2024,Clinical Haematology,N/A,545,383,141,21,83,NULL,NULL
 30/11/2024,Rheumatology,N/A,236,210,26,0,18,NULL,NULL
@@ -2049,17 +2008,13 @@ month,specialty,appointment_type,appointments_attended,appointments_attended_rou
 31/03/2023,Gastroenterology,N/A,381,315,59,7,86,NULL,NULL
 30/11/2024,Breast Surgery,N/A,321,179,64,78,28,NULL,NULL
 31/07/2022,General Medicine,N/A,449,442,7,0,54,NULL,NULL
-31/12/2024,General Surgery,RTT First,531,402,129,0,26,NULL,NULL
 31/07/2022,Rheumatology,N/A,237,210,26,1,41,NULL,NULL
 30/11/2024,Neurology,N/A,171,161,10,0,66,NULL,NULL
 30/09/2022,Cardiology,N/A,2919,2689,230,0,327,NULL,NULL
 29/02/2024,Vascular Surgery,N/A,122,101,19,2,19,NULL,NULL
 31/08/2022,Trauma & Orthopaedics,N/A,2320,2220,100,0,410,NULL,NULL
-31/12/2024,Gastroenterology,RTT First,222,121,89,12,19,NULL,NULL
-31/12/2024,Vascular Surgery,Non-RTT,20,16,4,0,5,NULL,NULL
 31/05/2023,Gastroenterology,N/A,370,327,40,3,97,NULL,NULL
 31/03/2024,Gastroenterology,N/A,579,508,59,12,140,NULL,NULL
-31/12/2024,General Medicine,Non-RTT,21,20,1,0,2,NULL,NULL
 30/09/2023,Trauma & Orthopaedics,N/A,2239,2155,84,0,387,NULL,NULL
 30/09/2024,Diabetes,N/A,294,263,31,0,81,NULL,NULL
 30/04/2023,Urology,N/A,232,118,90,24,43,NULL,NULL
@@ -2076,7 +2031,6 @@ month,specialty,appointment_type,appointments_attended,appointments_attended_rou
 31/03/2023,Paediatric ENT,N/A,113,75,37,1,38,NULL,NULL
 30/09/2022,ENT,N/A,416,280,119,17,134,NULL,NULL
 31/07/2024,Neurology,N/A,136,127,9,0,49,NULL,NULL
-31/12/2024,General Surgery,RTT Follow-up,268,220,44,4,24,NULL,NULL
 31/08/2022,Urology,N/A,215,128,66,21,37,NULL,NULL
 31/03/2024,Paediatric ENT,N/A,117,77,40,0,29,NULL,NULL
 28/02/2023,Urology,N/A,219,133,65,21,48,NULL,NULL
@@ -2084,10 +2038,8 @@ month,specialty,appointment_type,appointments_attended,appointments_attended_rou
 31/10/2022,Urology,N/A,237,140,58,39,35,NULL,NULL
 31/01/2023,Dermatology,N/A,228,184,31,13,69,NULL,NULL
 31/03/2024,ENT,N/A,537,261,234,42,127,NULL,NULL
-31/12/2024,ENT,RTT Follow-up,527,269,78,180,54,NULL,NULL
 31/07/2023,Neurology,N/A,139,120,19,0,54,NULL,NULL
 31/01/2024,Cardiology,N/A,3794,3469,325,0,392,NULL,NULL
-31/12/2024,General Medicine,N/A,426,381,42,3,82,NULL,NULL
 30/09/2023,Colorectal Surgery,N/A,176,72,47,57,52,NULL,NULL
 31/01/2024,Gynaecology,N/A,2159,1396,701,62,219,NULL,NULL
 31/07/2022,General Surgery,N/A,193,141,49,3,52,NULL,NULL
@@ -2121,16 +2073,13 @@ month,specialty,appointment_type,appointments_attended,appointments_attended_rou
 31/10/2022,Trauma & Orthopaedics,N/A,2050,1961,89,0,433,NULL,NULL
 31/07/2023,Trauma & Orthopaedics,N/A,2054,1980,74,0,410,NULL,NULL
 31/05/2024,Respiratory,N/A,720,533,177,10,152,NULL,NULL
-31/12/2024,Urology,N/A,141,101,36,4,27,NULL,NULL
 31/12/2023,Paediatric ENT,N/A,53,30,23,0,24,NULL,NULL
 31/03/2024,Clinical Haematology,N/A,448,286,143,19,84,NULL,NULL
-31/12/2024,Paediatrics,Non-RTT,187,149,38,0,24,NULL,NULL
 31/03/2024,Cardiology,N/A,3587,3269,318,0,410,NULL,NULL
 30/09/2024,Colorectal Surgery,N/A,111,49,45,17,25,NULL,NULL
 30/04/2023,Clinical Haematology,N/A,373,244,102,27,49,NULL,NULL
 31/12/2022,Paediatrics,N/A,666,652,14,0,110,NULL,NULL
 30/04/2023,Cardiology,N/A,2591,2377,214,0,275,NULL,NULL
-31/12/2024,Neurology,N/A,95,91,4,0,25,NULL,NULL
 30/06/2022,Neurology,N/A,103,85,18,0,50,NULL,NULL
 31/07/2023,Rheumatology,N/A,256,219,37,0,44,NULL,NULL
 30/06/2024,Diabetes,N/A,339,294,45,0,90,NULL,NULL
@@ -2139,7 +2088,6 @@ month,specialty,appointment_type,appointments_attended,appointments_attended_rou
 28/02/2023,General Medicine,N/A,765,745,16,4,96,NULL,NULL
 30/04/2024,Clinical Haematology,N/A,526,363,136,27,89,NULL,NULL
 30/09/2024,Neurology,N/A,161,146,15,0,54,NULL,NULL
-30/06/2025,Colorectal Surgery,RTT First,0,0,0,0,1,NULL,NULL
 30/09/2022,Paediatrics,N/A,742,723,19,0,102,NULL,NULL
 30/09/2023,Gastroenterology,N/A,491,463,25,3,97,NULL,NULL
 31/01/2023,Colorectal Surgery,N/A,185,45,70,70,28,NULL,NULL
@@ -2151,11 +2099,9 @@ month,specialty,appointment_type,appointments_attended,appointments_attended_rou
 30/11/2024,Dermatology,N/A,167,121,38,8,62,NULL,NULL
 31/07/2024,General Surgery,N/A,546,502,38,6,126,NULL,NULL
 30/04/2024,ENT,N/A,511,264,218,29,108,NULL,NULL
-31/12/2024,ENT,RTT First,934,634,143,157,133,NULL,NULL
 31/12/2022,General Surgery,N/A,228,199,26,3,59,NULL,NULL
 31/08/2023,Vascular Surgery,N/A,107,94,13,0,14,NULL,NULL
 30/04/2023,Trauma & Orthopaedics,N/A,1995,1906,89,0,376,NULL,NULL
-31/12/2024,Gynaecology,RTT First,740,464,89,187,44,NULL,NULL
 30/06/2024,Gynaecology,N/A,1820,1034,748,38,229,NULL,NULL
 30/09/2023,Breast Surgery,N/A,283,155,59,69,27,NULL,NULL
 30/04/2024,Cardiology,N/A,3938,3642,296,0,484,NULL,NULL
@@ -2164,10 +2110,8 @@ month,specialty,appointment_type,appointments_attended,appointments_attended_rou
 31/08/2024,Vascular Surgery,N/A,70,58,9,3,6,NULL,NULL
 30/04/2023,Respiratory,N/A,553,478,63,12,93,NULL,NULL
 31/07/2024,Rheumatology,N/A,273,237,34,2,34,NULL,NULL
-31/12/2024,Paediatrics,RTT First,261,227,34,0,17,NULL,NULL
 31/01/2024,Neurology,N/A,165,142,21,2,68,NULL,NULL
 31/05/2024,Cardiology,N/A,3771,3382,389,0,462,NULL,NULL
-31/12/2024,Paediatric ENT,N/A,37,11,26,0,5,NULL,NULL
 31/05/2024,Clinical Haematology,N/A,495,328,151,16,67,NULL,NULL
 31/05/2023,Rheumatology,N/A,354,315,38,1,52,NULL,NULL
 30/09/2023,Neurology,N/A,119,102,15,2,64,NULL,NULL
@@ -2179,7 +2123,6 @@ month,specialty,appointment_type,appointments_attended,appointments_attended_rou
 31/07/2023,Colorectal Surgery,N/A,152,54,51,47,36,NULL,NULL
 31/12/2022,Diabetes,N/A,324,227,97,0,107,NULL,NULL
 31/03/2023,Cardiology,N/A,3361,3074,287,0,308,NULL,NULL
-31/12/2024,Diabetes,Non-RTT,292,260,32,0,51,NULL,NULL
 31/10/2022,Respiratory,N/A,727,622,87,18,120,NULL,NULL
 31/10/2023,Urology,N/A,335,171,130,34,123,NULL,NULL
 31/08/2023,General Medicine,N/A,609,567,35,7,84,NULL,NULL
@@ -2198,11 +2141,7 @@ month,specialty,appointment_type,appointments_attended,appointments_attended_rou
 30/09/2023,Diabetes,N/A,328,291,37,0,118,NULL,NULL
 31/08/2023,Colorectal Surgery,N/A,140,48,45,47,58,NULL,NULL
 30/04/2023,Dermatology,N/A,228,164,39,25,65,NULL,NULL
-31/12/2024,Breast Surgery,RTT Follow-up,57,29,8,20,0,NULL,NULL
 31/07/2022,Dermatology,N/A,197,145,27,25,73,NULL,NULL
-31/12/2024,Neurology,RTT Follow-up,21,13,3,5,3,NULL,NULL
-31/12/2024,Paediatrics,N/A,394,385,9,0,44,NULL,NULL
-31/12/2024,Respiratory,RTT Follow-up,51,37,12,2,11,NULL,NULL
 30/06/2023,Cardiology,N/A,3314,3019,295,0,335,NULL,NULL
 31/01/2023,Rheumatology,N/A,347,308,38,1,63,NULL,NULL
 31/07/2024,General Medicine,N/A,847,814,31,2,75,NULL,NULL
@@ -2229,10 +2168,8 @@ month,specialty,appointment_type,appointments_attended,appointments_attended_rou
 30/09/2024,ENT,N/A,460,157,269,34,220,NULL,NULL
 31/07/2023,ENT,N/A,419,236,167,16,123,NULL,NULL
 30/11/2023,General Surgery,N/A,462,341,114,7,81,NULL,NULL
-31/12/2024,Trauma & Orthopaedics,N/A,1441,1422,19,0,215,NULL,NULL
 31/01/2024,ENT,N/A,557,308,224,25,155,NULL,NULL
 31/05/2024,Dermatology,N/A,223,146,54,23,79,NULL,NULL
-31/12/2024,Cardiology,RTT Follow-up,45,35,10,0,4,NULL,NULL
 30/11/2024,Cardiology,N/A,3739,3385,354,0,434,NULL,NULL
 30/06/2023,Clinical Haematology,N/A,425,276,128,21,76,NULL,NULL
 31/10/2022,Dermatology,N/A,233,173,40,20,65,NULL,NULL
@@ -2255,7 +2192,6 @@ month,specialty,appointment_type,appointments_attended,appointments_attended_rou
 31/12/2022,Trauma & Orthopaedics,N/A,1888,1778,110,0,385,NULL,NULL
 31/10/2024,Respiratory,N/A,910,641,261,8,185,NULL,NULL
 30/11/2024,Gynaecology,N/A,1947,1186,725,36,209,NULL,NULL
-31/12/2024,Clinical Haematology,RTT Follow-up,90,33,17,40,7,NULL,NULL
 30/11/2022,Paediatrics,N/A,757,733,24,0,81,NULL,NULL
 30/06/2022,Gynaecology,N/A,1402,857,507,38,204,NULL,NULL
 30/11/2024,General Surgery,N/A,408,385,19,4,70,NULL,NULL
@@ -2269,7 +2205,6 @@ month,specialty,appointment_type,appointments_attended,appointments_attended_rou
 31/10/2022,Diabetes,N/A,438,359,79,0,91,NULL,NULL
 31/05/2023,Cardiology,N/A,3427,3134,293,0,353,NULL,NULL
 31/08/2023,Trauma & Orthopaedics,N/A,2179,2118,61,0,429,NULL,NULL
-31/12/2024,Colorectal Surgery,N/A,57,24,30,3,12,NULL,NULL
 30/09/2022,Vascular Surgery,N/A,95,77,18,0,7,NULL,NULL
 30/04/2024,Diabetes,N/A,351,313,38,0,80,NULL,NULL
 31/05/2024,Diabetes,N/A,340,303,37,0,88,NULL,NULL
@@ -2277,27 +2212,19 @@ month,specialty,appointment_type,appointments_attended,appointments_attended_rou
 31/10/2023,Trauma & Orthopaedics,N/A,2484,2413,71,0,431,NULL,NULL
 31/08/2024,Urology,N/A,248,129,95,24,63,NULL,NULL
 31/05/2024,ENT,N/A,480,208,237,35,147,NULL,NULL
-31/12/2024,Vascular Surgery,RTT First,77,61,16,0,3,NULL,NULL
 31/07/2023,Dermatology,N/A,258,174,34,50,110,NULL,NULL
 31/05/2024,General Medicine,N/A,624,607,13,4,103,NULL,NULL
 30/09/2022,Rheumatology,N/A,284,263,20,1,40,NULL,NULL
 30/11/2022,Cardiology,N/A,3113,2905,208,0,282,NULL,NULL
 31/10/2024,Clinical Haematology,N/A,528,347,165,16,74,NULL,NULL
 31/10/2024,Neurology,N/A,193,182,11,0,73,NULL,NULL
-31/12/2024,Cardiology,RTT First,312,180,132,0,33,NULL,NULL
 31/01/2023,Respiratory,N/A,839,751,70,18,131,NULL,NULL
 30/06/2022,ENT,N/A,339,232,102,5,154,NULL,NULL
 30/04/2024,General Medicine,N/A,689,664,19,6,89,NULL,NULL
 31/08/2022,Paediatrics,N/A,717,698,19,0,104,NULL,NULL
-31/12/2024,Trauma & Orthopaedics,Non-RTT,523,467,56,0,44,NULL,NULL
 30/11/2024,Gastroenterology,N/A,364,328,30,6,103,NULL,NULL
 31/05/2023,Trauma & Orthopaedics,N/A,2231,2168,63,0,397,NULL,NULL
-31/12/2024,Diabetes,N/A,212,182,30,0,41,NULL,NULL
-31/12/2024,Rheumatology,Non-RTT,531,372,159,0,32,NULL,NULL
-31/12/2024,Colorectal Surgery,Non-RTT,80,40,22,18,2,NULL,NULL
 31/07/2024,Breast Surgery,N/A,305,154,64,87,48,NULL,NULL
-31/12/2024,Dermatology,N/A,76,61,15,0,26,NULL,NULL
-28/02/2025,ENT,RTT First,0,0,0,0,2,NULL,NULL
 30/06/2022,Cardiology,N/A,2651,2406,245,0,324,NULL,NULL
 31/12/2022,Breast Surgery,N/A,193,98,36,59,55,NULL,NULL
 30/06/2022,Clinical Haematology,N/A,419,287,117,15,70,NULL,NULL
@@ -2310,7 +2237,6 @@ month,specialty,appointment_type,appointments_attended,appointments_attended_rou
 30/09/2023,Paediatric ENT,N/A,77,50,27,0,39,NULL,NULL
 30/04/2024,Vascular Surgery,N/A,94,78,12,4,7,NULL,NULL
 30/11/2023,Gastroenterology,N/A,737,691,41,5,91,NULL,NULL
-31/12/2024,Gastroenterology,RTT Follow-up,49,32,13,4,1,NULL,NULL
 31/05/2023,Paediatrics,N/A,645,604,41,0,90,NULL,NULL
 31/08/2024,Rheumatology,N/A,185,157,28,0,39,NULL,NULL
 29/02/2024,Respiratory,N/A,748,584,152,12,131,NULL,NULL
@@ -2321,7 +2247,6 @@ month,specialty,appointment_type,appointments_attended,appointments_attended_rou
 31/03/2024,Gynaecology,N/A,1944,1127,754,63,190,NULL,NULL
 31/05/2023,Colorectal Surgery,N/A,162,47,63,52,27,NULL,NULL
 31/10/2023,Colorectal Surgery,N/A,166,62,41,63,38,NULL,NULL
-31/12/2024,Paediatric ENT,Non-RTT,135,108,27,0,30,NULL,NULL
 30/11/2023,Gynaecology,N/A,1976,1215,693,68,242,NULL,NULL
 30/09/2024,General Surgery,N/A,428,392,28,8,62,NULL,NULL
 31/12/2023,Diabetes,N/A,275,244,31,0,74,NULL,NULL
@@ -2336,20 +2261,14 @@ month,specialty,appointment_type,appointments_attended,appointments_attended_rou
 31/03/2024,Rheumatology,N/A,292,246,45,1,45,NULL,NULL
 31/07/2023,Gastroenterology,N/A,368,322,45,1,71,NULL,NULL
 29/02/2024,Dermatology,N/A,232,148,50,34,78,NULL,NULL
-31/12/2024,Rheumatology,N/A,87,76,11,0,11,NULL,NULL
-31/12/2024,Breast Surgery,N/A,142,74,23,45,17,NULL,NULL
 31/08/2022,General Medicine,N/A,519,511,3,5,65,NULL,NULL
 30/06/2022,General Surgery,N/A,219,164,52,3,46,NULL,NULL
 31/05/2023,Paediatric ENT,N/A,78,58,18,2,44,NULL,NULL
-31/12/2024,Gynaecology,RTT Follow-up,441,223,111,107,31,NULL,NULL
-31/12/2024,Urology,Non-RTT,337,186,58,93,50,NULL,NULL
-31/12/2024,Respiratory,N/A,470,348,120,2,75,NULL,NULL
 31/10/2024,Cardiology,N/A,3987,3592,395,0,501,NULL,NULL
 30/09/2023,ENT,N/A,470,282,168,20,137,NULL,NULL
 30/04/2023,General Medicine,N/A,475,460,10,5,65,NULL,NULL
 31/01/2023,General Medicine,N/A,777,716,55,6,89,NULL,NULL
 31/07/2022,Respiratory,N/A,663,524,117,22,117,NULL,NULL
-31/12/2024,Clinical Haematology,RTT First,92,41,20,31,4,NULL,NULL
 31/07/2024,Respiratory,N/A,806,589,210,7,173,NULL,NULL
 31/08/2022,Breast Surgery,N/A,234,130,70,34,56,NULL,NULL
 30/09/2024,General Medicine,N/A,805,748,53,4,61,NULL,NULL
@@ -2357,7 +2276,6 @@ month,specialty,appointment_type,appointments_attended,appointments_attended_rou
 31/07/2022,Neurology,N/A,90,76,12,2,35,NULL,NULL
 31/08/2023,Rheumatology,N/A,244,209,35,0,37,NULL,NULL
 28/02/2023,Respiratory,N/A,780,694,71,15,142,NULL,NULL
-31/12/2024,Dermatology,RTT Follow-up,276,116,88,72,6,NULL,NULL
 30/11/2022,Vascular Surgery,N/A,105,97,7,1,14,NULL,NULL
 31/10/2024,Colorectal Surgery,N/A,127,49,64,14,37,NULL,NULL
 30/09/2022,Gastroenterology,N/A,339,280,53,6,78,NULL,NULL
