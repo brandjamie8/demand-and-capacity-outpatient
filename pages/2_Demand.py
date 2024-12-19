@@ -161,6 +161,10 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
 
                 # --- Analyze Appointments for Removals ---
         st.subheader("Appointments to Stop a Clock")
+        appointment_df = appointment_df[appointment_df['specialty'] == selected_specialty]
+
+        # Convert 'month' to datetime and filter baseline period
+        appointment_df['month'] = pd.to_datetime(appointment_df['month']).dt.to_period('M').dt.to_timestamp('M')
 
         baseline_appointment_df = appointment_df[
             (appointment_df['month'] >= baseline_start) &
