@@ -161,6 +161,11 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
 
                 # --- Analyze Appointments for Removals ---
         st.subheader("Appointments to Stop a Clock")
+
+        baseline_appointment_df = appointment_df[
+            (appointment_df['month'] >= baseline_start) &
+            (appointment_df['month'] <= baseline_end)
+        ]
         
         # Group by appointment_type and sum appointments_for_removals
         appointment_totals = baseline_appointment_df.groupby('appointment_type')['appointments_for_removals'].sum()
