@@ -68,15 +68,21 @@ specialty_summary['WL Change'] = specialty_summary['WL End'] - specialty_summary
 # Calculate deficit
 specialty_summary['Deficit (12-Month)'] = specialty_summary['Referrals (12-Month)'] - specialty_summary['Removals (12-Month)']
 
-# Add arrows for the expected change
-specialty_summary['Expected Change'] = specialty_summary['Deficit (12-Month)'].apply(
-    lambda x: '⬆️' if x > 0 else '⬇️' if x < 0 else '➖'
-)
+# Add arrows and numbers for the expected change
+def format_expected_change(deficit):
+    if deficit > 0:
+        return f"⬆️ {deficit:.0f}"
+    elif deficit < 0:
+        return f"⬇️ {abs(deficit):.0f}"
+    else:
+        return "➖ 0"
+
+specialty_summary['Expected Change'] = specialty_summary['Deficit (12-Month)'].apply(format_expected_change)
 
 # Add a total row
 totals = pd.DataFrame(specialty_summary.sum(numeric_only=True)).T
 totals['specialty'] = 'Total'
-totals['Expected Change'] = '—'
+totals['Expected Change'] = format_expected_change(totals['Deficit (12-Month)'].values[0])
 specialty_summary = pd.concat([specialty_summary, totals], ignore_index=True)
 
 # Select relevant columns to display
@@ -84,10 +90,10 @@ columns_to_display = [
     'specialty', 
     'additions',
     'removals',
+    'Expected Change',
     'WL Start',
     'WL End',
     'WL Change',
-    'Expected Change',
     'Referrals (12-Month)',
     'Removals (12-Month)'
 ]
