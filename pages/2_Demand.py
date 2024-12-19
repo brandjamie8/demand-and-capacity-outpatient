@@ -161,7 +161,21 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
 
         # --- Analyze Appointments for Removals ---
         st.subheader("Appointments to Stop a Clock")
+        referral_df = referral_df[referral_df['specialty'] == selected_specialty]
+        appointment_df = appointment_df[appointment_df['specialty'] == selected_specialty]
 
+        # Convert 'month' to datetime
+        referral_df['month'] = pd.to_datetime(referral_df['month']).dt.to_period('M').dt.to_timestamp('M')
+        appointment_df['month'] = pd.to_datetime(appointment_df['month']).dt.to_period('M').dt.to_timestamp('M')
+
+        # Baseline period for appointments to stop a clock
+        baseline_start = pd.to_datetime("2023-04-01").to_period('M').to_timestamp('M')
+        baseline_end = pd.to_datetime("2024-03-31").to_period('M').to_timestamp('M')
+
+        baseline_appointment_df = appointment_df[
+            (appointment_df['month'] >= baseline_start) &
+            (appointment_df['month'] <= baseline_end)
+        ]
         # Group by appointment_type and sum appointments_for_removals
         appointment_totals = baseline_appointment_df.groupby('appointment_type')['appointments_for_removals'].sum()
         
