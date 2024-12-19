@@ -127,6 +127,22 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
             st.write(f"**Mean Absolute Error (Average):** {error_average:.2f}")
             best_fit = "Average" if error_average < error_regression else "Regression"
             st.write(f"**Best Fit Model:** {best_fit}")
+        # --- Choose Prediction Model ---
+        st.subheader("Choose Prediction Model")
+        selected_model = st.radio(
+            "Select the model to generate the predicted trend for the next 12 months:",
+            options=["Average (Baseline)", "Regression"],
+            index=0 if error_average < error_regression else 1
+        )
+
+        # --- Predict Future Demand ---
+        st.subheader("Predict Future Demand")
+        future_months = pd.date_range(start=pd.to_datetime(st.session_state.model_start_date), periods=12, freq='M')
+        if selected_model == "Average (Baseline)":
+            future_predictions = [baseline_scaled_additions / 12] * len(future_months)
+        else:
+            future_months_ordinal = future_months.map(pd.Timestamp.toordinal)
+            future_predictions = intercept + slope * future_months_ordinal
 
         # --- Predict Future Demand ---
         st.subheader("Predict Future Demand")
