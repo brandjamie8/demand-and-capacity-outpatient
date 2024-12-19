@@ -48,8 +48,8 @@ referral_aggregated = referral_baseline_df.groupby('specialty').agg({'additions'
 appointment_aggregated = appointment_baseline_df.groupby('specialty').agg({'removals': 'sum'}).reset_index()
 
 # Calculate waiting list at the start and end of the baseline
-wl_start = appointment_df[appointment_df['month'] == baseline_start].groupby('specialty').agg({'waiting_list': 'sum'}).reset_index()
-wl_end = appointment_df[appointment_df['month'] == baseline_end].groupby('specialty').agg({'waiting_list': 'sum'}).reset_index()
+wl_start = referral_df[referral_df['month'] == baseline_start].groupby('specialty').agg({'waiting_list': 'sum'}).reset_index()
+wl_end = referral_df[referral_df['month'] == baseline_end].groupby('specialty').agg({'waiting_list': 'sum'}).reset_index()
 
 # Merge all data
 specialty_summary = pd.merge(referral_aggregated, appointment_aggregated, on='specialty', how='outer').fillna(0)
