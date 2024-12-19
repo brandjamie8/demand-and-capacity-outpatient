@@ -333,7 +333,7 @@ if st.session_state.referral_df is not None and st.session_state.appointment_df 
         """)
         
         # Define the validation period (6 months before baseline start)
-        validation_start_date = baseline_start_date - pd.DateOffset(months=6)
+        validation_start_date = baseline_start_date - pd.DateOffset(months=12)
         validation_end_date = baseline_start_date - pd.DateOffset(months=1)
         
         # Filter validation data
