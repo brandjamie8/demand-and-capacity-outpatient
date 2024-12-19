@@ -66,7 +66,7 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
         # Display total referrals for baseline period
         if not baseline_referral_df.empty:
             st.subheader("Baseline Referral Summary")
-            st.write(f"**Total Referrals in Baseline Period ({baseline_start:%Y-%m} to {baseline_end:%Y-%m}):** {total_referrals_baseline:.0f}")
+            #st.write(f"**Total Referrals in Baseline Period ({baseline_start:%Y-%m} to {baseline_end:%Y-%m}):** {total_referrals_baseline:.0f}")
 
 
         
