@@ -61,12 +61,7 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
 
         st.plotly_chart(fig, use_container_width=True)
 
-        # Extrapolate baseline referrals to a year's worth
-        if not baseline_referral_df.empty:
-            num_baseline_months = (baseline_end.year - baseline_start.year) * 12 + (baseline_end.month - baseline_start.month) + 1
-            total_referrals_baseline = baseline_referral_df['additions'].sum()
-            baseline_yearly_referrals = (total_referrals_baseline / num_baseline_months) * 12
-            st.write(f"**Total Referrals (12-Month Equivalent):** {baseline_yearly_referrals:.0f}")
+
 
         # Display total referrals for baseline period
         if not baseline_referral_df.empty:
@@ -89,8 +84,13 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
         # Display total and scaled baseline referrals
         total_baseline_additions = baseline_df['additions'].sum()
         baseline_scaled_additions = (total_baseline_additions / num_baseline_months) * 12
-        st.write(f"**Total Baseline Referrals:** {total_baseline_additions:.0f}")
-        st.write(f"**Annualized Baseline Referrals:** {baseline_scaled_additions:.0f}")
+        #st.write(f"**Total Baseline Referrals:** {total_baseline_additions:.0f}")
+        # Extrapolate baseline referrals to a year's worth
+        if not baseline_referral_df.empty:
+            num_baseline_months = (baseline_end.year - baseline_start.year) * 12 + (baseline_end.month - baseline_start.month) + 1
+            total_referrals_baseline = baseline_referral_df['additions'].sum()
+            baseline_yearly_referrals = (total_referrals_baseline / num_baseline_months) * 12
+            st.write(f"**Total Referrals (12-Month Equivalent):** {baseline_yearly_referrals:.0f}")        
 
         # --- Analyze Model Fit ---
         st.subheader("Model Fit: Baseline Average vs. Trend Line")
