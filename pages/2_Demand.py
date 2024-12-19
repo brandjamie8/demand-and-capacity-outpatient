@@ -115,18 +115,18 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
             error_regression = np.mean(np.abs(actual_baseline - predicted_regression))
             error_average = np.mean(np.abs(actual_baseline - predicted_average))
 
-            # Determine best fit
-            st.write(f"**Mean Absolute Error (Regression):** {error_regression:.2f}")
-            st.write(f"**Mean Absolute Error (Average):** {error_average:.2f}")
-            best_fit = "Average" if error_average < error_regression else "Regression"
-            st.write(f"**Best Fit Model:** {best_fit}")
-
             # Plot baseline fit
             fig = go.Figure()
             fig.add_trace(go.Scatter(x=baseline_df['month'], y=actual_baseline, mode='lines+markers', name='Actual Demand'))
             fig.add_trace(go.Scatter(x=baseline_df['month'], y=predicted_average, mode='lines', name='Predicted (Average)', line=dict(dash='dash')))
             fig.add_trace(go.Scatter(x=baseline_df['month'], y=predicted_regression, mode='lines', name='Predicted (Regression)', line=dict(dash='dot')))
             st.plotly_chart(fig, use_container_width=True)
+
+            # Determine best fit
+            st.write(f"**Mean Absolute Error (Regression):** {error_regression:.2f}")
+            st.write(f"**Mean Absolute Error (Average):** {error_average:.2f}")
+            best_fit = "Average" if error_average < error_regression else "Regression"
+            st.write(f"**Best Fit Model:** {best_fit}")
 
         # --- Predict Future Demand ---
         st.subheader("Predict Future Demand")
