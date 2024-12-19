@@ -159,19 +159,9 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
         fig_future.add_trace(go.Scatter(x=future_df['month'], y=future_df['predicted_demand'], mode='lines+markers', name='Predicted Demand'))
         st.plotly_chart(fig_future, use_container_width=True)
 
-                # --- Analyze Appointments for Removals ---
+        # --- Analyze Appointments for Removals ---
         st.subheader("Appointments to Stop a Clock")
-        appointment_df = st.session_state.appointment_df
-        appointment_df = appointment_df[appointment_df['specialty'] == selected_specialty]
 
-        # Convert 'month' to datetime and filter baseline period
-        appointment_df['month'] = pd.to_datetime(appointment_df['month']).dt.to_period('M').dt.to_timestamp('M')
-
-        baseline_appointment_df = appointment_df[
-            (appointment_df['month'] >= baseline_start) &
-            (appointment_df['month'] <= baseline_end)
-        ]
-        
         # Group by appointment_type and sum appointments_for_removals
         appointment_totals = baseline_appointment_df.groupby('appointment_type')['appointments_for_removals'].sum()
         
@@ -179,44 +169,46 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
         appointment_order = ['RTT First', 'RTT Follow-up', 'Non-RTT']
         appointment_totals = appointment_totals.reindex(appointment_order).fillna(0)
 
-        # Scale to 12 months
-        appointment_totals_scaled = (appointment_totals / num_baseline_months) * 12
-
         # Calculate ratios
-        rtt_first = appointment_totals_scaled.get('RTT First', 0)
-        rtt_followup = appointment_totals_scaled.get('RTT Follow-up', 0)
-        non_rtt = appointment_totals_scaled.get('Non-RTT', 0)
+        rtt_first = appointment_totals.get('RTT First', 0)
+        rtt_followup = appointment_totals.get('RTT Follow-up', 0)
+        non_rtt = appointment_totals.get('Non-RTT', 0)
 
         first_to_followup_ratio = rtt_followup / rtt_first if rtt_first > 0 else None
         first_to_all_followup_ratio = (rtt_followup + non_rtt) / rtt_first if rtt_first > 0 else None
 
-        # Display totals and ratios
-        st.write(f"**Baseline Period:** {baseline_start:%B %Y} to {baseline_end:%B %Y}")
-        st.write("**Appointments for Removals (Baseline Months):**")
-        for app_type in appointment_order:
-            st.write(f"- **{app_type}:** {appointment_totals.get(app_type, 0):.0f}")
-
-        st.write("**Appointments for Removals (Scaled to 12 Months):**")
-        for app_type in appointment_order:
-            st.write(f"- **{app_type}:** {appointment_totals_scaled.get(app_type, 0):.0f}")
-
+        # Display ratios
+        st.write(f"**Baseline Period (April 2023 - March 2024):**")
         st.write(f"**RTT First to RTT Follow-Up Ratio:** {first_to_followup_ratio:.2f}" if first_to_followup_ratio else "N/A")
         st.write(f"**RTT First to All Follow-Up (Including Non-RTT) Ratio:** {first_to_all_followup_ratio:.2f}" if first_to_all_followup_ratio else "N/A")
 
-        # --- Chart for Scaled Appointments ---
-        st.subheader("Appointments by Type (Scaled to 12 Months)")
-        chart_data = pd.DataFrame({
-            'Appointment Type': appointment_order,
-            'Appointments (Scaled to 12 Months)': appointment_totals_scaled
-        }).reset_index(drop=True)
+        # --- Predict Future Appointments ---
+        st.subheader("Future Appointment Needs")
+        
+        # Assume one RTT First appointment per referral and use ratios to calculate follow-ups
+        predicted_yearly_referrals = st.session_state.forecasted_total  # From referral predictions
+        rtt_followup_needed = predicted_yearly_referrals * first_to_followup_ratio if first_to_followup_ratio else 0
+        non_rtt_needed = predicted_yearly_referrals * (first_to_all_followup_ratio - first_to_followup_ratio) if first_to_all_followup_ratio else 0
+
+        # Display predictions
+        st.write(f"**Predicted Yearly Referrals:** {predicted_yearly_referrals:.0f}")
+        st.write(f"**RTT Follow-Up Appointments Needed:** {rtt_followup_needed:.0f}")
+        st.write(f"**Non-RTT Appointments Needed:** {non_rtt_needed:.0f}")
+
+        # --- Chart for Future Appointment Needs ---
+        st.subheader("Appointments Needed by Type (Next 12 Months)")
+        future_appointments = pd.DataFrame({
+            'Appointment Type': ['RTT First', 'RTT Follow-Up', 'Non-RTT'],
+            'Appointments Needed': [predicted_yearly_referrals, rtt_followup_needed, non_rtt_needed]
+        })
 
         fig = px.bar(
-            chart_data,
+            future_appointments,
             x='Appointment Type',
-            y='Appointments (Scaled to 12 Months)',
-            title="Appointments by Type (Scaled to 12 Months)",
-            labels={'Appointments (Scaled to 12 Months)': 'Appointments'},
-            text='Appointments (Scaled to 12 Months)'
+            y='Appointments Needed',
+            title="Appointments Needed by Type (Next 12 Months)",
+            labels={'Appointments Needed': 'Appointments'},
+            text='Appointments Needed'
         )
         fig.update_traces(texttemplate='%{text:.0f}', textposition='outside')
         st.plotly_chart(fig, use_container_width=True)
