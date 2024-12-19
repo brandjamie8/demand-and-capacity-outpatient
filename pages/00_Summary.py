@@ -47,8 +47,14 @@ appointment_baseline_df = appointment_df[(appointment_df['month'] >= baseline_st
 referral_aggregated = referral_baseline_df.groupby('specialty').agg({'additions': 'sum'}).reset_index()
 appointment_aggregated = appointment_baseline_df.groupby('specialty').agg({'removals': 'sum'}).reset_index()
 
-# Merge the aggregated dataframes on 'specialty'
+# Calculate waiting list at the start and end of the baseline
+wl_start = appointment_df[appointment_df['month'] == baseline_start].groupby('specialty').agg({'waiting_list': 'sum'}).reset_index()
+wl_end = appointment_df[appointment_df['month'] == baseline_end].groupby('specialty').agg({'waiting_list': 'sum'}).reset_index()
+
+# Merge all data
 specialty_summary = pd.merge(referral_aggregated, appointment_aggregated, on='specialty', how='outer').fillna(0)
+specialty_summary = pd.merge(specialty_summary, wl_start.rename(columns={'waiting_list': 'WL Start'}), on='specialty', how='left').fillna(0)
+specialty_summary = pd.merge(specialty_summary, wl_end.rename(columns={'waiting_list': 'WL End'}), on='specialty', how='left').fillna(0)
 
 # Calculate the number of months in the baseline period
 num_baseline_months = (baseline_end.year - baseline_start.year) * 12 + (baseline_end.month - baseline_start.month) + 1
@@ -57,25 +63,30 @@ scaling_factor = 12 / num_baseline_months
 # Calculate extrapolated values
 specialty_summary['Referrals (12-Month)'] = specialty_summary['additions'] * scaling_factor
 specialty_summary['Removals (12-Month)'] = specialty_summary['removals'] * scaling_factor
+specialty_summary['WL Change'] = specialty_summary['WL End'] - specialty_summary['WL Start']
 
 # Calculate deficit
 specialty_summary['Deficit (12-Month)'] = specialty_summary['Referrals (12-Month)'] - specialty_summary['Removals (12-Month)']
 
-# Add a message about the expected change to the waiting list
-specialty_summary['Expected Change'] = specialty_summary.apply(
-    lambda row: (
-        f"Increase in waiting list by {row['Deficit (12-Month)']:.0f}" if row['Deficit (12-Month)'] > 0 else
-        f"Decrease in waiting list by {-row['Deficit (12-Month)']:.0f}" if row['Deficit (12-Month)'] < 0 else
-        "No change in waiting list"
-    ),
-    axis=1
+# Add arrows for the expected change
+specialty_summary['Expected Change'] = specialty_summary['Deficit (12-Month)'].apply(
+    lambda x: '⬆️' if x > 0 else '⬇️' if x < 0 else '➖'
 )
+
+# Add a total row
+totals = pd.DataFrame(specialty_summary.sum(numeric_only=True)).T
+totals['specialty'] = 'Total'
+totals['Expected Change'] = '—'
+specialty_summary = pd.concat([specialty_summary, totals], ignore_index=True)
 
 # Select relevant columns to display
 columns_to_display = [
     'specialty', 
     'additions',
     'removals',
+    'WL Start',
+    'WL End',
+    'WL Change',
     'Expected Change',
     'Referrals (12-Month)',
     'Removals (12-Month)'
@@ -85,7 +96,10 @@ columns_to_display = [
 specialty_summary_display = specialty_summary[columns_to_display].rename(columns={
     'specialty': 'Specialty',
     'additions': 'Referrals (Baseline)',
-    'removals': 'Removals (Baseline)'
+    'removals': 'Removals (Baseline)',
+    'WL Start': 'Waiting List Start',
+    'WL End': 'Waiting List End',
+    'WL Change': 'Waiting List Change'
 })
 
 # Display the summary table
