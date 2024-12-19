@@ -149,9 +149,10 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
             'month': future_months,
             'predicted_demand': future_predictions
         })
-
+        forecasted_total = future_df['predicted_demand'].sum()
+        st.session_state.forecasted_total = forecasted_total
         # Display future predictions
-        st.write(f"**Total Predicted Demand for Next 12 Months:** {future_df['predicted_demand'].sum():.0f}")
+        st.write(f"**Total Predicted Demand for Next 12 Months:** {forecasted_total:.0f}")
 
         # Plot future predictions
         fig_future = go.Figure()
