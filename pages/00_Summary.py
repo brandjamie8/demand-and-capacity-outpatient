@@ -18,7 +18,7 @@ referral_df = st.session_state.referral_df
 # Convert the 'month' column to datetime if not already
 for df in [appointment_df, referral_df]:
     if not pd.api.types.is_datetime64_any_dtype(df['month']):
-        df['month'] = pd.to_datetime(df['month'])
+        df['month'] = pd.to_datetime(df['month'], format='%d/%m/%Y')
 
 # User input for baseline period
 st.subheader("Select Baseline Period")
