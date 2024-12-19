@@ -161,6 +161,7 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
 
         # --- Analyze Appointments for Removals ---
         st.subheader("Appointments to Stop a Clock")
+        appointment_df = st.session_state.appointment_df
         referral_df = referral_df[referral_df['specialty'] == selected_specialty]
         appointment_df = appointment_df[appointment_df['specialty'] == selected_specialty]
 
