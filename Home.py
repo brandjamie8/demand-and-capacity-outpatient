@@ -41,8 +41,8 @@ try:
     st.session_state.selected_specialty = selected_specialty
 
     # Display a preview of the referral data
-    st.subheader("Referral Data Preview")
-    st.write("Here are the first few rows of the Referral Data:")
+    st.subheader("Waiting List Data Preview")
+    st.write("Here are the first few rows of the Waiting List Data:")
     st.dataframe(referral_df.head())
 
     # Display a preview of the appointment data
