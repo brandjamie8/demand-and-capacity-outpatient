@@ -15,10 +15,8 @@ if ('referral_df' in st.session_state and st.session_state.referral_df is not No
     # Baseline Referral Analysis
     st.subheader(f"Referral Demand Forecast for {selected_specialty}")
 
-    if 'forecasted_referrals' in st.session_state:
-        forecasted_referrals_df = st.session_state['forecasted_referrals']
-        forecasted_referrals_df['forecasted_referrals'] = forecasted_referrals_df['forecasted_referrals'].round()
-        forecasted_total = forecasted_referrals_df['forecasted_referrals'].sum()
+    if 'forecasted_total' in st.session_state:
+        forecasted_total = st.session_state.forecasted_total
     else:
         st.error("Please complete the referral demand analysis to forecast referrals.")
 
