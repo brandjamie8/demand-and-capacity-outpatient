@@ -15,7 +15,7 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
     selected_specialty = st.session_state.selected_specialty
 
     # Ensure required columns are present in both datasets
-    referral_required_columns = ['month', 'specialty', 'priority', 'referrals']
+    referral_required_columns = ['month', 'specialty', 'additions', 'removals']
     appointment_required_columns = ['month', 'specialty', 'appointment_type', 'appointments_attended']
 
     if all(column in referral_df.columns for column in referral_required_columns) and \
