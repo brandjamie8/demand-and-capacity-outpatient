@@ -20,9 +20,6 @@ if ('referral_df' in st.session_state and st.session_state.referral_df is not No
     else:
         st.error("Please complete the referral demand analysis to forecast referrals.")
 
-    st.write(f"**Total Forecasted Referrals for Next Year:** {forecasted_total:.0f}")
-    st.write(forecasted_referrals_df)
-
     # Ratios for waiting list removals
     st.subheader("Appointment Type Ratios Based on Waiting List Removals")
     rtt_first_to_followup_ratio = st.session_state.first_followup_removals_ratio
