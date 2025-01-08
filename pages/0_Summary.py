@@ -66,7 +66,7 @@ specialty_summary['Removals (12-Month)'] = specialty_summary['removals'] * scali
 specialty_summary['WL Change'] = specialty_summary['WL End'] - specialty_summary['WL Start']
 
 # Calculate deficit
-specialty_summary['Deficit (12-Month)'] = specialty_summary['Referrals (12-Month)'] - specialty_summary['Removals (12-Month)']
+specialty_summary['Deficit (12-Month)'] = specialty_summary['additions'] - specialty_summary['removals']
 
 # Add arrows and numbers for the expected change
 def format_expected_change(deficit):
