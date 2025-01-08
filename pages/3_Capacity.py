@@ -28,6 +28,7 @@ if 'referral_df' in st.session_state and st.session_state.referral_df is not Non
         # Convert 'month' to datetime and set as month-end
         specialty_referral_df['month'] = pd.to_datetime(specialty_referral_df['month']).dt.to_period('M').dt.to_timestamp('M')
         specialty_appointment_df['month'] = pd.to_datetime(specialty_appointment_df['month']).dt.to_period('M').dt.to_timestamp('M')
+        specialty_appointment_df.sort_values(by='month', inplace=True)
 
         # Default baseline period as the last 6 months of available data
         max_date = specialty_appointment_df['month'].max()
