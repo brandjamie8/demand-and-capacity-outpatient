@@ -18,13 +18,14 @@ if 'forecasted_total' in st.session_state and \
     st.header("Input Waiting List Variables")
 
     if 'waiting_list_start' not in st.session_state:
-        st.session_state.waiting_list_start = 500
+        st.session_state.waiting_list_start = 500.0
 
     waiting_list_start = st.number_input(
         'Waiting List at the Start of the Year',
-        min_value=0,
+        min_value=0.0,
         value=st.session_state.waiting_list_start,
-        key='input_waiting_list_start'
+        key='input_waiting_list_start',
+        step=1.0 
     )
 
     # Calculate waiting list additions from forecasted referrals
